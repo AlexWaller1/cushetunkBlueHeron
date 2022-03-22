@@ -214,3 +214,170 @@ console.log(isPalindrome2(racecar2));
 
 console.log(isPalindrome2(house));
 // house is not a palindrome
+
+console.log("----------------------------");
+console.log("----------------------------");
+
+let chars1 = ["a", "b", "c", "d", "e", "f", "g"];
+
+let chars2 = ["h", "i", "j", "k", "l", "m", "n"];
+
+let chars3 = ["o", "p", "q", "r", "s", "t", "u"];
+
+let chars4 = ["v", "w", "x", "y", "z"];
+
+let chars5 = ["A", "B", "C", "D", "E", "F", "G"];
+
+let chars6 = ["H", "I", "J", "K", "L", "M", "N"];
+
+let chars7 = ["O", "P", "Q", "R", "S", "T", "U"];
+
+let chars8 = ["V", "W", "X", "Y", "Z"];
+
+let chars9 = ["`", "~", "1", "!", "2", "@", "3"];
+
+let chars10 = ["#", "4", "$", "5", "%", "6", "^"];
+
+let chars11 = ["7", "&", "8", "*", "9", "(", "0"];
+
+let chars12 = [")", "-", "_", "=", "+", "[", "{"];
+
+let chars13 = ["]", "}", "|", ":", ";", "'", "<"];
+
+let chars14 = [",", ".", ">", "/", "?"];
+
+let masterChars = [
+  ...chars1,
+  ...chars2,
+  ...chars3,
+  ...chars4,
+  ...chars5,
+  ...chars6,
+  ...chars7,
+  ...chars8,
+  ...chars9,
+  ...chars10,
+  ...chars11,
+  ...chars12,
+  ...chars13,
+  ...chars14
+];
+
+let corNumbers = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
+  42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+  61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79,
+  80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92
+];
+
+console.log(masterChars.length);
+// 92
+
+console.log(corNumbers.length);
+// 92
+
+class HashMap {
+  constructor() {
+    this.container = [];
+    this.size = 0;
+  }
+
+  hash(string) {
+    let numString = "";
+    let rNum = 0;
+    let i = 0;
+
+    for (; i < string.length; i++) {
+      let index = masterChars.indexOf(string.charAt(i));
+      let newChar = corNumbers[index];
+      numString = numString.concat(newChar);
+    }
+    rNum = parseInt(numString);
+    return rNum;
+  }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] != undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    delete this.container[key];
+    this.size--;
+  }
+}
+
+const dachshunds = new HashMap();
+
+console.log(dachshunds.hash("Bodhi"));
+// 2815489
+console.log(dachshunds.hash("Bodhi"));
+// 2815489
+console.log(dachshunds.hash("Chipper"));
+// 29891616518
+console.log(dachshunds.hash("Chipper"));
+// 29891616518
+console.log(dachshunds.hash("Beezer"));
+// 285526518
+console.log(dachshunds.hash("Beezer"));
+// 285526518
+
+dachshunds.set("1", "Chipper");
+dachshunds.set("2", "Beezer");
+dachshunds.set("3", "Bodhi");
+dachshunds.set("4", "Jake");
+dachshunds.set("5", "Star");
+
+console.log(dachshunds.size);
+// 5
+console.log(dachshunds.get("5"));
+// Star
+console.log(dachshunds.get("4"));
+// Jake
+console.log(dachshunds.get("3"));
+// Bodhi
+console.log(dachshunds.get("2"));
+// Beezer
+console.log(dachshunds.get("1"));
+// Chipper
+console.log(dachshunds.has("5"));
+// true
+console.log(dachshunds.has("4"));
+// true
+console.log(dachshunds.has("3"));
+// true
+console.log(dachshunds.has("2"));
+// true
+console.log(dachshunds.has("1"));
+// true
+console.log(dachshunds.has("a"));
+// false
+dachshunds.set("6", "test");
+
+console.log(dachshunds.get("6"));
+// test
+console.log(dachshunds.size);
+// 6
+dachshunds.delete("6");
+
+console.log(dachshunds.get("6"));
+// undefined
+console.log(dachshunds.size);
+// 5
