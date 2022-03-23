@@ -381,3 +381,156 @@ console.log(dachshunds.get("6"));
 // undefined
 console.log(dachshunds.size);
 // 5
+
+console.log("-------------------------------");
+console.log("---------------------------");
+
+console.log(2 == "2");
+// true
+console.log(2 === "2");
+// false
+
+console.log(2.5 % 1);
+// 0.5
+
+function mathDotRound(num) {
+  let decimal = num % 1;
+
+  if (decimal > 0.5) {
+    let roundDec = 1 - decimal;
+    return num + roundDec;
+  } else {
+    return num - decimal;
+  }
+}
+
+console.log(mathDotRound(2.65));
+// 3
+console.log(mathDotRound(5.34));
+// 5
+console.log(mathDotRound(37));
+// 37
+
+console.log("-----------------------------");
+console.log("---------------------------");
+
+console.log(Math.pow(2, 3));
+// 8
+console.log(Math.pow(9, 3));
+// 729
+console.log(Math.pow(3, 4));
+// 81
+console.log(Math.pow(11, 2));
+// 121
+
+function mathDotPow(num1, num2) {
+  let rNum = 1;
+  let i = 1;
+
+  for (; i <= num2; i++) {
+    rNum = rNum * num1;
+  }
+  return rNum;
+}
+
+console.log(mathDotPow(9, 3));
+// 729
+console.log(mathDotPow(2, 3));
+// 8
+console.log(mathDotPow(3, 4));
+// 81
+console.log(mathDotPow(11, 2));
+// 121
+
+console.log("----------------------------");
+console.log("-------------------------");
+
+// Longest Substring Without Repeating Characters
+
+// Given a string s, find the length of the longest
+// substring without repeating characters
+
+// Example 1:
+// Intput: s = "abcabcbb"
+// Output: 3
+
+// Example 2:
+// Input: s = "bbbb"
+// Output: 1
+
+// Example 3:
+// Input: s = "pwwkew"
+// Output: 3
+
+let string1 = "abcabcbb";
+
+let string2 = "bbbb";
+
+let string3 = "pwwkew";
+
+let string4 = "carolc";
+
+function allStringCombos(string) {
+  let strCombos = [];
+  let count = 0;
+  let substr = "";
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    substr = string.charAt(i);
+    strCombos.push(substr);
+    let j = i + 1;
+    for (; j < string.length; j++) {
+      substr = substr.concat(string.charAt(j));
+      strCombos.push(substr);
+    }
+  }
+  return strCombos;
+}
+
+console.log(allStringCombos("dachshund"));
+
+let stringArray1 = allStringCombos(string1);
+
+let stringArray2 = allStringCombos(string2);
+
+let stringArray3 = allStringCombos(string3);
+
+console.log(stringArray3);
+
+function uniqueCharCount(string) {
+  let count = 0;
+  let countArray = [];
+  let charMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    if (charMap.get(string.charAt(i)) == undefined) {
+      count++;
+      countArray.push(count);
+      charMap.set(string.charAt(i), i);
+    } else {
+      count = 0;
+      charMap = new Map();
+    }
+  }
+
+  let j = 0;
+  let max = 0;
+
+  for (; j < countArray.length; j++) {
+    if (countArray[j] > max) {
+      max = countArray[j];
+    }
+  }
+  return max;
+}
+
+console.log(uniqueCharCount(string3));
+// 3
+console.log(uniqueCharCount(string2));
+// 1
+console.log(uniqueCharCount(string1));
+// 3
+console.log(uniqueCharCount(string4));
+// 5
