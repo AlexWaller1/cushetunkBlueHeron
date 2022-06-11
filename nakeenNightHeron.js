@@ -464,3 +464,37 @@ console.log(charsMap5.size);
 // 62
 
 charsMap5.set("~", 63);
+charsMap5.set("`", 64);
+charsMap5.set("!", 65);
+charsMap5.set("@", 66);
+charsMap5.set("#", 67);
+charsMap5.set("$", 68);
+charsMap5.set("%", 69);
+charsMap5.set("^", 70);
+charsMap5.set("&", 71);
+charsMap5.set("*", 72);
+charsMap5.set("(", 73);
+charsMap5.set(")", 74);
+charsMap5.set("-", 75);
+charsMap5.set("_", 76);
+charsMap5.set("+", 77);
+charsMap5.set("=", 78);
+charsMap5.set("{", 79);
+charsMap5.set("[", 80);
+charsMap5.set("}", 81);
+charsMap5.set("]", 82);
+charsMap5.set(":", 83);
+charsMap5.set(";", 84);
+charsMap5.set("'", 85);
+charsMap5.set("<", 86);
+charsMap5.set(",", 87);
+charsMap5.set(">", 88);
+charsMap5.set(".", 89);
+charsMap5.set("|", 90);
+charsMap5.set("?", 91);
+charsMap5.set("/", 92);
+
+console.log(charsMap5.size);
+
+console.log("-------------------------------------");
+console.log("----------------------------------");
