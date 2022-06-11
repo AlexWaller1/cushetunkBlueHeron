@@ -498,3 +498,65 @@ console.log(charsMap5.size);
 
 console.log("-------------------------------------");
 console.log("----------------------------------");
+
+class HashMap {
+  constructor(message) {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  hash(key) {
+    if (typeof key !== "string") {
+      key = key.toString();
+    }
+
+    let rString = "";
+    let i = 0;
+    for (; i < key.length; i++) {
+      let char = charsMap5.get(key.charAt(i));
+      rString = rString.concat(char);
+    }
+    let rNum = parseInt(rString);
+    return rNum;
+  }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] !== undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    delete this.container[key];
+    this.size--;
+  }
+}
+
+const hammerHeadMap = new HashMap("This is the Hammerhead Hash Map!");
+
+console.log(hammerHeadMap.message);
+// This is the Hammerhead Hash Map!
+
+console.log(hammerHeadMap.hash("Hammerhead"));
+// 34113135188514
+console.log(hammerHeadMap.hash("Hammerhead"));
+// 34113135188514
+console.log(hammerHeadMap.hash("Taylor"));
+// 46125121518
+console.log(hammerHeadMap.hash("Taylor"));
+// 46125121518
