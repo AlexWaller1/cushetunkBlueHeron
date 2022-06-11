@@ -625,12 +625,16 @@ console.log(numSet);
 console.log(numSet.size);
 // 5
 
-numSet.delete(3);
+console.log(numSet.delete(3));
+// true
 
 console.log(numSet);
 // {1, 2, 4, 5}
 console.log(numSet.size);
 // 4
+console.log(numSet.add(1));
+
+console.log(numSet);
 
 class Set41 {
   constructor(message = "Hello Oa") {
@@ -640,8 +644,15 @@ class Set41 {
   }
 
   add(key) {
+    let i = 0;
+    for (; i < this.size; i++) {
+      if (this.container[i] == key) {
+        return this.container;
+      }
+    }
     this.container[this.size] = key;
     this.size++;
+    return this.container;
   }
 
   has(key) {
@@ -655,7 +666,7 @@ class Set41 {
   }
 
   delete(key) {
-    let newSet = new Set();
+    let newSet = new Set41();
     let i = 0;
 
     for (; i < this.size; i++) {
@@ -667,3 +678,13 @@ class Set41 {
     this.size = newSet.size;
   }
 }
+
+const numSet2 = new Set41();
+
+console.log(numSet2.message);
+// Hello Oa
+numSet2.add(1);
+numSet2.add(2);
+numSet2.add(3);
+numSet2.add(4);
+numSet2.add(5);
