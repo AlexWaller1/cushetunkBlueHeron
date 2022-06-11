@@ -542,8 +542,12 @@ class HashMap {
 
   delete(key) {
     key = this.hash(key);
-    delete this.container[key];
-    this.size--;
+    if (this.container[key] !== undefined) {
+      delete this.container[key];
+      this.size--;
+      return true;
+    }
+    return false;
   }
 }
 
@@ -560,3 +564,106 @@ console.log(hammerHeadMap.hash("Taylor"));
 // 46125121518
 console.log(hammerHeadMap.hash("Taylor"));
 // 46125121518
+
+hammerHeadMap.set(1, "Hammerhead");
+hammerHeadMap.set(2, "Taylor");
+hammerHeadMap.set(3, "Harvey");
+hammerHeadMap.set(4, "Wibaux");
+
+console.log(hammerHeadMap.size);
+// 4
+console.log(hammerHeadMap.get(1));
+// Hammerhead
+console.log(hammerHeadMap.get(2));
+// Taylor
+console.log(hammerHeadMap.get(3));
+// Harvey
+console.log(hammerHeadMap.get(4));
+// Wibaux
+console.log(hammerHeadMap.has(1));
+// true
+console.log(hammerHeadMap.has(2));
+// true
+console.log(hammerHeadMap.has(3));
+// true
+console.log(hammerHeadMap.has(4));
+// true
+console.log(hammerHeadMap.has(5));
+// false
+
+console.log(hammerHeadMap.delete(3));
+// true
+console.log(hammerHeadMap.has(3));
+// false
+console.log(hammerHeadMap.size);
+// 3
+console.log(hammerHeadMap.container);
+
+console.log(hammerHeadMap.delete(3));
+// false
+console.log(hammerHeadMap.size);
+// 3
+hammerHeadMap.set(3, "Harvey");
+
+console.log(hammerHeadMap.get(3));
+// Harvey
+console.log(hammerHeadMap.container);
+
+console.log("--------------------------------");
+console.log("------------------------------------");
+
+const numSet = new Set();
+
+numSet.add(1);
+numSet.add(2);
+numSet.add(3);
+numSet.add(4);
+numSet.add(5);
+
+console.log(numSet);
+// {1, 2, 3, 4, 5}
+console.log(numSet.size);
+// 5
+
+numSet.delete(3);
+
+console.log(numSet);
+// {1, 2, 4, 5}
+console.log(numSet.size);
+// 4
+
+class Set41 {
+  constructor(message = "Hello Oa") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  add(key) {
+    this.container[this.size] = key;
+    this.size++;
+  }
+
+  has(key) {
+    let i = 0;
+    for (; i < this.size; i++) {
+      if (this.container[i] == key) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  delete(key) {
+    let newSet = new Set();
+    let i = 0;
+
+    for (; i < this.size; i++) {
+      if (this.container[i] !== key) {
+        newSet.add(this.container[i]);
+      }
+    }
+    this.container = newSet.container;
+    this.size = newSet.size;
+  }
+}
