@@ -30,4 +30,26 @@ class Array22 {
     }
     return -1;
   }
+
+  includes(element) {
+    let i = 0;
+
+    for (; i < this.length; i++) {
+      if (this.container[i] == element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  slice(index1, index2) {
+    let rArray = new Array22();
+
+    for (; index1 < index2; index1++) {
+      rArray.push(this.container[index1]);
+    }
+    return rArray;
+  }
+
+  shift() {}
 }
