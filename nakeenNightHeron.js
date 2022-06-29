@@ -668,6 +668,9 @@ class Set41 {
   delete(key) {
     let newSet = new Set41();
     let i = 0;
+    if (!this.has(key)) {
+      return false;
+    }
 
     for (; i < this.size; i++) {
       if (this.container[i] !== key) {
@@ -676,6 +679,7 @@ class Set41 {
     }
     this.container = newSet.container;
     this.size = newSet.size;
+    return true;
   }
 }
 
