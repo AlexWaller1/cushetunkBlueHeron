@@ -51,5 +51,52 @@ class Array22 {
     return rArray;
   }
 
-  shift() {}
+  shift() {
+    let rElement = this.container[0];
+    let newArray = new Array22();
+    let i = 1;
+
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
+  }
+
+  unshift(args) {
+    let newArray = new Array22();
+    let i = 0;
+
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+
+    let j = 0;
+
+    for (; j < this.length; j++) {
+      newArray.push(this.container[j]);
+    }
+
+    this.container = newArray.container;
+    this.length = newArray.length;
+
+    return this.length;
+  }
+
+  delete(index) {
+    let rElement = this.container[index];
+    let newArray = new Array22();
+    let i = 0;
+
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+    }
+
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
+  }
 }
