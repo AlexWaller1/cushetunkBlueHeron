@@ -279,3 +279,67 @@ console.log(isPalindrome(racecar));
 // true
 console.log(isPalindrome(television));
 // false
+console.log(isPalindrome(radar));
+// true
+console.log(isPalindrome(lamp));
+// false
+console.log(isPalindrome(kayak));
+// true
+console.log(isPalindrome(sodaCan));
+// false
+console.log("-----------------------------------");
+console.log("---------------------------------");
+
+function reverseNum(num) {
+  let remainder = 0;
+  let rNum = 0;
+
+  for (; parseInt(num) > 0; num = num / 10) {
+    num = parseInt(num);
+    remainder = num % 10;
+    rNum = rNum * 10 + remainder;
+  }
+  return rNum;
+}
+
+console.log(reverseNum(37));
+// 73
+console.log(reverseNum(56));
+// 65
+console.log(reverseNum(9876));
+// 6789
+
+let testNums1 = [45, 98, 109, 908, 43];
+
+let testNums2 = [23, 45, 19, 34, 74, 56];
+
+let testNums3 = [80, 1, 34, 15, 10, 16];
+
+let testNums4 = [57, 17, 18, 90, 21, 22];
+
+function greatestReverseNum(array) {
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    array[i] = reverseNum(array[i]);
+  }
+
+  let max = array[0];
+  let j = 0;
+
+  for (; j < array.length; j++) {
+    if (array[j] > max) {
+      max = array[j];
+    }
+  }
+  return max;
+}
+
+console.log(greatestReverseNum(testNums1));
+// 901
+console.log(greatestReverseNum(testNums2));
+// 91
+console.log(greatestReverseNum(testNums3));
+// 61
+console.log(greatestReverseNum(testNums4));
+// 81
