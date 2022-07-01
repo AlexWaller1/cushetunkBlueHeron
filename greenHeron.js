@@ -100,6 +100,38 @@ class Array22 {
     this.length = newArray.length;
     return rElement;
   }
+
+  insert(element, index) {
+    let newArray = new Array22();
+    let i = 0;
+
+    for (; i < this.length; i++) {
+      if (i == index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
+      }
+    }
+
+    this.container = newArray.container;
+    this.length = newArray.length;
+
+    return this.container;
+  }
+
+  reverse() {
+    let temp = 0;
+    let i = 0;
+    let j = this.length - 1;
+
+    for (; i < j; i++, j--) {
+      temp = this.container[i];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
+    }
+    return this.container;
+  }
 }
 
 const robots = new Array22();
@@ -169,3 +201,36 @@ console.log(roboClone1.container);
 // {0: 'Hank-44', 1: 'Warren-21', 2: 'Bender', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
 console.log(roboClone1.length);
 // 5
+console.log(robots.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(robots.insert("Rising Dough", 2));
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Rising Dough', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(robots.reverse());
+// {0: 'Eggplant-Head', 1: 'Mellon-Tech', 2: 'Rising Dough', 3: 'Warren-21', 4: 'Hank-44'}
+console.log(robots.container);
+// {0: 'Eggplant-Head', 1: 'Mellon-Tech', 2: 'Rising Dough', 3: 'Warren-21', 4: 'Hank-44'}
+
+console.log("------------------------------------");
+console.log("----------------------------------");
+
+function isPrimeNum(num) {
+  let sqrt = Math.sqrt(num);
+  let i = 2;
+
+  for (; i <= sqrt; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrimeNum(9));
+// false
+console.log(isPrimeNum(2));
+// true
+console.log(isPrimeNum(29));
+// true
+
+console.log("------------------------------------");
+console.log("-------------------------------");
