@@ -132,6 +132,20 @@ class Array22 {
     }
     return this.container;
   }
+
+  randomize() {
+    let temp = 0;
+    let i = 0;
+    let j = 0;
+
+    for (; i < this.length; i++) {
+      j = Math.floor(Math.random() * this.length);
+      temp = this.container[i];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
+    }
+    return this.container;
+  }
 }
 
 const robots = new Array22();
@@ -209,6 +223,8 @@ console.log(robots.reverse());
 // {0: 'Eggplant-Head', 1: 'Mellon-Tech', 2: 'Rising Dough', 3: 'Warren-21', 4: 'Hank-44'}
 console.log(robots.container);
 // {0: 'Eggplant-Head', 1: 'Mellon-Tech', 2: 'Rising Dough', 3: 'Warren-21', 4: 'Hank-44'}
+console.log(robots.randomize());
+// it works
 
 console.log("------------------------------------");
 console.log("----------------------------------");
@@ -234,3 +250,32 @@ console.log(isPrimeNum(29));
 
 console.log("------------------------------------");
 console.log("-------------------------------");
+
+let racecar = "racecar";
+
+let television = "television";
+
+let radar = "radar";
+
+let lamp = "lamp";
+
+let kayak = "kayak";
+
+let sodaCan = "soda can";
+
+function isPalindrome(string) {
+  let i = 0;
+  let j = string.length - 1;
+
+  for (; i < j; i++, j--) {
+    if (string.charAt(i) !== string.charAt(j)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrome(racecar));
+// true
+console.log(isPalindrome(television));
+// false
