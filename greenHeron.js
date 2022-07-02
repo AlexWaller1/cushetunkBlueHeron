@@ -479,3 +479,41 @@ class PrimeMap {
     return this.size;
   }
 }
+
+const charsMap = new PrimeMap();
+
+console.log(charsMap.message);
+// Default Robo Message
+charsMap.set("a", 1);
+charsMap.set("b", 2);
+charsMap.set("c", 3);
+charsMap.set("d", 4);
+charsMap.set("e", 5);
+charsMap.set("f", 6);
+charsMap.set("g", 7);
+
+console.log(charsMap.get("a"));
+// 1
+console.log(charsMap.get("b"));
+// 2
+console.log(charsMap.size);
+// 7
+
+charsMap.set("h", 8);
+charsMap.set("i", 9);
+charsMap.set("j", 10);
+charsMap.set("k", 11);
+charsMap.set("l", 12);
+charsMap.set("m", 13);
+charsMap.set("n", 14);
+charsMap.set("o", 15);
+charsMap.set("p", 16);
+charsMap.set("q", 17);
+charsMap.set("r", 18);
+
+console.log(charsMap.get("i"));
+// 9
+console.log(charsMap.get("j"));
+// 10
+console.log(charsMap.size);
+// 18
