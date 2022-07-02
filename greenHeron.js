@@ -1016,3 +1016,28 @@ let target1 = 5;
 let majEl2 = [10, 100, 101, 101];
 
 let target2 = 101;
+
+function isMajorityElement(array, target) {
+  let half = array.length / 2;
+  let count = 0;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (array[i] == target) {
+      count++;
+    }
+  }
+
+  if (count > half) {
+    return true;
+  }
+  return false;
+}
+
+console.log(isMajorityElement(majEl1, target1));
+// true
+console.log(isMajorityElement(majEl2, target2));
+// false
+
+console.log("--------------------------------------------");
+console.log("------------------------------------------");
