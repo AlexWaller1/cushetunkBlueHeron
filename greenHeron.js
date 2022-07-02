@@ -517,3 +517,114 @@ console.log(charsMap.get("j"));
 // 10
 console.log(charsMap.size);
 // 18
+
+charsMap.set("s", 19);
+charsMap.set("t", 20);
+charsMap.set("u", 21);
+charsMap.set("v", 22);
+charsMap.set("w", 23);
+charsMap.set("x", 24);
+charsMap.set("y", 25);
+charsMap.set("z", 26);
+
+console.log(charsMap.size);
+// 26
+
+charsMap.set("A", 27);
+charsMap.set("B", 28);
+charsMap.set("C", 29);
+charsMap.set("D", 30);
+charsMap.set("E", 31);
+charsMap.set("F", 32);
+charsMap.set("G", 33);
+charsMap.set("H", 34);
+charsMap.set("I", 35);
+charsMap.set("J", 36);
+
+console.log(charsMap.get("E"));
+// 31
+console.log(charsMap.get("J"));
+// 36
+console.log(charsMap.size);
+// 36
+
+charsMap.set("K", 37);
+charsMap.set("L", 38);
+charsMap.set("M", 39);
+charsMap.set("N", 40);
+charsMap.set("O", 41);
+charsMap.set("P", 42);
+charsMap.set("Q", 43);
+charsMap.set("R", 44);
+charsMap.set("S", 45);
+charsMap.set("T", 46);
+charsMap.set("U", 47);
+charsMap.set("V", 48);
+charsMap.set("W", 49);
+charsMap.set("X", 50);
+charsMap.set("Y", 51);
+charsMap.set("Z", 52);
+
+console.log(charsMap.size);
+// 52
+
+charsMap.set("`", 53);
+charsMap.set("~", 54);
+charsMap.set("!", 55);
+charsMap.set("@", 56);
+charsMap.set("#", 57);
+charsMap.set("$", 58);
+charsMap.set("%", 59);
+charsMap.set("^", 60);
+charsMap.set("&", 61);
+charsMap.set("*", 62);
+charsMap.set("(", 63);
+charsMap.set(")", 64);
+charsMap.set("-", 65);
+charsMap.set("_", 66);
+charsMap.set("+", 67);
+charsMap.set("=", 68);
+charsMap.set("1", 69);
+charsMap.set("2", 70);
+charsMap.set("3", 71);
+charsMap.set("4", 72);
+charsMap.set("5", 73);
+charsMap.set("6", 74);
+charsMap.set("7", 75);
+charsMap.set("8", 76);
+charsMap.set("9", 77);
+charsMap.set("0", 78);
+
+console.log(charsMap.size);
+// 78
+console.log(charsMap.get("3"));
+// 71
+
+charsMap.set("[", 79);
+charsMap.set("{", 80);
+charsMap.set("]", 81);
+charsMap.set("}", 82);
+charsMap.set("|", 83);
+charsMap.set(":", 84);
+charsMap.set(";", 85);
+charsMap.set("'", 86);
+charsMap.set("<", 87);
+charsMap.set(",", 88);
+charsMap.set(">", 89);
+charsMap.set(".", 90);
+charsMap.set("?", 91);
+charsMap.set("/", 92);
+
+console.log(charsMap.size);
+// 92
+
+console.log("---------------------------------------------");
+console.log("--------------------------------------------");
+
+class HashMap {
+  constructor(message = "Robo Default Message") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+}
