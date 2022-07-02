@@ -913,3 +913,106 @@ console.log(generation("-2", "m"));
 
 console.log("-------------------------------------------");
 console.log("---------------------------------------");
+
+// find the majority element in the array
+
+let majority1 = [3, 2, 3];
+
+let majority2 = [2, 2, 1, 1, 1, 2, 2];
+
+let majority3 = [3, 4, 4, 3, 9, 5, 9, 6, 9];
+
+let majority4 = [1];
+
+function majorityElement(array) {
+  let elObj = {};
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (elObj[key] !== undefined) {
+      let value = elObj[key];
+      value++;
+      elObj[key] = value;
+    } else {
+      elObj[key] = 1;
+    }
+  }
+
+  let values = Object.values(elObj);
+  let keys = Object.keys(elObj);
+  let max = values[0];
+  let rNum = keys[0];
+  let j = 1;
+
+  for (; j < values.length; j++) {
+    if (values[j] > max) {
+      max = values[j];
+      rNum = keys[j];
+    }
+  }
+  return parseInt(rNum);
+}
+
+console.log(majorityElement(majority1));
+// 3
+console.log(majorityElement(majority2));
+// 2
+console.log(majorityElement(majority3));
+// 9
+console.log(majorityElement(majority4));
+
+console.log("----------------------------------------------");
+console.log("-------------------------------------------");
+
+// didn't work, not quite the right idea
+function majorityElement2(array) {
+  array = array.sort((a, b) => (a > b ? 1 : -1));
+  let newArray = [];
+  let count = 1;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (array[i] == array[i - 1]) {
+      count++;
+    }
+    if (array[i] !== array[i - 1]) {
+      newArray.push(count);
+      count = 1;
+    }
+    if (i == array.length - 1) {
+      newArray.push(count);
+    }
+  }
+
+  let max = newArray[0];
+  let j = 1;
+
+  for (; j < newArray.length; j++) {
+    if (newArray[j] > max) {
+      max = newArray[j];
+    }
+  }
+  return max;
+}
+
+console.log(majorityElement2(majority1));
+// 2
+console.log(majorityElement2(majority2));
+// 4
+console.log(majorityElement2(majority3));
+// 3
+console.log(majorityElement2(majority4));
+
+console.log("--------------------------------------------");
+console.log("-------------------------------------------");
+
+// Check if a Number is Majority Element in a Sorted Array
+
+let majEl1 = [2, 4, 5, 5, 5, 5, 5, 6, 6];
+
+let target1 = 5;
+
+let majEl2 = [10, 100, 101, 101];
+
+let target2 = 101;
