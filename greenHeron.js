@@ -659,7 +659,7 @@ class HashMap {
     if (this.container[key] == undefined) {
       return false;
     }
-    return false;
+    return true;
   }
 
   delete(key) {
@@ -686,3 +686,19 @@ console.log(risingDough.hash("Chipper"));
 // 29891616518
 console.log(risingDough.size);
 // 0
+console.log(risingDough.set(1, "Rising Dough"));
+// 1
+console.log(risingDough.set(2, "Brayden"));
+// 2
+console.log(risingDough.set(3, "Dex Garrity"));
+// 3
+console.log(risingDough.set(4, "Brooke Nevins"));
+// 4
+console.log(risingDough.set(5, "Carmine"));
+// 5
+console.log(risingDough.has(1));
+// true
+console.log(risingDough.has(5));
+// true
+console.log(risingDough.has(34));
+// false
