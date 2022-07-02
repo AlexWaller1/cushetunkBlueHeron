@@ -857,3 +857,59 @@ console.log(isObject(isObject6));
 // false
 console.log(typeof null);
 // object
+let object1 = { ...null };
+
+console.log(object1);
+// {};
+
+console.log("----------------------------------------------");
+console.log("--------------------------------------------");
+
+let x = -4;
+
+let y = "f";
+
+let xy = `${x}${y}`;
+
+console.log(xy);
+// -4f
+
+function generation(x, y) {
+  let key = `${x}${y}`;
+
+  let familyTree = {
+    "-3f": "great grandmother",
+    "-3m": "great grandfather",
+    "-2f": "grandmother",
+    "-2m": "grandfather",
+    "-1f": "mother",
+    "-1m": "father",
+    "0f": "current",
+    "0m": "current",
+    "1f": "daughter",
+    "1m": "son",
+    "2f": "granddaughter",
+    "2m": "grandson",
+    "3f": "great granddaughter",
+    "3m": "great grandson"
+  };
+
+  if (familyTree[key] !== undefined) {
+    return familyTree[key];
+  }
+  return "not in tree's range";
+}
+
+console.log(generation(-3, "f"));
+// great grandmother
+console.log(generation(1, "f"));
+// daughter
+console.log(generation(-1, "m"));
+// father
+console.log(generation(-5, "c"));
+// not in tree's range
+console.log(generation("-2", "m"));
+// grandfather
+
+console.log("-------------------------------------------");
+console.log("---------------------------------------");
