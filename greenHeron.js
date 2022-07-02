@@ -444,3 +444,38 @@ robots3[4] = "Bender";
 
 console.log(robots3);
 // ['Hank-44', 'Warren-21', 'Mellon-Tech', 'Eggplant-Head', 'Bender']
+console.log(robots3.length);
+// 5
+console.log("-------------------------------------");
+console.log("---------------------------------");
+
+class PrimeMap {
+  constructor(message = "Default Robo Message") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  set(key, value) {
+    this.container[key] = value;
+    this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    return this.container[key];
+  }
+
+  has(key) {
+    if (this.container[key] == undefined) {
+      return false;
+    }
+    return true;
+  }
+
+  delete(key) {
+    delete this.container[key];
+    this.size--;
+    return this.size;
+  }
+}
