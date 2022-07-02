@@ -641,6 +641,33 @@ class HashMap {
     }
     return parseInt(keyString);
   }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] == undefined) {
+      return false;
+    }
+    return false;
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    delete this.container[key];
+    this.size--;
+    return this.size;
+  }
 }
 
 const risingDough = new HashMap("Rising Dough Map");
@@ -657,3 +684,5 @@ console.log(risingDough.hash("Chipper"));
 // 29891616518
 console.log(risingDough.hash("Chipper"));
 // 29891616518
+console.log(risingDough.size);
+// 0
