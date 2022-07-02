@@ -702,3 +702,116 @@ console.log(risingDough.has(5));
 // true
 console.log(risingDough.has(34));
 // false
+console.log(risingDough.get(1));
+// Rising Dough
+console.log(risingDough.get(3));
+// Dex Garrity
+console.log(risingDough.get(4));
+// Brooke Nevins
+console.log(risingDough.set(6, "test"));
+// 6
+console.log(risingDough.has(6));
+// true
+console.log(risingDough.delete(6));
+// 5
+console.log(risingDough.has(6));
+// false
+console.log("---------------------------------------------");
+console.log("-------------------------------------");
+
+const numSet = new Set();
+
+numSet.add(1);
+numSet.add(2);
+numSet.add(3);
+numSet.add(4);
+numSet.add(5);
+
+console.log(numSet);
+
+console.log(numSet.size);
+// 5
+console.log(numSet.has(2));
+// true
+console.log(numSet.add(6));
+// the add function returns the set itself
+console.log(numSet.delete(3));
+// true will return true if key found and deleted
+console.log(numSet.delete(11));
+// returns false if key not found
+console.log(numSet);
+
+console.log("------------------------------------------------");
+console.log("-----------------------------------------------");
+
+class KeySet {
+  constructor(message = "This is a Set!") {
+    this.container = {};
+    this.size = 0;
+    this.message = message;
+  }
+
+  add(key) {
+    this.container[this.size] = key;
+    this.size++;
+    return this.container;
+  }
+
+  has(key) {
+    let i = 0;
+
+    for (; i < this.size; i++) {
+      if (this.container[i] == key) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  delete(key) {
+    let rBoolean = false;
+    let newSet = new KeySet();
+    let i = 0;
+
+    for (; i < this.size; i++) {
+      if (this.container[i] == key) {
+        rBoolean = true;
+        delete this.container[i];
+      }
+    }
+
+    if (rBoolean) {
+      let j = 0;
+      for (; j < this.size; j++) {
+        if (this.container[j] !== undefined) {
+          newSet.add(this.container[j]);
+        }
+      }
+      this.container = newSet.container;
+      this.size = newSet.size;
+    }
+
+    return rBoolean;
+  }
+}
+
+const numSet2 = new KeySet();
+
+console.log(numSet2.size);
+// 0
+console.log(numSet2.add(0));
+// {0: 0}
+console.log(numSet2.add(1));
+// {0: 0, 1: 1}
+console.log(numSet2.add(2));
+// {0: 0, 1: 1, 2: 2}
+console.log(numSet2.add(3));
+// {0: 0, 1: 1, 2: 2, 3: 3}
+console.log(numSet2.size);
+// 4
+console.log(numSet2.delete(12));
+// false
+console.log(numSet2.delete(1));
+// true
+console.log(numSet2.container);
+// {0: 0, 1: 2, 2: 3}
