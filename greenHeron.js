@@ -343,3 +343,30 @@ console.log(greatestReverseNum(testNums3));
 // 61
 console.log(greatestReverseNum(testNums4));
 // 81
+
+console.log("----------------------------------");
+console.log("------------------------------");
+
+function findAllFactors(num) {
+  let rArray = [];
+  let sqrt = Math.sqrt(num);
+  let i = 1;
+
+  for (; i <= sqrt; i++) {
+    if (num % i == 0) {
+      rArray.push(i);
+      let factor = num / i;
+      if (factor !== sqrt) {
+        rArray.push(factor);
+      }
+    }
+  }
+  return rArray;
+}
+
+console.log(findAllFactors(36));
+// [1, 36, 2, 18, 3, 12, 4, 9, 6]
+console.log(findAllFactors(96));
+// [1, 96, 2, 48, 3, 32, 4, 24, 6, 16, 8, 12]
+console.log(findAllFactors(31));
+// [1, 31]
