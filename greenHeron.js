@@ -223,7 +223,7 @@ console.log(robots.reverse());
 // {0: 'Eggplant-Head', 1: 'Mellon-Tech', 2: 'Rising Dough', 3: 'Warren-21', 4: 'Hank-44'}
 console.log(robots.container);
 // {0: 'Eggplant-Head', 1: 'Mellon-Tech', 2: 'Rising Dough', 3: 'Warren-21', 4: 'Hank-44'}
-console.log(robots.randomize());
+// console.log(robots.randomize());
 // it works
 
 console.log("------------------------------------");
@@ -370,3 +370,77 @@ console.log(findAllFactors(96));
 // [1, 96, 2, 48, 3, 32, 4, 24, 6, 16, 8, 12]
 console.log(findAllFactors(31));
 // [1, 31]
+console.log("--------------------------------------");
+console.log("---------------------------------");
+
+const hammerHead = {
+  name: "Hammerhead",
+  occupation: "Pickerel Cola Space Truck Driver",
+  species: "Hammerhead Shark",
+  homePlanet: "Venice Sands 5",
+  hasPickerelCola: true
+};
+
+const hammerHead2 = hammerHead;
+
+hammerHead2["friends"] = ["Taylor", "Harvey", "Wibaux"];
+
+console.log(hammerHead.friends);
+// ['Taylor', 'Harvey', 'Wibaux']
+console.log(hammerHead.friends[2]);
+// Wibaux
+console.log(robots.container);
+/* {
+    0: 'Eggplant-Head',
+    1: 'Mellon-Tech',
+    2: 'Rising Dough',
+    3: 'Warren-21',
+    4: 'Hank-44'
+} */
+console.log(robots.length);
+// 5
+const robots2 = robots.container;
+
+robots2[5] = "Bender";
+
+console.log(robots2);
+/* {
+    0: 'Eggplant-Head',
+    1: 'Mellon-Tech',
+    2: 'Rising Dough',
+    3: 'Warren-21',
+    4: 'Hank-44',
+    5: 'Bender'
+} */
+console.log(robots.container);
+/* {
+    0: 'Eggplant-Head',
+    1: 'Mellon-Tech',
+    2: 'Rising Dough',
+    3: 'Warren-21',
+    4: 'Hank-44',
+    5: 'Bender'
+} */
+console.log(robots.length);
+// 5 :(
+robots.length++;
+
+console.log(robots.length);
+// 6 :)
+
+const robots3 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
+
+console.log(robots3.length);
+// 4
+robots3.length++;
+
+console.log(robots3.length);
+// 5
+console.log(robots3);
+// ['Hank-44', 'Warren-21', 'Mellon-Tech', 'Eggplant-Head', empty]
+console.log(robots3[4]);
+// undefined
+robots3[4] = "Bender";
+
+console.log(robots3);
+// ['Hank-44', 'Warren-21', 'Mellon-Tech', 'Eggplant-Head', 'Bender']
