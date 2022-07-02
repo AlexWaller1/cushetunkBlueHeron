@@ -815,3 +815,45 @@ console.log(numSet2.delete(1));
 // true
 console.log(numSet2.container);
 // {0: 0, 1: 2, 2: 3}
+console.log(numSet2.size);
+// 3
+console.log(numSet2.add(4));
+// {0: 0, 1: 2, 2: 3, 3: 4}
+console.log(numSet2.size);
+// 4
+console.log("----------------------------------------------");
+console.log("---------------------------------------------");
+
+let isObject1 = [1, 2, 3, 4];
+
+let isObject2 = "Hello Oa";
+
+let isObject3 = 45;
+
+let isObject4 = true;
+
+let isObject5 = null;
+
+let isObject6 = undefined;
+
+function isObject(data) {
+  if (typeof data !== "object") {
+    return false;
+  }
+  return true;
+}
+
+console.log(isObject(isObject1));
+// true
+console.log(isObject(isObject2));
+// false
+console.log(isObject(isObject3));
+// false
+console.log(isObject(isObject4));
+// false
+console.log(isObject(isObject5));
+// true
+console.log(isObject(isObject6));
+// false
+console.log(typeof null);
+// object
