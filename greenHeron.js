@@ -627,4 +627,33 @@ class HashMap {
     this.size = 0;
     this.message = message;
   }
+
+  hash(value) {
+    if (typeof value !== "string") {
+      value = value.toString();
+    }
+    let keyString = "";
+    let i = 0;
+
+    for (; i < value.length; i++) {
+      let char = charsMap.get(value.charAt(i));
+      keyString = keyString.concat(char);
+    }
+    return parseInt(keyString);
+  }
 }
+
+const risingDough = new HashMap("Rising Dough Map");
+
+console.log(risingDough.hash("Bodhi"));
+// 2815489
+console.log(risingDough.hash("Bodhi"));
+// 2815489
+console.log(risingDough.hash("Beezer"));
+// 285526518
+console.log(risingDough.hash("Beezer"));
+// 285526518
+console.log(risingDough.hash("Chipper"));
+// 29891616518
+console.log(risingDough.hash("Chipper"));
+// 29891616518
