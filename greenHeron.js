@@ -1041,3 +1041,132 @@ console.log(isMajorityElement(majEl2, target2));
 
 console.log("--------------------------------------------");
 console.log("------------------------------------------");
+
+/* 
+Given an integer array of size n, find all elements that
+appear more than [ n/3 ] times.
+*/
+
+let majNums1 = [3, 2, 3];
+
+let majNums2 = [1];
+
+let majNums3 = [1, 2];
+
+function majorityElement3(array) {
+  let third = array.length / 3;
+  let objEl = {};
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (objEl[key] !== undefined) {
+      let value = objEl[key];
+      value++;
+      objEl[key] = value;
+    } else {
+      objEl[key] = 1;
+    }
+  }
+
+  let rArray = [];
+  let keys = Object.keys(objEl);
+  let values = Object.values(objEl);
+  let j = 0;
+
+  for (; j < values.length; j++) {
+    let v = parseInt(values[j]);
+    if (v > third) {
+      rArray.push(parseInt(keys[j]));
+    }
+  }
+  return rArray;
+}
+
+console.log(majorityElement3(majNums1));
+// [3]
+console.log(majorityElement3(majNums2));
+// [1]
+console.log(majorityElement3(majNums3));
+// [1, 2]
+
+console.log("------------------------------------------");
+console.log("--------------------------------------------");
+
+function return37() {
+  let i = 1;
+
+  while (i > 0) {
+    if (i == 37) {
+      break;
+    }
+    i++;
+  }
+  return i;
+}
+
+console.log(return37());
+
+// The LeetCode Min Max Game
+
+let minMax1 = [1, 3, 5, 2, 4, 8, 2, 2];
+
+let minMax2 = [3];
+
+function minMaxGame(array) {
+  let rArray = [];
+  let isMin = true;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (i % 2 !== 0 && isMin == true) {
+      let element = Math.min(array[i], array[i - 1]);
+      rArray.push(element);
+    }
+    if (i % 2 !== 0 && isMin == false) {
+      let element2 = Math.max(array[i], array[i - 1]);
+      rArray.push(element2);
+    }
+    if (i % 2 !== 0) {
+      isMin = !isMin;
+    }
+  }
+  return rArray;
+}
+// we want [1, 5, 4, 2]
+console.log(minMaxGame(minMax1));
+
+function minMaxGame2(array) {
+  let isMin = true;
+  let rArray = [];
+  let i = 0;
+  for (; i < array.length; i++) {
+    if (i % 2 !== 0 && isMin == true) {
+      let element = Math.min(array[i], array[i - 1]);
+      rArray.push(element);
+    }
+    if (i % 2 !== 0 && isMin == false) {
+      let element2 = Math.max(array[i], array[i - 1]);
+      rArray.push(element2);
+    }
+    if (i % 2 !== 0) {
+      isMin = !isMin;
+    }
+    if (i == array.length - 1 && array.length !== 1) {
+      i = 0;
+      array = [...rArray];
+      isMin = true;
+      rArray = [];
+    }
+    if (i == array.length - 1 && array.length == 1) {
+      break;
+    }
+  }
+
+  return array;
+}
+
+console.log(minMaxGame2(minMax1));
+
+console.log("---------------------------------------------");
+console.log("--------------------------------------------");
