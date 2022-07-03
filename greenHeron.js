@@ -1299,3 +1299,78 @@ console.log(findDifference(distinct1, distinct2));
 // [[1, 3], [4, 6]]
 console.log(findDifference(distinct3, distinct4));
 // [[3], []]
+
+console.log("--------------------------------------------");
+console.log("--------------------------------------");
+
+/* 
+
+Verifying an Alien Dictionary
+
+In an alien language, surprisingly, they also use 
+English lowercase letters, but possibly in a different order. 
+The order of the alphabet is some permutation of lowercase 
+letters.
+Given a sequence of words written in the alien language, and the 
+order of the alphabet, return true if and only if the given words
+are sorted lexicographically in this alien language.
+
+*/
+
+let can = "can";
+
+console.log(can.charAt(3) == "");
+// true
+console.log(1 > 0);
+// true
+let alienWords1 = ["hello", "leetcode"];
+
+let order1 = "hlabcdefgijkmnopqrstuvwxyz";
+
+let alienWords2 = ["word", "world", "row"];
+
+let order2 = "worldabcefghijkmnpqstuvxyz";
+
+let alienWords3 = ["apple", "app"];
+
+let order3 = "abcdefghijklmnopqrstuvwxyz";
+
+function isAlienSorted(words, order) {
+  order = order.split("");
+  order.unshift("");
+  let charsMap = new Map();
+  let i = 0;
+
+  for (; i < order.length; i++) {
+    let key = order[i];
+    charsMap.set(key, i);
+  }
+
+  let j = 0;
+
+  for (; j < words.length - 1; j++) {
+    let a = 0;
+    for (; a < words[j].length; a++) {
+      if (
+        charsMap.get(words[j].charAt(a)) < charsMap.get(words[j + 1].charAt(a))
+      ) {
+        break;
+      }
+      if (
+        charsMap.get(words[j].charAt(a)) > charsMap.get(words[j + 1].charAt(a))
+      ) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+console.log(isAlienSorted(alienWords1, order1));
+// true
+console.log(isAlienSorted(alienWords2, order2));
+// false
+console.log(isAlienSorted(alienWords3, order3));
+// false
+console.log("---------------------------------------------");
+console.log("-------------------------------------------");
