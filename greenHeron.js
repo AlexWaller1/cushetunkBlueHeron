@@ -1170,3 +1170,57 @@ console.log(minMaxGame2(minMax1));
 
 console.log("---------------------------------------------");
 console.log("--------------------------------------------");
+
+/* 
+
+Given two integer arrays nums1 and nums2, return an array of 
+their intersection. Each element in the result must appear as 
+many times as it shows in both arrays and you may return the 
+result in any order.
+
+*/
+
+let intersection1 = [1, 2, 2, 1];
+
+let intersection2 = [2, 2];
+
+let intersection3 = [4, 9, 5];
+
+let intersection4 = [9, 4, 9, 8, 4];
+
+function intersectionArrays(array1, array2) {
+  let numsMap = new Map();
+  let rArray = [];
+  let i = 0;
+
+  for (; i < array1.length; i++) {
+    let key = array1[i];
+    if (numsMap.has(key)) {
+      let value = numsMap.get(key);
+      value++;
+      numsMap.set(key, value);
+    } else {
+      numsMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < array2.length; j++) {
+    let key2 = array2[j];
+    if (numsMap.has(key2) && numsMap.get(key2) !== 0) {
+      rArray.push(key2);
+      let value = numsMap.get(key2);
+      value--;
+      numsMap.set(key2, value);
+    }
+  }
+  return rArray;
+}
+
+console.log(intersectionArrays(intersection1, intersection2));
+// [2, 2]
+console.log(intersectionArrays(intersection3, intersection4));
+// [9, 4]
+console.log("---------------------------------------------");
+console.log("------------------------------------------------");
