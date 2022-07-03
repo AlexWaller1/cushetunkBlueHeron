@@ -1224,3 +1224,78 @@ console.log(intersectionArrays(intersection3, intersection4));
 // [9, 4]
 console.log("---------------------------------------------");
 console.log("------------------------------------------------");
+
+/* 
+
+Given two 0-indexed integer arrays array1 and array2, return a 
+list answer of size 2 where
+
+- answer[0] is a list of all distinct integers in nums1 which are
+not present in nums2
+
+- answer[1] is a list of all distinct integers in nums2 which are
+not present in nums1
+
+
+*/
+
+let distinct1 = [1, 2, 3];
+
+let distinct2 = [2, 4, 6];
+
+let distinct3 = [1, 2, 3, 3];
+
+let distinct4 = [1, 1, 2, 2];
+
+function findDifference(array1, array2) {
+  let numSet1 = new Set();
+  let numSet2 = new Set();
+
+  let i = 0;
+  for (; i < array1.length; i++) {
+    let key = array1[i];
+    if (!numSet1.has(key)) {
+      numSet1.add(key);
+    }
+  }
+
+  let j = 0;
+  for (; j < array2.length; j++) {
+    let key2 = array2[j];
+    if (!numSet2.has(key2)) {
+      numSet2.add(key2);
+    }
+  }
+
+  let rArray1 = [];
+  let rArray2 = [];
+  let numSet3 = new Set();
+  let numSet4 = new Set();
+
+  let a = 0;
+  for (; a < array1.length; a++) {
+    let key = array1[a];
+    if (!numSet2.has(key) && !numSet3.has(key)) {
+      rArray1.push(key);
+      numSet3.add(key);
+    }
+  }
+
+  let b = 0;
+  for (; b < array2.length; b++) {
+    let key2 = array2[b];
+    if (!numSet1.has(key2) && !numSet4.has(key2)) {
+      rArray2.push(key2);
+      numSet4.add(key2);
+    }
+  }
+
+  let answer = [rArray1, rArray2];
+
+  return answer;
+}
+
+console.log(findDifference(distinct1, distinct2));
+// [[1, 3], [4, 6]]
+console.log(findDifference(distinct3, distinct4));
+// [[3], []]
