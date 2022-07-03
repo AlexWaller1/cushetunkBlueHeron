@@ -1374,3 +1374,208 @@ console.log(isAlienSorted(alienWords3, order3));
 // false
 console.log("---------------------------------------------");
 console.log("-------------------------------------------");
+
+// Numbers Smaller than Current
+
+let smallerThan1 = [8, 1, 2, 2, 3];
+
+let smallerThan2 = [6, 5, 4, 8];
+
+let smallerThan3 = [7, 7, 7, 7];
+
+function smallerNumsThanCurrent(array) {
+  let array2 = [...array];
+  array.sort((a, b) => (a > b ? 1 : -1));
+  let numsMap = new Map();
+  let rArray = [];
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (!numsMap.has(array[i])) {
+      numsMap.set(array[i], i);
+    }
+  }
+
+  let j = 0;
+  for (; j < array2.length; j++) {
+    rArray.push(numsMap.get(array2[j]));
+  }
+  return rArray;
+}
+
+console.log(smallerNumsThanCurrent(smallerThan1));
+// [4, 0, 1, 1, 3]
+console.log(smallerNumsThanCurrent(smallerThan2));
+// [2, 1, 0, 3]
+console.log(smallerNumsThanCurrent(smallerThan3));
+// [0, 0, 0, 0]
+
+console.log("----------------------------------------------");
+console.log("--------------------------------------------");
+
+/* 
+
+Given a string s, find the first non-repeating character in it 
+and return its index. If it does not exist, return -1.
+
+*/
+
+let nonRepeat1 = "leetcode";
+
+let nonRepeat2 = "loveleetcode";
+
+let nonRepeat3 = "aabb";
+
+function firstNonRepeatingChar(string) {
+  let charMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charMap.has(key)) {
+      let value = charMap.get(key);
+      value++;
+      charMap.set(key, value);
+    } else {
+      charMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < string.length; j++) {
+    let key2 = string.charAt(j);
+    if (charMap.get(key2) == 1) return j;
+  }
+  return -1;
+}
+
+console.log(firstNonRepeatingChar(nonRepeat1));
+// 0
+console.log(firstNonRepeatingChar(nonRepeat2));
+// 2
+console.log(firstNonRepeatingChar(nonRepeat3));
+// -1
+
+console.log("-------------------------------------------");
+console.log("----------------------------------------");
+
+/* 
+
+Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
+
+Return the sorted string. If there are multiple answers, return any of them.
+
+
+*/
+
+let frequency1 = "tree";
+
+let frequency2 = "cccaaa";
+
+let frequency3 = "Aabb";
+
+let frequency4 = "raaeaedere";
+
+function frequencySort(string) {
+  let newArray = [];
+  let count = 1;
+  let i = 0;
+
+  string = string.split("");
+  string = string.sort((a, b) => (a > b ? 1 : -1));
+  string = string.join("");
+
+  for (; i < string.length; i++) {
+    if (string.charAt(i) == string.charAt(i + 1)) {
+      count++;
+    }
+    if (string.charAt(i) !== string.charAt(i + 1) && i !== string.length - 1) {
+      let newPair = { char: string.charAt(i), count: count };
+      newArray.push(newPair);
+      count = 1;
+    }
+    if (i == string.length - 1) {
+      let newPair = { char: string.charAt(i), count: count };
+      newArray.push(newPair);
+    }
+  }
+
+  newArray.sort((a, b) => (a.count < b.count ? 1 : -1));
+
+  let rString = "";
+  let j = 0;
+
+  for (; j < newArray.length; j++) {
+    while (newArray[j].count > 0) {
+      rString = rString.concat(newArray[j].char);
+      newArray[j].count--;
+    }
+  }
+  return rString;
+}
+
+console.log(frequencySort(frequency1));
+
+console.log(frequencySort(frequency2));
+
+console.log(frequencySort(frequency3));
+
+console.log(frequencySort(frequency4));
+
+console.log("-------------------------------------------");
+console.log("---------------------------------------------");
+
+console.log("e" * 2);
+// NaN
+
+/* 
+
+Percentage of Letter in String
+
+Given a string s and a character letter, return the percentage 
+of characters in s that equal letter rounded down to the nearest
+whole percent.
+
+*/
+
+let percentWord1 = "foobar";
+
+let percentChar1 = "o";
+
+let percentWord2 = "jjjj";
+
+let percentchar2 = "x";
+
+function percentageLetter(string, char) {
+  let charsMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charsMap.has(key)) {
+      let value = charsMap.get(key);
+      value++;
+      charsMap.set(key, value);
+    } else {
+      charsMap.set(key, 1);
+    }
+  }
+
+  if (!charsMap.has(char)) {
+    charsMap.set(char, 0);
+  }
+
+  let charNum = charsMap.get(char);
+
+  let rNum = (charNum / string.length) * 100;
+
+  return parseInt(rNum);
+}
+
+console.log(percentageLetter(percentWord1, percentChar1));
+// 100
+console.log(percentageLetter(percentWord2, percentchar2));
+// 0
+console.log("---------------------------------------------");
+console.log("--------------------------------------------");
