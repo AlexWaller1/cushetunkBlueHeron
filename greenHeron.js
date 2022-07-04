@@ -1579,3 +1579,16 @@ console.log(percentageLetter(percentWord2, percentchar2));
 // 0
 console.log("---------------------------------------------");
 console.log("--------------------------------------------");
+
+console.log("Jewels and Stones");
+// Jewels and Stones
+
+// Jewels and Stones
+
+let jewels1 = "aA";
+
+let stones1 = "aAAbbbb";
+
+let jewels2 = "z";
+
+let stones = "ZZ";
