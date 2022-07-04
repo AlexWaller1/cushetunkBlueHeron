@@ -1630,6 +1630,10 @@ let anagram3 = "rat";
 
 let anagram4 = "car";
 
+let anagram5 = "a";
+
+let anagram6 = "ab";
+
 function isAnagram(string1, string2) {
   string1 = string1.split("");
 
@@ -1660,3 +1664,60 @@ console.log(anagram1);
 // anagram
 console.log(anagram2);
 // gramana
+
+function isAnagram2(string1, string2) {
+  let charsMap = new Map();
+  let charsMap2 = new Map();
+  let i = 0;
+
+  for (; i < string1.length; i++) {
+    let key = string1.charAt(i);
+    if (charsMap.has(key)) {
+      let value = charsMap.get(key);
+      value++;
+      charsMap.set(key, value);
+    } else {
+      charsMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < string2.length; j++) {
+    let key2 = string2.charAt(j);
+    if (charsMap2.has(key2)) {
+      let value2 = charsMap2.get(key2);
+      value2++;
+      charsMap2.set(key2, value2);
+    } else {
+      charsMap2.set(key2, 1);
+    }
+  }
+
+  let string3 = "";
+
+  if (string1.length > string2.length) {
+    string3 = string1;
+  } else {
+    string3 = string2;
+  }
+
+  let a = 0;
+
+  for (; a < string3.length; a++) {
+    let key3 = string3.charAt(a);
+    if (charsMap.get(key3) !== charsMap2.get(key3)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isAnagram2(anagram1, anagram2));
+// true
+console.log(isAnagram2(anagram3, anagram4));
+// false
+console.log(isAnagram2(anagram5, anagram6));
+// false
+console.log("-----------------------------------");
+console.log("-------------------------------");
