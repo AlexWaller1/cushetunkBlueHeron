@@ -1591,4 +1591,72 @@ let stones1 = "aAAbbbb";
 
 let jewels2 = "z";
 
-let stones = "ZZ";
+let stones2 = "ZZ";
+
+function jewelsAndStones(jewels, stones) {
+  let jewelCase = new Set();
+  let i = 0;
+
+  for (; i < jewels.length; i++) {
+    let key = jewels.charAt(i);
+    jewelCase.add(key);
+  }
+
+  let count = 0;
+  let j = 0;
+
+  for (; j < stones.length; j++) {
+    let key2 = stones.charAt(j);
+    if (jewelCase.has(key2)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(jewelsAndStones(jewels1, stones1));
+// 3
+console.log(jewelsAndStones(jewels2, stones2));
+// 0
+
+console.log("-------------------------------------------------");
+console.log("--------------------------------------------");
+
+let anagram1 = "anagram";
+
+let anagram2 = "gramana";
+
+let anagram3 = "rat";
+
+let anagram4 = "car";
+
+function isAnagram(string1, string2) {
+  string1 = string1.split("");
+
+  string2 = string2.split("");
+
+  string1.sort((a, b) => (a > b ? 1 : -1));
+
+  string2.sort((a, b) => (a > b ? 1 : -1));
+
+  string1 = string1.join("");
+
+  string2 = string2.join("");
+
+  if (string1 == string2) {
+    return true;
+  }
+  return false;
+}
+
+console.log(isAnagram(anagram1, anagram2));
+// true
+console.log(isAnagram(anagram3, anagram4));
+// false
+console.log("------------------------------------");
+console.log("----------------------------------");
+
+console.log(anagram1);
+// anagram
+console.log(anagram2);
+// gramana
