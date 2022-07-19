@@ -1721,3 +1721,13 @@ console.log(isAnagram2(anagram5, anagram6));
 // false
 console.log("-----------------------------------");
 console.log("-------------------------------");
+
+console.log("Hello Oa");
+
+class Array41 {
+  constructor(message = "Array 41!") {
+    this.container = {};
+    this.length = 0;
+    this.message = message;
+  }
+}
