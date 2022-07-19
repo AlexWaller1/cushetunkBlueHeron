@@ -1730,4 +1730,45 @@ class Array41 {
     this.length = 0;
     this.message = message;
   }
+
+  push(element) {
+    this.container[this.length] = element;
+    this.length++;
+    return this.length;
+  }
+
+  pop() {
+    let rElement = this.container[this.length - 1];
+    delete this.container[this.length - 1];
+    this.length--;
+    return rElement;
+  }
+
+  indexOf(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] == element) {
+        return i;
+      }
+      return -1;
+    }
+  }
+
+  includes(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] == element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  slice(index1, index2) {
+    let rArray = new Array41("Clone of Array 41");
+    for (; index1 < index2; index1++) {
+      rArray.push(this.container[index1]);
+    }
+    return rArray;
+  }
 }
