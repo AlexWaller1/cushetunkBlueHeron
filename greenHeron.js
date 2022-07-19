@@ -1771,4 +1771,20 @@ class Array41 {
     }
     return rArray;
   }
+
+  shift() {
+    let rElement = this.container[0];
+    let newArray = new Array41("New Version of Array 41");
+    let i = 1;
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
+  }
+
+  unshift(args) {
+    let newArray = new Array41();
+  }
 }
