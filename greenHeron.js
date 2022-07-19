@@ -1786,5 +1786,35 @@ class Array41 {
 
   unshift(args) {
     let newArray = new Array41();
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+
+    let j = 0;
+    for (; j < this.length; j++) {
+      newArray.push(this.container[j]);
+    }
+
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.length;
+  }
+
+  delete(index) {
+    let rElement = this.container[index]
+      ? this.container[index]
+      : "array does not currently contain this index";
+    let newArray = new Array41();
+    let i = 0;
+
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
   }
 }
