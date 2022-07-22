@@ -1875,3 +1875,13 @@ console.log(robots41.container);
 // {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
 console.log(robots41.length);
 // 4
+console.log(robots41.push("Bender"));
+// 5
+console.log(robots41.container[robots41.length - 1]);
+// Bender
+console.log(robots41.length);
+// 5
+console.log(robots41.pop());
+// Bender
+console.log(robots41.length);
+// 4
