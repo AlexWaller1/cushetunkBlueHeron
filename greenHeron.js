@@ -2084,3 +2084,73 @@ charsMap41.set(")", 74);
 
 console.log(charsMap41.get("!"));
 // 65
+
+charsMap41.set("-", 75);
+charsMap41.set("_", 76);
+charsMap41.set("+", 77);
+charsMap41.set("=", 78);
+charsMap41.set("[", 79);
+charsMap41.set("]", 80);
+charsMap41.set("{", 81);
+charsMap41.set("}", 82);
+charsMap41.set("|", 83);
+
+console.log(charsMap41.get("_"));
+// 76
+
+charsMap41.set(":", 84);
+charsMap41.set(";", 85);
+charsMap41.set("'", 86);
+charsMap41.set("<", 87);
+charsMap41.set(",", 88);
+charsMap41.set(">", 89);
+charsMap41.set(".", 90);
+charsMap41.set("?", 91);
+charsMap41.set("/", 92);
+
+console.log(charsMap41.get("/"));
+// 92
+
+class HashMap41 {
+  constructor(message = "HashMap41!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  hash(key) {
+    if (typeof key !== "string") {
+      key = key.toString();
+    }
+    let rString = "";
+    let i = 0;
+
+    for (; i < key.length; i++) {
+      let current = key.charAt(i);
+      let char = charsMap41.get(current);
+      rString = rString.concat(char);
+    }
+    return parseInt(rString);
+  }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+  }
+}
+
+const roboMap41 = new HashMap41("This is RoboMap41");
+
+console.log(roboMap41.hash("Bodhi"));
+// 2815489
+console.log(roboMap41.hash("Bodhi"));
+// 2815489
+console.log(roboMap41.hash("Beezer"));
+// 285526518
+console.log(roboMap41.hash("Beezer"));
+// 285526518
+console.log(roboMap41.hash("Chipper"));
+// 29891616518
+console.log(roboMap41.hash("Chipper"));
+// 29891616518
