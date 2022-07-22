@@ -2137,6 +2137,30 @@ class HashMap41 {
     key = this.hash(key);
     this.container[key] = value;
     this.size++;
+    return this.container;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] !== undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    if (this.container[key] !== undefined) {
+      delete this.container[key];
+      this.size--;
+      return true;
+    }
+    return false;
   }
 }
 
@@ -2154,3 +2178,41 @@ console.log(roboMap41.hash("Chipper"));
 // 29891616518
 console.log(roboMap41.hash("Chipper"));
 // 29891616518
+roboMap41.set(1, "Hank-44");
+roboMap41.set(2, "Warren-21");
+roboMap41.set(3, "Mellon-Tech");
+roboMap41.set(4, "Eggplant-Head");
+
+console.log(roboMap41.get(1));
+// Hank-44
+console.log(roboMap41.get(2));
+// Warren-21
+console.log(roboMap41.get(3));
+// Mellon-Tech
+console.log(roboMap41.get(4));
+// Eggplant-Head
+console.log(roboMap41.get(112));
+// undefined
+console.log(roboMap41.set(5, "Bender"));
+
+console.log(roboMap41.get(5));
+// Bender
+console.log(roboMap41.size);
+// 5
+console.log(roboMap41.has(3));
+// true
+console.log(roboMap41.has(105));
+// false
+roboMap41.set(6, "Table");
+
+console.log(roboMap41.get(6));
+// Table
+console.log(roboMap41.size);
+// 6
+console.log(roboMap41.delete(6));
+// true
+console.log(roboMap41.size);
+// 5
+
+console.log("----------------------------------------");
+console.log("---------------------------------------");
