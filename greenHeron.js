@@ -1750,8 +1750,8 @@ class Array41 {
       if (this.container[i] == element) {
         return i;
       }
-      return -1;
     }
+    return -1;
   }
 
   includes(element) {
@@ -1885,3 +1885,23 @@ console.log(robots41.pop());
 // Bender
 console.log(robots41.length);
 // 4
+console.log(robots41.indexOf("Hank-44"));
+// 0
+console.log(robots41.indexOf("Warren-21"));
+// 1
+console.log(robots41.indexOf("Mellon-Tech"));
+// 2
+console.log(robots41.indexOf("Eggplant-Head"));
+// 3
+console.log(robots41.indexOf("Bender"));
+// -1
+console.log(robots41.includes("Hank-44"));
+// true
+console.log(robots41.includes("Warren-21"));
+// true
+console.log(robots41.includes("Mellon-Tech"));
+// true
+console.log(robots41.includes("Eggplant-Head"));
+// true
+console.log(robots41.includes("Bender"));
+// false
