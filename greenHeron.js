@@ -1841,9 +1841,9 @@ class Array41 {
     let j = 0;
     for (; i < this.length; i++) {
       j = Math.floor(Math.random() * this.length);
-      temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      temp = this.container[i];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
     }
     return this.container;
   }
@@ -1854,8 +1854,8 @@ class Array41 {
     let j = this.length - 1;
     for (; i < j; i++, j--) {
       temp = this.container[i];
-      array[i] = array[j];
-      array[j] = temp;
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
     }
     return this.container;
   }
@@ -1905,3 +1905,44 @@ console.log(robots41.includes("Eggplant-Head"));
 // true
 console.log(robots41.includes("Bender"));
 // false
+const robots42 = robots41.slice(1, 3);
+
+console.log(robots42.container);
+// {0: 'Warren-21', 1: 'Mellon-Tech'}
+console.log(robots42.length);
+// 2
+console.log(robots42.shift());
+// Warren-21
+console.log(robots42.container);
+// {0: 'Mellon-Tech'}
+console.log(robots42.length);
+// 1
+console.log(robots42.unshift("Hank-44", "Warren-21"));
+// 3
+console.log(robots42.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech'}
+console.log(robots42.push("Eggplant-Head"));
+// 4
+console.log(robots42.push("Big O"));
+// 5
+console.log(robots42.push("Rising Dough"));
+// 6
+console.log(robots42.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 'Big O', 5: 'Rising Dough'}
+console.log(robots42.delete(4));
+// Big O
+console.log(robots42.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 'Rising Dough'}
+console.log(robots42.length);
+// 5
+console.log(robots42.insert("Big O", 4));
+// 6
+console.log(robots42.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 'Big O', 5: 'Rising Dough'}
+console.log(robots42.length);
+// 6
+console.log(robots42.reverse());
+// {0: 'Rising Dough', 1: 'Big O', 2: 'Eggplant-Head', 3: 'Mellon-Tech', 4: 'Warren-21', 5: 'Hank-44'}
+
+// console.log(robots42.randomize());
+// it works!!!
