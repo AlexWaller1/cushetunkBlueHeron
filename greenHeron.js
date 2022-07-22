@@ -2000,3 +2000,87 @@ console.log(charsMap41.get("a"));
 // 1
 console.log(charsMap41.get("b"));
 // 2
+
+charsMap41.set("k", 11);
+charsMap41.set("l", 12);
+charsMap41.set("m", 13);
+charsMap41.set("n", 14);
+charsMap41.set("o", 15);
+charsMap41.set("p", 16);
+charsMap41.set("q", 17);
+charsMap41.set("r", 18);
+charsMap41.set("s", 19);
+charsMap41.set("t", 20);
+charsMap41.set("u", 21);
+charsMap41.set("v", 22);
+charsMap41.set("w", 23);
+charsMap41.set("x", 24);
+charsMap41.set("y", 25);
+charsMap41.set("z", 26);
+
+console.log(charsMap41.get("x"));
+// 24
+
+charsMap41.set("A", 27);
+charsMap41.set("B", 28);
+charsMap41.set("C", 29);
+charsMap41.set("D", 30);
+charsMap41.set("E", 31);
+charsMap41.set("F", 32);
+charsMap41.set("G", 33);
+charsMap41.set("H", 34);
+charsMap41.set("I", 35);
+charsMap41.set("J", 36);
+charsMap41.set("K", 37);
+charsMap41.set("L", 38);
+charsMap41.set("M", 39);
+charsMap41.set("N", 40);
+
+console.log(charsMap41.get("A"));
+// 27
+
+charsMap41.set("O", 41);
+charsMap41.set("P", 42);
+charsMap41.set("Q", 43);
+charsMap41.set("R", 44);
+charsMap41.set("S", 45);
+charsMap41.set("T", 46);
+charsMap41.set("U", 47);
+charsMap41.set("V", 48);
+charsMap41.set("W", 49);
+charsMap41.set("X", 50);
+charsMap41.set("Y", 51);
+charsMap41.set("Z", 52);
+
+console.log(charsMap.get("Y"));
+// 51
+
+charsMap41.set("1", 53);
+charsMap41.set("2", 54);
+charsMap41.set("3", 55);
+charsMap41.set("4", 56);
+charsMap41.set("5", 57);
+charsMap41.set("6", 58);
+charsMap41.set("7", 59);
+charsMap41.set("8", 60);
+charsMap41.set("9", 61);
+charsMap41.set("0", 62);
+
+console.log(charsMap41.get("9"));
+// 61
+
+charsMap41.set("`", 63);
+charsMap41.set("~", 64);
+charsMap41.set("!", 65);
+charsMap41.set("@", 66);
+charsMap41.set("#", 67);
+charsMap41.set("$", 68);
+charsMap41.set("%", 69);
+charsMap41.set("^", 70);
+charsMap41.set("&", 71);
+charsMap41.set("*", 72);
+charsMap41.set("(", 73);
+charsMap41.set(")", 74);
+
+console.log(charsMap41.get("!"));
+// 65
