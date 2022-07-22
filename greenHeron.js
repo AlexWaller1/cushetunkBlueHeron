@@ -1817,4 +1817,61 @@ class Array41 {
     this.length = newArray.length;
     return rElement;
   }
+
+  insert(element, index) {
+    let newArray = new Array41();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+      if (i == index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.length;
+  }
+
+  randomize() {
+    let temp = 0;
+    let i = 0;
+    let j = 0;
+    for (; i < this.length; i++) {
+      j = Math.floor(Math.random() * this.length);
+      temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return this.container;
+  }
+
+  reverse() {
+    let temp = 0;
+    let i = 0;
+    let j = this.length - 1;
+    for (; i < j; i++, j--) {
+      temp = this.container[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return this.container;
+  }
 }
+
+const robots41 = new Array41();
+
+console.log(robots41.push("Hank-44"));
+// 1
+console.log(robots41.push("Warren-21"));
+// 2
+console.log(robots41.push("Mellon-Tech"));
+// 3
+console.log(robots41.push("Eggplant-Head"));
+// 4
+console.log(robots41.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(robots41.length);
+// 4
