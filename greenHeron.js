@@ -1946,3 +1946,57 @@ console.log(robots42.reverse());
 
 // console.log(robots42.randomize());
 // it works!!!
+
+console.log(robots42.message);
+// Clone of Array41
+console.log(robots41.message);
+// Array41!
+console.log("-------------------------------------------");
+console.log("---------------------------------------");
+
+class PrimeMap41 {
+  constructor(message = "This is PrimeMap41") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  set(key, value) {
+    this.container[key] = value;
+    this.size++;
+  }
+
+  get(key) {
+    return this.container[key];
+  }
+
+  has(key) {
+    if (this.container[key] !== undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  delete(key) {
+    delete this.container[key];
+    this.size--;
+  }
+}
+
+const charsMap41 = new PrimeMap41();
+
+charsMap41.set("a", 1);
+charsMap41.set("b", 2);
+charsMap41.set("c", 3);
+charsMap41.set("d", 4);
+charsMap41.set("e", 5);
+charsMap41.set("f", 6);
+charsMap41.set("g", 7);
+charsMap41.set("h", 8);
+charsMap41.set("i", 9);
+charsMap41.set("j", 10);
+
+console.log(charsMap41.get("a"));
+// 1
+console.log(charsMap41.get("b"));
+// 2
