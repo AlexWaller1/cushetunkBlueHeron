@@ -2216,3 +2216,21 @@ console.log(roboMap41.size);
 
 console.log("----------------------------------------");
 console.log("---------------------------------------");
+
+console.log("Hello Oa");
+
+const roboTest = new Set();
+
+roboTest.add("Hank-44");
+roboTest.add("Warren-21");
+roboTest.add("Mellon-Tech");
+roboTest.add("Eggplant-Head");
+
+console.log(roboTest.has("Hank-44"));
+// true
+console.log(roboTest.has("Warren-21"));
+// true
+console.log(roboTest.has("Mellon-Tech"));
+// true
+console.log(roboTest.has("Eggplant-Head"));
+// true
