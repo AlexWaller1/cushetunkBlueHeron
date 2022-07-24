@@ -2234,3 +2234,42 @@ console.log(roboTest.has("Mellon-Tech"));
 // true
 console.log(roboTest.has("Eggplant-Head"));
 // true
+console.log(roboTest.size);
+// 4
+console.log(roboTest);
+
+class KeySet41 {
+  constructor(message = "This is a Set!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  add(key) {
+    this.container[this.size] = key;
+    this.size++;
+    return this.container;
+  }
+
+  has(key) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] == key) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  delete(key) {
+    let newSet = new Set41("I've Been Cloned!!!");
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] !== key) {
+        newSet.add(this.container[i]);
+      }
+    }
+    this.container = newSet.container;
+    this.size = newSet.size;
+  }
+}
