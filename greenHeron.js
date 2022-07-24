@@ -2253,7 +2253,7 @@ class KeySet41 {
 
   has(key) {
     let i = 0;
-    for (; i < this.length; i++) {
+    for (; i < this.size; i++) {
       if (this.container[i] == key) {
         return true;
       }
@@ -2264,7 +2264,7 @@ class KeySet41 {
   delete(key) {
     let newSet = new Set41("I've Been Cloned!!!");
     let i = 0;
-    for (; i < this.length; i++) {
+    for (; i < this.size; i++) {
       if (this.container[i] !== key) {
         newSet.add(this.container[i]);
       }
@@ -2273,3 +2273,25 @@ class KeySet41 {
     this.size = newSet.size;
   }
 }
+
+const roboSet = new KeySet41();
+
+roboSet.add("Hank-44");
+roboSet.add("Warren-21");
+roboSet.add("Mellon-Tech");
+roboSet.add("Eggplant-Head");
+
+console.log(roboSet.container);
+
+console.log(roboSet.container[0]);
+// Hank-44
+console.log(roboSet.message);
+// This is a Set!
+console.log(roboSet.has("Hank-44"));
+// true
+console.log(roboSet.has("Warren-21"));
+// true
+console.log(roboSet.has("Mellon-Tech"));
+// true
+console.log(roboSet.has("Eggplant-Head"));
+// true
