@@ -2262,15 +2262,21 @@ class KeySet41 {
   }
 
   delete(key) {
-    let newSet = new Set41("I've Been Cloned!!!");
+    let rBoolean = false;
+    let newSet = new KeySet41("I've Been Cloned!!!");
     let i = 0;
     for (; i < this.size; i++) {
       if (this.container[i] !== key) {
         newSet.add(this.container[i]);
       }
+      if (this.container[i] == key) {
+        rBoolean = true;
+      }
     }
     this.container = newSet.container;
     this.size = newSet.size;
+    this.message = newSet.message;
+    return rBoolean;
   }
 }
 
@@ -2295,3 +2301,96 @@ console.log(roboSet.has("Mellon-Tech"));
 // true
 console.log(roboSet.has("Eggplant-Head"));
 // true
+console.log(roboSet.has("Bender"));
+// false
+console.log(roboSet.delete("Mellon-Tech"));
+// true
+console.log(roboSet.container);
+//  ['Hank-44', 'Warren-21', 'Eggplant-Head']
+console.log(roboSet.size);
+// 3
+roboSet.add("Mellon-Tech");
+
+console.log(roboSet.container);
+// ['Hank-44', 'Warren-21', 'Eggplant-Head', 'Mellon-Tech']
+console.log(roboSet.size);
+// 4
+console.log(roboSet.message);
+// I've Been Cloned!!!
+console.log("---------------------------------------");
+console.log("--------------------------------------");
+
+let racecar5 = "racecar";
+
+let lamp5 = "lamp";
+
+let kayak5 = "kayak";
+
+let table5 = "table";
+
+function isPalindrome(string) {
+  let i = 0;
+  let j = string.length - 1;
+
+  for (; i < j; i++, j--) {
+    if (string.charAt(i) !== string.charAt(j)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrome(racecar5));
+// true
+console.log(isPalindrome(lamp5));
+// false
+console.log(isPalindrome(kayak5));
+// true
+console.log(isPalindrome(table5));
+// false
+console.log("---------------------------------------");
+console.log("------------------------------------------");
+
+function reverseNum(num) {
+  let remainder = 0;
+  let rNum = 0;
+
+  for (; parseInt(num) > 0; num = num / 10) {
+    num = parseInt(num);
+    remainder = num % 10;
+    rNum = rNum * 10 + remainder;
+  }
+  return rNum;
+}
+
+console.log(reverseNum(37));
+// 73
+console.log(reverseNum(459685));
+// 586954
+console.log(parseInt(0.5));
+// 0
+console.log("--------------------------------------");
+console.log("--------------------------------------------");
+
+function isPrimeNum(num) {
+  let sqrt = Math.sqrt(num);
+  let i = 2;
+
+  for (; i <= sqrt; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrimeNum(9));
+// false
+console.log(isPrimeNum(19));
+// true
+console.log(isPrimeNum(23));
+// true
+console.log("-----------------------------------");
+console.log("------------------------------------------");
+
+
