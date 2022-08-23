@@ -87,4 +87,32 @@ class Array21 {
     this.length = newArray.length;
     return this.container;
   }
+
+  insert(element, index) {
+    let newArray = new Array21();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i === index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.container;
+  }
+
+  reverse() {
+    let temp = 0;
+    let i = 0;
+    let j = this.length - 1;
+    for (; i < j; i++, j--) {
+      temp = this.container[i];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
+    }
+    return this.container;
+  }
 }
