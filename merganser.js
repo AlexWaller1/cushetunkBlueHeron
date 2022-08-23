@@ -115,4 +115,46 @@ class Array21 {
     }
     return this.container;
   }
+
+  randomize() {
+    let temp = 0;
+    let i = 0;
+    let j = 0;
+    for (; i < this.length; i++) {
+      j = Math.floor(Math.random() * this.length);
+      temp = this.container[j];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
+    }
+    return this.container;
+  }
 }
+
+const robots = new Array21("Robots Array");
+
+console.log(robots.push("Hank-44"));
+// 1
+console.log(robots.push("Warren-21"));
+// 2
+console.log(robots.push("Mellon-Tech"));
+// 3
+console.log(robots.push("Eggplant-Head"));
+// 4
+console.log(robots.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(robots.length);
+// 4
+console.log(robots.container[2]);
+// Mellon-Tech
+console.log(robots.container[0]);
+// Hank-44
+console.log(robots.push("Bender"));
+// 5
+console.log(robots.pop());
+// Bender
+console.log(robots.length);
+// 4
+console.log(robots.indexOf("Mellon-Tech"));
+// 2
+console.log(robots.indexOf("Eggplant-Head"));
+// 3
