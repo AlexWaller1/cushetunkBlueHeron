@@ -1,7 +1,7 @@
 console.log("Hello Oa");
 
 class Array21 {
-  constructor(message) {
+  constructor(message = "Array 21!") {
     this.container = {};
     this.length = 0;
     this.message = message;
@@ -58,5 +58,33 @@ class Array21 {
     this.container = newArray.container;
     this.length = newArray.length;
     return rElement;
+  }
+
+  unshift(args) {
+    let newArray = new Array21();
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+    let j = 0;
+    for (; j < this.length; j++) {
+      newArray.push(this.container[j]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return newArray.container;
+  }
+
+  delete(index) {
+    let newArray = new Array21();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.container;
   }
 }
