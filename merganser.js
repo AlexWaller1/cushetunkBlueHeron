@@ -122,7 +122,7 @@ class Array21 {
     let j = 0;
     for (; i < this.length; i++) {
       j = Math.floor(Math.random() * this.length);
-      temp = this.container[j];
+      temp = this.container[i];
       this.container[i] = this.container[j];
       this.container[j] = temp;
     }
@@ -195,3 +195,11 @@ console.log(robots2.length);
 // 3
 console.log(robots2.insert("Eggplant-Head", 2));
 // {0: 'Hank-44', 1: 'Mellon-Tech', 2: 'Eggplant-Head', 3: 'Warren-21'}
+console.log(robots2.length);
+// 4
+console.log(robots2.container);
+// {0: 'Hank-44', 1: 'Mellon-Tech', 2: 'Eggplant-Head', 3: 'Warren-21'}
+console.log(robots2.reverse());
+// {0: 'Warren-21', 1: 'Eggplant-Head', 2: 'Mellon-Tech', 3: 'Hank-44'}
+console.log(robots2.randomize());
+// it works!!!
