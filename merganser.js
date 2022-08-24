@@ -203,3 +203,110 @@ console.log(robots2.reverse());
 // {0: 'Warren-21', 1: 'Eggplant-Head', 2: 'Mellon-Tech', 3: 'Hank-44'}
 console.log(robots2.randomize());
 // it works!!!
+console.log("----------------------------------------------");
+console.log("-----------------------------------------");
+
+const mellonTech = "Mellon-Tech";
+
+console.log("Mellon-Tech");
+// Mellon-Tech
+console.log(!!mellonTech);
+// true
+const emptyString = "";
+
+console.log(!!emptyString);
+// false
+
+class PrimeMap {
+  constructor(message = "This is PrimeMap!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  set(key, value) {
+    this.container[key] = value;
+    this.size++;
+  }
+
+  get(key) {
+    return this.container[key];
+  }
+
+  has(key) {
+    if (this.container[key] == undefined) {
+      return false;
+    }
+    return true;
+  }
+
+  delete(key) {
+    delete this.container[key];
+    this.size--;
+  }
+}
+
+const charsMap = new PrimeMap();
+
+charsMap.set(1, "a");
+charsMap.set(2, "b");
+charsMap.set(3, "c");
+charsMap.set(4, "d");
+charsMap.set(5, "e");
+charsMap.set(6, "f");
+
+console.log(charsMap.get(1));
+// a
+console.log(charsMap.get(2));
+// b
+
+charsMap.set(7, "g");
+charsMap.set(8, "h");
+charsMap.set(9, "i");
+charsMap.set(10, "j");
+charsMap.set(11, "k");
+charsMap.set(12, "l");
+charsMap.set(13, "m");
+charsMap.set(14, "n");
+charsMap.set(15, "o");
+charsMap.set(16, "p");
+charsMap.set(17, "q");
+charsMap.set(18, "r");
+charsMap.set(19, "s");
+charsMap.set(20, "t");
+charsMap.set(21, "u");
+charsMap.set(22, "v");
+charsMap.set(23, "w");
+charsMap.set(24, "x");
+charsMap.set(25, "y");
+charsMap.set(26, "z");
+
+console.log(charsMap.size);
+// 26
+
+charsMap.set(27, "A");
+charsMap.set(28, "B");
+charsMap.set(29, "C");
+charsMap.set(30, "D");
+charsMap.set(31, "E");
+charsMap.set(32, "F");
+charsMap.set(33, "G");
+charsMap.set(34, "H");
+charsMap.set(35, "I");
+charsMap.set(36, "J");
+charsMap.set(37, "K");
+charsMap.set(38, "L");
+charsMap.set(39, "M");
+charsMap.set(40, "N");
+charsMap.set(41, "O");
+charsMap.set(42, "P");
+charsMap.set(43, "Q");
+charsMap.set(44, "R");
+charsMap.set(45, "S");
+charsMap.set(46, "T");
+charsMap.set(47, "U");
+charsMap.set(48, "V");
+charsMap.set(49, "W");
+charsMap.set(50, "X");
+charsMap.set(51, "Y");
+charsMap.set(52, "Z");
