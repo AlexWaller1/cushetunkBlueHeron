@@ -357,6 +357,7 @@ charsMap.set(".", 89);
 charsMap.set("'", 90);
 charsMap.set("?", 91);
 charsMap.set("/", 92);
+charsMap.set("0", 93);
 
 console.log(charsMap.size);
 // 92
@@ -384,6 +385,31 @@ class HashMap {
     }
     return parseInt(rString);
   }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] !== undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    delete this.container[key];
+    this.size--;
+  }
 }
 
 const dachshunds = new HashMap();
@@ -400,3 +426,48 @@ console.log(dachshunds.hash("Bodhi"));
 // 2815489
 console.log(dachshunds.hash("Bodhi"));
 // 2815489
+
+const roboMap = new HashMap();
+
+roboMap.set(1, "Hank-44");
+roboMap.set(2, "Warren-21");
+roboMap.set(3, "Mellon-Tech");
+roboMap.set(4, "Eggplant-Head");
+
+console.log(roboMap.get(1));
+// Hank-44
+console.log(roboMap.get(2));
+// Warren-21
+console.log(roboMap.get(3));
+// Mellon-Tech
+console.log(roboMap.get(4));
+// Eggplant-Head
+console.log(roboMap.has(1));
+// true
+console.log(roboMap.has(2));
+// true
+console.log(roboMap.has(3));
+// true
+console.log(roboMap.has(4));
+// true
+console.log(roboMap.has(10));
+// false
+console.log(roboMap.get(10));
+// undefined
+console.log(roboMap.size);
+// 4
+console.log(roboMap.set(11, "test"));
+
+console.log(roboMap.get(11));
+// test
+console.log(roboMap.size);
+// 5
+roboMap.delete(11);
+
+console.log(roboMap.get(11));
+// undefined
+console.log(roboMap.size);
+// 4
+
+console.log("--------------------------------------------------");
+console.log("------------------------------------------------");
