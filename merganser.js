@@ -158,3 +158,40 @@ console.log(robots.indexOf("Mellon-Tech"));
 // 2
 console.log(robots.indexOf("Eggplant-Head"));
 // 3
+console.log(robots.indexOf("Warren-21"));
+// 1
+console.log(robots.indexOf("Hank-44"));
+// 0
+console.log(robots.includes("Hank-44"));
+// true
+console.log(robots.includes("Warren-21"));
+// true
+console.log(robots.includes("Mellon-Tech"));
+// true
+console.log(robots.includes("Eggplant-Head"));
+// true
+console.log(robots.includes("Bender"));
+// false
+const robots2 = robots.splice(0, 2);
+
+console.log(robots2.container);
+// {0: 'Hank-44', 1: 'Warren-21'}
+console.log(robots2.length);
+// 2
+console.log(robots2.container[0]);
+// Hank-44
+console.log(robots2.shift());
+// Hank-44
+console.log(robots2.container);
+// {0: 'Warren-21'}
+console.log(robots2.unshift("Hank-44", "Mellon-Tech", "Eggplant-Head"));
+// {0: 'Hank-44', 1: 'Mellon-Tech', 2: 'Eggplant-Head', 3: 'Warren-21'}
+let numTwo = 2;
+console.log(numTwo.name);
+// undefined
+console.log(robots2.delete(2));
+// {0: 'Hank-44', 1: 'Mellon-Tech', 2: 'Warren-21'}
+console.log(robots2.length);
+// 3
+console.log(robots2.insert("Eggplant-Head", 2));
+// {0: 'Hank-44', 1: 'Mellon-Tech', 2: 'Eggplant-Head', 3: 'Warren-21'}
