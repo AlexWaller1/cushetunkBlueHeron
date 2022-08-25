@@ -471,3 +471,62 @@ console.log(roboMap.size);
 
 console.log("--------------------------------------------------");
 console.log("------------------------------------------------");
+
+console.log(!!null);
+// false
+const hammerHead = {
+  name: "Hammerhead",
+  species: "Hammerhead Shark",
+  occupation: "Pickerel Cola Space Truck Driver",
+  homePlanet: "Venice Sands 5",
+  hasCoolJacket: true,
+  hasPickerelCola: true,
+  livesInRiver: false,
+  friends: ["Taylor", "Harvey", "Wibaux"]
+};
+
+const wibaux = {
+  name: "Wibaux",
+  species: "Whitefish",
+  occupation: "River Guide",
+  homePlanet: "Hardin-37",
+  hasCoolJacket: false,
+  hasPickerelCola: false,
+  livesInRiver: true,
+  friends: ["Harvey", "Taylor", "Hammerhead"]
+};
+
+console.log(hammerHead.name);
+// Hammerhead
+console.log(hammerHead.homePlanet);
+// Venice Sands 5
+console.log(typeof wibaux.livesInRiver);
+// boolean
+console.log(hammerHead.friends[0]);
+// Taylor
+console.log(wibaux.friends.length);
+// 3
+console.log(wibaux.friends.length === hammerHead.friends.length);
+// true
+
+let {
+  name,
+  species,
+  occupation,
+  homePlanet,
+  hasCoolJacket,
+  hasPickerelCola,
+  livesInRiver,
+  friends
+} = wibaux;
+
+console.log(name);
+// Wibaux
+console.log(species);
+// Whitefish
+console.log(occupation);
+// River Guide
+console.log(homePlanet);
+// Hardin-37
+console.log(livesInRiver);
+// true
