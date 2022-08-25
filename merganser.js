@@ -530,3 +530,113 @@ console.log(homePlanet);
 // Hardin-37
 console.log(livesInRiver);
 // true
+console.log(typeof friends);
+// object
+console.log("-----------------------------------------------");
+console.log("----------------------------------------------");
+
+function isPrimeNum(num) {
+  let i = 2;
+  let sqrt = Math.sqrt(num);
+  for (; i <= sqrt; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrimeNum(3));
+// true
+console.log(isPrimeNum(4));
+// false
+console.log(isPrimeNum(5));
+// true
+console.log(isPrimeNum(6));
+// false
+console.log(isPrimeNum(7));
+// true
+console.log(isPrimeNum(17));
+// true
+console.log(isPrimeNum(18));
+// false
+console.log(isPrimeNum(19));
+// true
+console.log(isPrimeNum(20));
+// false
+console.log("isPrimeNum !!!");
+// isPrimeNum !!!
+console.log("------------------------------------------------");
+console.log("------------------------------------------");
+
+function findAllFactors(num) {
+  let sqrt = Math.sqrt(num);
+  let rArray = [];
+  let i = 1;
+
+  for (; i <= sqrt; i++) {
+    if (num % i == 0) {
+      let factor = num / i;
+      rArray.push(factor);
+      if (i !== sqrt) {
+        let factor2 = num / factor;
+        rArray.push(factor2);
+      }
+    }
+  }
+  return rArray;
+}
+
+console.log(findAllFactors(36));
+// [36, 1, 18, 2, 12, 3, 9, 4, 6]
+console.log(findAllFactors(20));
+// [20, 1, 10, 2, 5, 4]
+console.log(findAllFactors(49));
+// [49, 1, 7]
+console.log(findAllFactors(52));
+// [52, 1, 26, 2, 13, 4]
+console.log("findAllFactors!!!");
+// findAllFactors!!!
+console.log("-----------------------------------------------");
+console.log("--------------------------------");
+
+let racecar = "racecar";
+
+let couch = "couch";
+
+let radar = "radar";
+
+let television = "television";
+
+let kayak = "kayak";
+
+let remote = "remote";
+
+function isPalindrome(string) {
+  let i = 0;
+  let j = string.length - 1;
+
+  for (; i < j; i++, j--) {
+    if (string.charAt(i) !== string.charAt(j)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrome(racecar));
+// true
+console.log(isPalindrome(couch));
+// false
+console.log(isPalindrome(radar));
+// true
+console.log(isPalindrome(television));
+// false
+console.log(isPalindrome(kayak));
+// true
+console.log(isPalindrome(remote));
+// false
+console.log("isPalindrome!!!");
+// isPalindrome!!!
+console.log("--------------------------------------------");
+console.log("---------------------------------------");
