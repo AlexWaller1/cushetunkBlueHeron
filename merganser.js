@@ -640,3 +640,101 @@ console.log("isPalindrome!!!");
 // isPalindrome!!!
 console.log("--------------------------------------------");
 console.log("---------------------------------------");
+
+function isObject(input) {
+  if (typeof input == "object") {
+    return true;
+  }
+  return false;
+}
+
+console.log(isObject(null));
+// true ???
+console.log(typeof null);
+// object
+
+let fortyFour = 44;
+
+let abc = "abc";
+
+console.log(`${fortyFour} ${abc}`);
+// 44 abc
+
+function generations(num, gen) {
+  let branch = `${num}${gen}`;
+
+  let family = {
+    "-3f": "great grandmother",
+    "-3m": "great grandfather",
+    "-2f": "grandmother",
+    "-2m": "grandfather",
+    "-1f": "mother",
+    "-1m": "father",
+    "0f": "current",
+    "0m": "current",
+    "1f": "daughter",
+    "1m": "son",
+    "2f": "granddaughter",
+    "2m": "grandson",
+    "3f": "great granddaughter",
+    "3m": "great grandson"
+  };
+
+  return family[branch];
+}
+
+console.log(generations(-3, "f"));
+// great grandmother
+console.log(generations(-3, "m"));
+// great grandfather
+console.log(generations(-2, "f"));
+// grandmother
+console.log(generations(-2, "m"));
+// grandfather
+console.log(generations(-1, "f"));
+// mother
+console.log(generations(-1, "m"));
+// father
+console.log("generations!!!");
+// generations!!!
+console.log("---------------------------------------------");
+console.log("----------------------------------------");
+
+let majEl1 = [3, 2, 3];
+
+let majEl2 = [2, 2, 1, 1, 2, 2];
+
+function majorityElement(array) {
+  let counter = {};
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (counter[key] !== undefined) {
+      let value = counter[key];
+      value++;
+      counter[key] = value;
+    } else {
+      counter[key] = 1;
+    }
+  }
+
+  let keys = Object.keys(counter);
+  let values = Object.values(counter);
+  let maxKey = keys[0];
+  let maxValue = values[0];
+  let j = 1;
+
+  for (; j < keys.length; j++) {
+    if (values[j] > maxValue) {
+      maxValue = values[j];
+      maxKey = keys[j];
+    }
+  }
+  return maxKey;
+}
+
+console.log(majorityElement(majEl1));
+// 3
+console.log(majorityElement(majEl2));
+// 2
