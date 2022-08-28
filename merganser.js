@@ -1152,3 +1152,32 @@ console.log(occurrencesEqual(charFreq2));
 
 console.log("---------------------------------------------");
 console.log("------------------------------------------");
+
+let pairs1 = [1, 2, 3, 1, 1, 3];
+
+let pairs2 = [1, 1, 1, 1];
+
+let pairs3 = [1, 2, 3];
+
+function pairCount(array) {
+  let i = 0;
+  let count = 0;
+  for (; i < array.length; i++) {
+    let j = i + 1;
+    for (; j < array.length; j++) {
+      if (array[i] == array[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+console.log(pairCount(pairs1));
+// 4
+console.log(pairCount(pairs2));
+// 6
+console.log(pairCount(pairs3));
+// 0
+console.log("-------------------------------------------");
+console.log("--------------------------------------");
