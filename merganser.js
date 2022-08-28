@@ -1112,3 +1112,43 @@ console.log(ringsAndRods(rings2));
 // 1
 console.log(ringsAndRods(rings3));
 // 0
+
+console.log("-------------------------------------");
+console.log("-------------------------------------------");
+
+let charFreq1 = "abacbc";
+
+let charFreq2 = "aaabb";
+
+function occurrencesEqual(string) {
+  let charObj = {};
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charObj[key] !== undefined) {
+      let value = charObj[key];
+      value++;
+      charObj[key] = value;
+    } else {
+      charObj[key] = 1;
+    }
+  }
+
+  let values = Object.values(charObj);
+  let j = 0;
+  for (; j < values.length - 1; j++) {
+    if (values[j] !== values[j + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(occurrencesEqual(charFreq1));
+// true
+console.log(occurrencesEqual(charFreq2));
+// false
+
+console.log("---------------------------------------------");
+console.log("------------------------------------------");
