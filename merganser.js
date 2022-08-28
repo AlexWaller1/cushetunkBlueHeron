@@ -700,6 +700,8 @@ console.log("generations!!!");
 console.log("---------------------------------------------");
 console.log("----------------------------------------");
 
+// majority element
+
 let majEl1 = [3, 2, 3];
 
 let majEl2 = [2, 2, 1, 1, 2, 2];
@@ -738,3 +740,173 @@ console.log(majorityElement(majEl1));
 // 3
 console.log(majorityElement(majEl2));
 // 2
+console.log("------------------------------------------");
+console.log("----------------------------------------");
+
+// intersection of two arrays
+
+let intersection1 = [1, 2, 2, 1];
+
+let intersection2 = [2, 2];
+
+let intersection3 = [4, 9, 5];
+
+let intersection4 = [9, 4];
+
+let intersection5 = [4, 9, 5];
+
+let intersection6 = [9, 4, 9, 8, 4];
+
+function arrayIntersection(array1, array2) {
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < array1.length; i++) {
+    let key = array1[i];
+    if (numsMap.has(key)) {
+      let value = numsMap.get(key);
+      value++;
+      numsMap.set(key, value);
+    } else {
+      numsMap.set(key, 1);
+    }
+  }
+
+  let rArray = [];
+  let j = 0;
+
+  for (; j < array2.length; j++) {
+    let key = array2[j];
+    if (numsMap.has(key)) {
+      rArray.push(key);
+      let value = numsMap.get(key);
+      value--;
+      numsMap.set(key, value);
+      if (value == 0) {
+        numsMap.delete(key);
+      }
+    }
+  }
+  return rArray;
+}
+
+console.log(arrayIntersection(intersection1, intersection2));
+// [2, 2]
+console.log(arrayIntersection(intersection3, intersection4));
+// [9, 4]
+console.log(arrayIntersection(intersection5, intersection6));
+
+console.log("------------------------------------------");
+console.log("--------------------------------------------");
+
+console.log(10 > undefined);
+// false
+console.log(10 < undefined);
+// false
+console.log("a" > "z");
+// false
+console.log("a" < "z");
+// true
+let robot = "robot";
+
+console.log(robot.charAt(5));
+// empty space
+console.log("t" > "");
+// true
+console.log("t" < "");
+// false
+
+console.log("------------------------------------------");
+console.log("-------------------------------------------------");
+
+let words1 = ["hello", "leetcode"];
+
+let order1 = "hlabcdefgijkmnopqrstuvwxyz";
+
+let words2 = ["word", "world", "row"];
+
+let order2 = "worldabcefghijkmnpqstuvxyz";
+
+let words3 = ["apple", "app"];
+
+let order3 = "abcdefghijklmnopqrstuvwxyz";
+
+let words4 = ["apap", "app"];
+
+let order4 = "abcdefghijklmnopqrstuvwxyz";
+
+function alienAlphabet(array, order) {
+  let aMap = new Map();
+  order = order.split("");
+  order.unshift("");
+  let i = 0;
+
+  for (; i < order.length; i++) {
+    let key = order[i];
+    aMap.set(key, i);
+  }
+  //return aMap;
+  let j = 0;
+  for (; j < array.length - 1; j++) {
+    let a = 0;
+    for (; a < array[j].length; a++) {
+      let s1 = array[j];
+      let s2 = array[j + 1];
+
+      if (aMap.get(s1.charAt(a)) < aMap.get(s2.charAt(a))) {
+        break;
+      }
+
+      if (aMap.get(s1.charAt(a)) > aMap.get(s2.charAt(a))) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+console.log(alienAlphabet(words1, order1));
+// true
+console.log(alienAlphabet(words2, order2));
+// false
+console.log(alienAlphabet(words3, order3));
+// false
+console.log(alienAlphabet(words4, order4));
+
+console.log("----------------------------------------------");
+console.log("----------------------------------------");
+
+let nums1 = [8, 1, 2, 2, 3];
+
+let nums2 = [6, 5, 4, 8];
+
+let nums3 = [7, 7, 7, 7];
+
+function numsSmallerThan(array) {
+  let array2 = [...array];
+  let clone = array2.sort((a, b) => (a > b ? 1 : -1));
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < clone.length; i++) {
+    if (!numsMap.has(clone[i])) {
+      numsMap.set(clone[i], i);
+    }
+  }
+
+  let rArray = [];
+  let j = 0;
+
+  for (; j < array.length; j++) {
+    let element = numsMap.get(array[j]);
+    rArray.push(element);
+  }
+  return rArray;
+}
+
+console.log(numsSmallerThan(nums1));
+// [4, 0, 1, 1, 3]
+console.log(numsSmallerThan(nums2));
+// [2, 1, 0, 3]
+console.log(numsSmallerThan(nums3));
+// [0, 0, 0, 0]
