@@ -910,3 +910,78 @@ console.log(numsSmallerThan(nums2));
 // [2, 1, 0, 3]
 console.log(numsSmallerThan(nums3));
 // [0, 0, 0, 0]
+
+console.log("--------------------------------------------");
+console.log("------------------------------------------");
+
+let percentString1 = "foobar";
+
+let letter1 = "o";
+
+let percentString2 = "jjjj";
+
+let letter2 = "k";
+
+function percentageLetter(string, letter) {
+  let i = 0;
+  let count = 0;
+  for (; i < string.length; i++) {
+    if (string.charAt(i) == letter) {
+      count++;
+    }
+  }
+  let percent = count / string.length;
+  let rNum = percent * 100;
+  return parseInt(rNum);
+}
+
+console.log(percentageLetter(percentString1, letter1));
+// 33
+console.log(percentageLetter(percentString2, letter2));
+// 0
+
+console.log("--------------------------------------------");
+console.log("-------------------------------------------");
+
+console.log("hat".length);
+// 3
+
+let decrease1 = "tree";
+
+let decrease2 = "cccaaa";
+
+let decrease3 = "Aabb";
+
+let decrease4 = "telephone";
+
+let decrease5 = "restaurant";
+
+function charsByFrequency(string) {
+  string = string.split("");
+  let array = string.sort((a, b) => (a > b ? 1 : -1));
+  let elString = `${array[0]}`;
+  let charArray = [];
+  let i = 1;
+  for (; i < array.length; i++) {
+    if (array[i] == array[i - 1]) {
+      elString = elString.concat(array[i]);
+    } else {
+      charArray.push(elString);
+      elString = `${array[i]}`;
+    }
+    if (i == array.length - 1 && elString.length >= 1) {
+      charArray.push(elString);
+    }
+  }
+  charArray = charArray.sort((a, b) => (a.length < b.length ? 1 : -1));
+  charArray = charArray.join("");
+  return charArray;
+}
+
+console.log(charsByFrequency(decrease1));
+
+console.log(charsByFrequency(decrease3));
+
+console.log(charsByFrequency(decrease4));
+
+console.log(charsByFrequency(decrease5));
