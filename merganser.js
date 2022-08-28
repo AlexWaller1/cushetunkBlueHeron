@@ -985,3 +985,130 @@ console.log(charsByFrequency(decrease3));
 console.log(charsByFrequency(decrease4));
 
 console.log(charsByFrequency(decrease5));
+
+console.log("-------------------------------------------------");
+console.log("---------------------------------------------");
+
+let nonRepeat1 = "leetcode";
+
+let nonRepeat2 = "loveleetcode";
+
+let nonRepeat3 = "aabb";
+
+function firstNonRepeatChar(string) {
+  let charsMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charsMap.has(key)) {
+      let value = charsMap.get(key);
+      value++;
+      charsMap.set(key, value);
+    } else {
+      charsMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+  for (; j < string.length; j++) {
+    let key = string.charAt(j);
+    if (charsMap.get(key) == 1) {
+      return j;
+    }
+  }
+  return -1;
+}
+
+console.log(firstNonRepeatChar(nonRepeat1));
+// 0
+console.log(firstNonRepeatChar(nonRepeat2));
+// 2
+console.log(firstNonRepeatChar(nonRepeat3));
+// -1
+
+console.log("-----------------------------------------------");
+console.log("-------------------------------------------");
+
+let appTwice1 = "abccbaacz";
+
+let appTwice2 = "abcdd";
+
+function appearsTwice(string) {
+  let charsMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charsMap.has(key)) {
+      return key;
+    } else {
+      charsMap.set(key, 1);
+    }
+  }
+  return -1;
+}
+
+console.log(appearsTwice(appTwice1));
+// c
+console.log(appearsTwice(appTwice2));
+// d
+console.log("------------------------------------------------");
+console.log("--------------------------------------------");
+
+let testObj = {};
+
+console.log(Object.keys(testObj));
+console.log("------------------------------------------------");
+console.log("-------------------------------------------------");
+
+let rings1 = "B0B6G0R6R0R6G9";
+
+let rings2 = "B0R0G0R9R0B0G0";
+
+let rings3 = "G4";
+
+function ringsAndRods(string) {
+  let rings = {
+    0: {},
+    1: {},
+    2: {},
+    3: {},
+    4: {},
+    5: {},
+    6: {},
+    7: {},
+    8: {},
+    9: {}
+  };
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (i % 2 !== 0) {
+      let color = string.charAt(i - 1);
+      if (rings[key][color] == undefined) {
+        rings[key][color] = 1;
+      }
+    }
+  }
+
+  let values = Object.values(rings);
+  let count = 0;
+  let j = 0;
+
+  for (; j < values.length; j++) {
+    let keys = Object.keys(values[j]);
+    if (keys.length == 3) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(ringsAndRods(rings1));
+// 1
+console.log(ringsAndRods(rings2));
+// 1
+console.log(ringsAndRods(rings3));
+// 0
