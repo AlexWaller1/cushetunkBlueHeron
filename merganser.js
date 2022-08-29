@@ -1181,3 +1181,199 @@ console.log(pairCount(pairs3));
 // 0
 console.log("-------------------------------------------");
 console.log("--------------------------------------");
+
+let pizza = "pizza";
+
+let knights = "Knights";
+
+let pizzaKnights = `${pizza}${knights}`;
+
+console.log(pizzaKnights);
+
+const dachshund = "dachshund";
+
+const trout = "trout";
+
+let beginEnd1 = "abcba";
+
+let beginEnd2 = "abacad";
+
+let beginEnd3 = "a";
+
+function beginEndSameLetter(string) {
+  let rArray = [];
+  let elString = "";
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    elString = string.charAt(i);
+    rArray.push(elString);
+    let j = i + 1;
+    if (j < string.length) {
+      for (; j < string.length; j++) {
+        elString = `${elString}${string.charAt(j)}`;
+        rArray.push(elString);
+      }
+    }
+  }
+
+  let count = 0;
+  let a = 0;
+
+  for (; a < rArray.length; a++) {
+    if (rArray[a].charAt(0) == rArray[a].charAt(rArray[a].length - 1)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(beginEndSameLetter(dachshund));
+// 11
+console.log(beginEndSameLetter(trout));
+// 6
+console.log(beginEndSameLetter(beginEnd1));
+// 7
+console.log(beginEndSameLetter(beginEnd2));
+// 9
+console.log(beginEndSameLetter(beginEnd3));
+// 1
+console.log(beginEndSameLetter("ad"));
+// 2
+console.log("-------------------------------------");
+console.log("----------------------------------------");
+
+let firstUnique1 = "leetcode";
+
+let firstUnique2 = "loveleetcode";
+
+let firstUnique3 = "aabb";
+
+function firstUniqueChar(string) {
+  let charsMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charsMap.has(key)) {
+      let value = charsMap.get(key);
+      value++;
+      charsMap.set(key, value);
+    } else {
+      charsMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < string.length; j++) {
+    let key = string.charAt(j);
+    if (charsMap.get(key) == 1) {
+      return j;
+    }
+  }
+  return -1;
+}
+
+console.log(firstUniqueChar(firstUnique1));
+// 0
+console.log(firstNonRepeatChar(firstUnique2));
+// 2
+console.log(firstUniqueChar(firstUnique3));
+// -1
+console.log("-------------------------------------");
+console.log("----------------------------------------");
+
+let burrito = "burrito";
+
+let beanBurrito = "bean burrito";
+
+console.log(beanBurrito.includes(burrito));
+// true
+
+let stringMatch1 = "abcd";
+
+let stringMatch2 = "cdabcdab";
+
+let stringMatch3 = "a";
+
+let stringMatch4 = "aa";
+
+let stringMatch5 = "abc";
+
+let stringMatch6 = "cabcabca";
+
+let stringMatch7 = "abacababacab";
+
+let stringMatch8 = "abcdabcdabcdabcd";
+
+function repeatStringMatch(string1, string2) {
+  let string3 = string1;
+  let i = 1;
+  let j = 0;
+  for (; j < 1000; j++) {
+    if (!string1.includes(string2)) {
+      string1 = `${string1}${string3}`;
+      i++;
+    }
+    if (string1.includes(string2)) {
+      return i;
+    }
+    if (!string1.includes(string2) && string1.length > string2.length * 2) {
+      return -1;
+    }
+  }
+}
+
+console.log(repeatStringMatch(stringMatch1, stringMatch2));
+// 3
+console.log(repeatStringMatch(stringMatch3, stringMatch4));
+// 2
+console.log(repeatStringMatch(stringMatch5, stringMatch6));
+// 4
+console.log(repeatStringMatch(stringMatch7, stringMatch8));
+// -1
+
+console.log("------------------------------");
+console.log("-----------------------------------");
+
+let str1 = "abab";
+
+let str2 = "aba";
+
+let str3 = "abcabcabcabc";
+
+function repeatedSubPattern(string) {
+  let subArray = [];
+  let i = 0;
+  for (; i < string.length; i++) {
+    let elString = string.charAt(i);
+    subArray.push(elString);
+    let j = i + 1;
+    for (; j < string.length; j++) {
+      elString = `${elString}${string.charAt(j)}`;
+      subArray.push(elString);
+    }
+  }
+
+  let a = 0;
+
+  for (; a < subArray.length; a++) {
+    let current = subArray[a];
+    let str5 = current;
+    while (current.length <= string.length) {
+      current = `${current}${str5}`;
+      if (current == string) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+console.log(repeatedSubPattern(str1));
+// true
+console.log(repeatedSubPattern(str2));
+// false
+console.log(repeatedSubPattern(str3));
+// true
