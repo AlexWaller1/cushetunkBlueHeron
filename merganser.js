@@ -1450,4 +1450,110 @@ console.log(testNum - remainder);
 
 function mathDotRound(num) {
   let remainder = num % 1;
+  if (remainder >= 0.5) {
+    return num - remainder + 1;
+  } else {
+    return num - remainder;
+  }
 }
+
+console.log(mathDotRound(9.54));
+// 10
+console.log(mathDotRound(9.49));
+// 9
+console.log("-------------------------------------");
+console.log("----------------------------------");
+
+const toLowerCaseMap = new Map();
+
+toLowerCaseMap.set("A", "a");
+toLowerCaseMap.set("B", "b");
+toLowerCaseMap.set("C", "c");
+toLowerCaseMap.set("D", "d");
+toLowerCaseMap.set("E", "e");
+toLowerCaseMap.set("F", "f");
+toLowerCaseMap.set("G", "g");
+toLowerCaseMap.set("H", "h");
+toLowerCaseMap.set("I", "i");
+toLowerCaseMap.set("J", "j");
+toLowerCaseMap.set("K", "k");
+toLowerCaseMap.set("L", "l");
+toLowerCaseMap.set("M", "m");
+toLowerCaseMap.set("N", "n");
+toLowerCaseMap.set("O", "o");
+toLowerCaseMap.set("P", "p");
+toLowerCaseMap.set("Q", "q");
+toLowerCaseMap.set("R", "r");
+toLowerCaseMap.set("S", "s");
+toLowerCaseMap.set("T", "t");
+toLowerCaseMap.set("U", "u");
+toLowerCaseMap.set("V", "v");
+toLowerCaseMap.set("W", "w");
+toLowerCaseMap.set("X", "x");
+toLowerCaseMap.set("Y", "y");
+toLowerCaseMap.set("Z", "z");
+
+console.log(toLowerCaseMap.size);
+// 26
+
+const toUpperCaseMap = new Map();
+
+toUpperCaseMap.set("a", "A");
+toUpperCaseMap.set("b", "B");
+toUpperCaseMap.set("c", "C");
+toUpperCaseMap.set("d", "D");
+toUpperCaseMap.set("e", "E");
+toUpperCaseMap.set("f", "F");
+toUpperCaseMap.set("g", "G");
+toUpperCaseMap.set("h", "H");
+toUpperCaseMap.set("i", "I");
+toUpperCaseMap.set("j", "J");
+toUpperCaseMap.set("k", "K");
+toUpperCaseMap.set("l", "L");
+toUpperCaseMap.set("m", "M");
+toUpperCaseMap.set("n", "N");
+toUpperCaseMap.set("o", "O");
+toUpperCaseMap.set("p", "P");
+toUpperCaseMap.set("q", "Q");
+toUpperCaseMap.set("r", "R");
+toUpperCaseMap.set("s", "S");
+toUpperCaseMap.set("t", "T");
+toUpperCaseMap.set("u", "U");
+toUpperCaseMap.set("v", "V");
+toUpperCaseMap.set("w", "W");
+toUpperCaseMap.set("x", "X");
+toUpperCaseMap.set("y", "Y");
+toUpperCaseMap.set("z", "Z");
+
+console.log(toUpperCaseMap.size);
+// 26
+
+function toUpCase(string) {
+  let rString = "";
+  let i = 0;
+  for (; i < string.length; i++) {
+    let currentChar = string.charAt(i);
+    if (toUpperCaseMap.has(currentChar)) {
+      let newChar = toUpperCaseMap.get(currentChar);
+      rString = `${rString}${newChar}`;
+    } else {
+      rString = `${rString}${currentChar}`;
+    }
+  }
+  return rString;
+}
+
+console.log(toUpCase("dachshund"));
+// DACHSHUND
+console.log(toUpCase("heron"));
+// HERON
+
+console.log("----------------------------------");
+console.log("--------------------------------");
+
+const protoSet = new Set();
+
+protoSet.add("Hank-44");
+protoSet.add("Warren-21");
+protoSet.add("MellonTech");
+protoSet.add("Eggplant-Head");
