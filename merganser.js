@@ -1377,3 +1377,77 @@ console.log(repeatedSubPattern(str2));
 // false
 console.log(repeatedSubPattern(str3));
 // true
+console.log("----------------------------------------");
+console.log("-------------------------------------");
+
+let jewels1 = "aA";
+
+let stones1 = "aAAbbbb";
+
+let jewels2 = "z";
+
+let stones2 = "ZZ";
+
+function jewelsAndStones(jewels, stones) {
+  let jewelKeys = new Set();
+  let i = 0;
+  for (; i < jewels.length; i++) {
+    let key = jewels.charAt(i);
+    if (!jewelKeys.has(key)) {
+      jewelKeys.add(key);
+    }
+  }
+
+  let count = 0;
+  let j = 0;
+
+  for (; j < stones.length; j++) {
+    let key = stones.charAt(j);
+    if (jewelKeys.has(key)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(jewelsAndStones(jewels1, stones1));
+// 3
+console.log(jewelsAndStones(jewels2, stones2));
+// 0
+console.log("----------------------------------");
+console.log("-------------------------------------");
+
+function reverseNum(num) {
+  let remainder = 0;
+  let reverse = 0;
+  for (; parseInt(num) > 0; num = num / 10) {
+    num = parseInt(num); // 109 // 10 // 1 // 0
+    remainder = num % 10; // 9 // 0 // 1
+    reverse = reverse * 10 + remainder; // 9 // 90 // 901
+    // 10.9
+    // 1
+    // 0.1
+  }
+  return reverse;
+}
+
+console.log(reverseNum(109));
+// 901
+console.log(reverseNum(70123));
+// 32107
+console.log(109 / 10);
+
+console.log("--------------------------------------");
+console.log("--------------------------------");
+
+console.log(parseFloat(9.54 % 1));
+
+let testNum = 9.54;
+
+let remainder = 9.54 % 1;
+
+console.log(testNum - remainder);
+
+function mathDotRound(num) {
+  let remainder = num % 1;
+}
