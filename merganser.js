@@ -1656,3 +1656,19 @@ let dateDiff4 = dateFour.diff(dateThree, "seconds");
 
 console.log(dateDiff4, " seconds");
 // 16 seconds
+
+let dateFive = moment([2007, 02, 19]);
+
+console.log(dateFive);
+// Moment<2007-03-19T00:00:00-04:00>
+
+const crashBandicoot = ["Crash Bandicoot", "Neo Cortex"];
+
+const neoCortex = ["Neo Cortex"];
+
+let crashCollection = collect(crashBandicoot);
+
+let crashReturn = crashCollection.diff(neoCortex);
+
+console.log(crashReturn);
+// Collection { items: [ 'Crash Bandicoot' ]}
