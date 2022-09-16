@@ -1,0 +1,25 @@
+{
+  "name": "cushetunkblueheron",
+  "version": "1.0.0",
+  "main": "node backend/node merganser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "merganser": "merganser.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexWaller1/cushetunkBlueHeron.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexWaller1/cushetunkBlueHeron/issues"
+  },
+  "homepage": "https://github.com/AlexWaller1/cushetunkBlueHeron#readme",
+  "dependencies": {
+    "collect.js": "^4.34.3",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {},
+  "description": ""
+}

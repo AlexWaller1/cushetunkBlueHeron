@@ -1557,3 +1557,102 @@ protoSet.add("Hank-44");
 protoSet.add("Warren-21");
 protoSet.add("MellonTech");
 protoSet.add("Eggplant-Head");
+
+console.log(protoSet);
+
+protoSet.add("test 1");
+protoSet.add("test 2");
+
+console.log(protoSet);
+
+protoSet.delete("test 1");
+
+console.log(protoSet);
+
+console.log(protoSet.has("Hank-44"));
+// true
+console.log(protoSet.has("Skeletor"));
+// false
+console.log(protoSet[0]);
+console.log("--------------------------------------");
+console.log("---------------------------");
+
+class Set21 {
+  constructor(message = "this is a set!!!") {
+    this.size = 0;
+    this.container = [];
+    this.message = message;
+  }
+
+  add(element) {
+    this.container[this.size] = element;
+    this.size++;
+  }
+
+  has(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] == element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  delete(element) {
+    let newSet = new Set21();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] !== element) {
+        newSet.add(this.container[i]);
+      }
+    }
+  }
+}
+
+console.log("------------------------------------");
+
+let nine = 9;
+
+let roboTest1 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
+
+let roboTest2 = ["Warren-21", "Eggplant-Head"];
+
+console.log("merganser");
+
+const collect = require("collect.js");
+
+const moment = require("moment");
+
+const roboCollection = collect(roboTest1);
+
+console.log(roboCollection.diff(roboTest2));
+// Collection{ items: [ 'Hank-44', 'Mellon-Tech' ]}
+
+let dateOne = moment([2006, 03, 17]);
+
+let dateTwo = moment([2007, 06, 24]);
+
+let dateDiff1 = dateOne.diff(dateTwo, "days");
+
+console.log(dateDiff1, " days");
+// -463 days
+
+let dateDiff2 = dateTwo.diff(dateOne, "days");
+
+console.log(dateDiff2, " days");
+// 463 days
+
+let dateThree = moment([2009, 01, 15, 10, 34, 16]);
+
+let dateFour = moment([2009, 01, 15, 10, 34, 32]);
+
+let dateDiff3 = dateThree.diff(dateFour, "seconds");
+
+console.log(dateDiff3, " seconds");
+// -16 seconds
+
+let dateDiff4 = dateFour.diff(dateThree, "seconds");
+
+console.log(dateDiff4, " seconds");
+// 16 seconds
