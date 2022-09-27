@@ -132,4 +132,19 @@ class Array11 {
     this.length = newArray.legnth;
     return rElement;
   }
+
+  unshift(args) {
+    let newArray = new Array11();
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+    let j = 0;
+    for (; j < this.length; j++) {
+      newArray.push(this.container[j]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.length;
+  }
 }
