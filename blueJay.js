@@ -42,3 +42,21 @@ console.log(homePlanet);
 // Venice Sands 5
 console.log(species);
 // Hammerhead Shark
+console.log(hasCoolJacket);
+// true
+console.log(hasPickerelCola);
+// true
+console.log(friends);
+// ['Taylor', 'Harvey', 'Wibaux']
+console.log(friends[0]);
+// Taylor
+console.log(friends[1]);
+// Harvey
+console.log(friends[2]);
+// Wibaux
+console.log(friends.length);
+// 3
+console.log(typeof friends);
+// object
+console.log(typeof friends[0]);
+// string
