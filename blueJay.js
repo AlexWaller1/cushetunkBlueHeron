@@ -60,3 +60,76 @@ console.log(typeof friends);
 // object
 console.log(typeof friends[0]);
 // string
+console.log(typeof hasCoolJacket);
+// boolean
+console.log(typeof null);
+// object
+console.log(!!null);
+// false
+let roboProtoType = [];
+
+console.log(roboProtoType.push("Hank-44"));
+// 1
+console.log("--------------------------------------");
+console.log("-----------------------------------");
+
+class Array11 {
+  constructor(message = "Array11!!!") {
+    this.containter = {};
+    this.length = 0;
+    this.message = message;
+  }
+
+  push(element) {
+    this.container[this.length] = element;
+    this.length++;
+    return this.length;
+  }
+
+  pop() {
+    let rElement = this.container[this.length - 1];
+    delete this.container[this.length - 1];
+    this.length--;
+    return rElement;
+  }
+
+  indexOf(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.containter[i] == element) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  includes(element) {
+    let i = 0;
+    for (; i < this.legnth; i++) {
+      if (this.container[i] == element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  splice(index1, index2) {
+    let clone = new Array11();
+    for (; index1 < index2; index1++) {
+      clone.push(this.container[index1]);
+    }
+    return clone;
+  }
+
+  shift() {
+    let rElement = this.container[0];
+    let newArray = Array11();
+    let i = 1;
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.legnth;
+    return rElement;
+  }
+}
