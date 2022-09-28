@@ -171,5 +171,18 @@ class Array11 {
     }
     let newArray = Array11();
     let i = 0;
+    for (; i < this.length; i++) {
+      if (i == index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = this.length;
+    return this.container;
   }
 }
+
+const robots = new Array11();
