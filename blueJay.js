@@ -147,4 +147,18 @@ class Array11 {
     this.length = newArray.length;
     return this.length;
   }
+
+  delete(index) {
+    let newArray = new Array11();
+    let rElement = this.container[index];
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
+  }
 }
