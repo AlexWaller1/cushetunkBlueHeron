@@ -149,6 +149,9 @@ class Array11 {
   }
 
   delete(index) {
+    if (index > this.length - 1 || index < 0) {
+      return "array does not have this index";
+    }
     let newArray = new Array11();
     let rElement = this.container[index];
     let i = 0;
@@ -160,5 +163,13 @@ class Array11 {
     this.container = newArray.container;
     this.length = newArray.length;
     return rElement;
+  }
+
+  insert(element, index) {
+    if (index > this.length || index < 0) {
+      return "cannot insert at this index";
+    }
+    let newArray = Array11();
+    let i = 0;
   }
 }
