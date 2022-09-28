@@ -75,7 +75,7 @@ console.log("-----------------------------------");
 
 class Array11 {
   constructor(message = "Array11!!!") {
-    this.containter = {};
+    this.container = {};
     this.length = 0;
     this.message = message;
   }
@@ -96,7 +96,7 @@ class Array11 {
   indexOf(element) {
     let i = 0;
     for (; i < this.length; i++) {
-      if (this.containter[i] == element) {
+      if (this.container[i] == element) {
         return i;
       }
     }
@@ -105,7 +105,7 @@ class Array11 {
 
   includes(element) {
     let i = 0;
-    for (; i < this.legnth; i++) {
+    for (; i < this.length; i++) {
       if (this.container[i] == element) {
         return true;
       }
@@ -186,3 +186,48 @@ class Array11 {
 }
 
 const robots = new Array11();
+
+let testObj = {};
+
+testObj[0] = "test";
+
+console.log(testObj);
+
+console.log(robots.push("Hank-44"));
+// 1
+console.log(robots.push("Warren-21"));
+// 2
+console.log(robots.push("Mellon-Tech"));
+// 3
+console.log(robots.push("Eggplant-Head"));
+// 4
+console.log(robots.length);
+// 4
+console.log(robots.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(robots.push("test"));
+// 5
+console.log(robots.pop());
+// test
+console.log(robots.length);
+// 4
+console.log(robots.indexOf("Hank-44"));
+// 0
+console.log(robots.indexOf("Warren-21"));
+// 1
+console.log(robots.indexOf("Mellon-Tech"));
+// 2
+console.log(robots.indexOf("Eggplant-Head"));
+// 3
+console.log(robots.indexOf("test"));
+// -1
+console.log(robots.includes("Hank-44"));
+// true
+console.log(robots.includes("Warren-21"));
+// true
+console.log(robots.includes("Mellon-Tech"));
+// true
+console.log(robots.includes("Eggplant-Head"));
+// true
+console.log(robots.includes("test"));
+// false
