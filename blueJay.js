@@ -390,6 +390,30 @@ charsMap.set("^", 65);
 charsMap.set("6", 66);
 charsMap.set("&", 67);
 charsMap.set("7", 68);
+charsMap.set("*", 69);
+charsMap.set("8", 70);
+charsMap.set("(", 71);
+charsMap.set("9", 72);
+charsMap.set(")", 73);
+charsMap.set("0", 74);
+charsMap.set("-", 75);
+charsMap.set("_", 76);
+charsMap.set("+", 77);
+charsMap.set("=", 78);
+charsMap.set("{", 79);
+charsMap.set("[", 80);
+charsMap.set("}", 81);
+charsMap.set("]", 82);
+charsMap.set("|", 83);
+charsMap.set(":", 84);
+charsMap.set(";", 85);
+charsMap.set("'", 86);
+charsMap.set("<", 87);
+charsMap.set(",", 88);
+charsMap.set(">", 89);
+charsMap.set(".", 90);
+charsMap.set("?", 91);
+charsMap.set("/", 92);
 
 class HashMap {
   constructor(message = "Hashmap") {
@@ -402,5 +426,29 @@ class HashMap {
     if (typeof element !== "string") {
       element = element.toString();
     }
+    let elString = "";
+    let i = 0;
+
+    for (; i < element.length; i++) {
+      let char = element.charAt(i);
+      let charNum = charsMap.get(char);
+      elString = elString.concat(charNum);
+    }
+    return parseInt(elString);
   }
 }
+
+const testMap = new HashMap();
+
+console.log(testMap.hash("Bodhi"));
+// 2815489
+console.log(testMap.hash("Bodhi"));
+// 2815489
+console.log(testMap.hash("Beezer"));
+// 285526518
+console.log(testMap.hash("Beezer"));
+// 285526518
+console.log(testMap.hash("Chipper"));
+// 29891616518
+console.log(testMap.hash("Chipper"));
+// 29891616518
