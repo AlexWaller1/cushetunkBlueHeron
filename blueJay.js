@@ -123,13 +123,13 @@ class Array11 {
 
   shift() {
     let rElement = this.container[0];
-    let newArray = Array11();
+    let newArray = new Array11();
     let i = 1;
     for (; i < this.length; i++) {
       newArray.push(this.container[i]);
     }
     this.container = newArray.container;
-    this.length = newArray.legnth;
+    this.length = newArray.length;
     return rElement;
   }
 
@@ -231,3 +231,31 @@ console.log(robots.includes("Eggplant-Head"));
 // true
 console.log(robots.includes("test"));
 // false
+console.log("Blue Jay");
+// Blue Jay
+console.log(!!undefined);
+// false
+let roboClone1 = robots.splice(2, 4);
+
+console.log(roboClone1.container);
+// {0: 'Mellon-Tech', 1: 'Eggplant-Head'}
+console.log(roboClone1.length);
+// 2
+console.log(robots.shift());
+// Hank-44
+console.log(robots.container);
+// {0: 'Warren-21', 1: 'Mellon-Tech', 2: 'Eggplant-Head'}
+console.log(robots.length);
+// 3
+console.log(robots.unshift("Hank-44", "Bender", "Test"));
+// 6
+console.log(robots.container);
+// {0: 'Hank-44', 1: 'Bender', 2: 'Test', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(robots.delete(2));
+// Test
+console.log(robots.container);
+// {0: 'Hank-44', 1: 'Bender', 2: 'Warren-21', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(robots.length);
+// 5
+console.log(robots.delete(-2));
+// array does not have this index
