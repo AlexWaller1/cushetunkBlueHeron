@@ -436,6 +436,12 @@ class HashMap {
     }
     return parseInt(elString);
   }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+  }
 }
 
 const testMap = new HashMap();
