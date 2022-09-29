@@ -462,6 +462,7 @@ class HashMap {
     key = this.hash(key);
     delete this.container[key];
     this.size--;
+    return this.size;
   }
 }
 
@@ -497,3 +498,21 @@ console.log(roboMap.get(2));
 // Mellon-Tech
 console.log(roboMap.get(3));
 // Eggplant-Head
+console.log(roboMap.has(0));
+// true
+console.log(roboMap.has(1));
+// true
+console.log(roboMap.has(2));
+// true
+console.log(roboMap.has(3));
+// true
+console.log(roboMap.has(4));
+// false
+console.log(roboMap.set(4, "test"));
+// 5
+console.log(roboMap.has(4));
+// true
+console.log(roboMap.delete(4));
+// 4
+console.log(roboMap.has(4));
+// false
