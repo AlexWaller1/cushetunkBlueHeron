@@ -319,3 +319,27 @@ console.log(charsMap.get("a"));
 // 1
 console.log(charsMap.get("b"));
 // 2
+
+charsMap.set("m", 13);
+charsMap.set("n", 14);
+charsMap.set("o", 15);
+charsMap.set("p", 16);
+charsMap.set("q", 17);
+charsMap.set("r", 18);
+charsMap.set("s", 19);
+charsMap.set("t", 20);
+charsMap.set("u", 21);
+
+console.log(charsMap.size);
+// 21
+
+charsMap.set("v", 22);
+charsMap.set("w", 23);
+charsMap.set("x", 24);
+charsMap.set("y", 25);
+charsMap.set("z", 26);
+
+console.log(charsMap.size);
+// 26
+console.log(charsMap.get("y"));
+// 25
