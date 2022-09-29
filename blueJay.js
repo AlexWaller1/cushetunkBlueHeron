@@ -441,6 +441,27 @@ class HashMap {
     key = this.hash(key);
     this.container[key] = value;
     this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    delete this.container[key];
+    this.size--;
   }
 }
 
@@ -458,3 +479,21 @@ console.log(testMap.hash("Chipper"));
 // 29891616518
 console.log(testMap.hash("Chipper"));
 // 29891616518
+const roboMap = new HashMap();
+
+console.log(roboMap.set(0, "Hank-44"));
+// 1
+console.log(roboMap.set(1, "Warren-21"));
+// 2
+console.log(roboMap.set(2, "Mellon-Tech"));
+// 3
+console.log(roboMap.set(3, "Eggplant-Head"));
+// 4
+console.log(roboMap.get(0));
+// Hank-44
+console.log(roboMap.get(1));
+// Warren-21
+console.log(roboMap.get(2));
+// Mellon-Tech
+console.log(roboMap.get(3));
+// Eggplant-Head
