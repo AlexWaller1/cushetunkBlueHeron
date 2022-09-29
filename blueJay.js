@@ -169,7 +169,7 @@ class Array11 {
     if (index > this.length || index < 0) {
       return "cannot insert at this index";
     }
-    let newArray = Array11();
+    let newArray = new Array11();
     let i = 0;
     for (; i < this.length; i++) {
       if (i == index) {
@@ -259,3 +259,9 @@ console.log(robots.length);
 // 5
 console.log(robots.delete(-2));
 // array does not have this index
+console.log(robots.insert("Rising Dough", 3));
+// {0: 'Hank-44', 1: 'Bender', 2: 'Warren-21', 3: 'Rising Dough', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(robots.insert("test", 21));
+// cannot insert at this index
+console.log(robots.insert("test", -12));
+// cannot insert at this index
