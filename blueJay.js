@@ -265,3 +265,57 @@ console.log(robots.insert("test", 21));
 // cannot insert at this index
 console.log(robots.insert("test", -12));
 // cannot insert at this index
+console.log("----------------------------------------------");
+console.log("----------------------------------------------");
+
+class PrimeMap {
+  constructor(message = "PrimeMap!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  set(key, value) {
+    this.container[key] = value;
+    this.size++;
+  }
+
+  get(key) {
+    return this.container[key];
+  }
+
+  has(key) {
+    if (this.container[key] !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  delete(key) {
+    delete this.container[key];
+    this.size--;
+  }
+}
+
+let charsMap = new PrimeMap();
+
+charsMap.set("a", 1);
+charsMap.set("b", 2);
+charsMap.set("c", 3);
+charsMap.set("d", 4);
+charsMap.set("e", 5);
+charsMap.set("f", 6);
+charsMap.set("g", 7);
+charsMap.set("h", 8);
+charsMap.set("i", 9);
+charsMap.set("j", 10);
+charsMap.set("k", 11);
+charsMap.set("l", 12);
+
+console.log(charsMap.size);
+// 12
+console.log(charsMap.get("a"));
+// 1
+console.log(charsMap.get("b"));
+// 2
