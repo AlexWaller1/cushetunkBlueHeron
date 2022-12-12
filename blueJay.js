@@ -597,6 +597,26 @@ class RoboBand {
     this.length = newArray.length;
     return rElement;
   }
+
+  unshift(args) {
+    let newArray = new RoboBand("unshift function!");
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+    let j = 0;
+    for (; j < this.length; j++) {
+      newArray.push(this.container[j]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.length;
+  }
+
+  delete(index) {
+    let newArray = new RoboBand("delete function!");
+    let i = 0;
+  }
 }
 
 const roboBand1 = new RoboBand("RoboBand!");
