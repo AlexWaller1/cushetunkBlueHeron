@@ -516,3 +516,98 @@ console.log(roboMap.delete(4));
 // 4
 console.log(roboMap.has(4));
 // false
+console.log("----------------------------------------");
+console.log("-----------------------------------");
+console.log("Blue Jay!");
+// Blue Jay!
+const robots211 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
+
+console.log(robots211[0]);
+// Hank-44
+console.log(robots211[1]);
+// Warren-21
+console.log(robots211[2]);
+// Mellon-Tech
+console.log(robots211[3]);
+// Eggplant-Head
+console.log(robots211.length);
+// 4
+console.log(typeof robots211[0]);
+// string
+
+class RoboBand {
+  constructor(message = "Robo Rock Band!") {
+    this.container = {};
+    this.length = 0;
+    this.message = message;
+  }
+
+  push(element) {
+    this.container[this.length] = element;
+    this.length++;
+    return this.length;
+  }
+
+  pop() {
+    let rElement = this.container[this.length - 1];
+    delete this.container[this.length - 1];
+    this.length--;
+    return rElement;
+  }
+
+  indexOf(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  includes(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  splice(index1, index2) {
+    if (index1 >= index2) {
+      return [];
+    }
+    let rArray = new RoboBand("RoboClone!");
+    for (; index1 < index2; index1++) {
+      rArray.push(this.container[index1]);
+    }
+    return rArray;
+  }
+}
+
+const roboBand1 = new RoboBand("RoboBand!");
+
+console.log(roboBand1.push("Hank-44"));
+// 1
+console.log(roboBand1.push("Warren-21"));
+// 2
+console.log(roboBand1.push("Mellon-Tech"));
+// 3
+console.log(roboBand1.push("Eggplant-Head"));
+// 4
+console.log(roboBand1.push("test"));
+// 5
+console.log(roboBand1.length);
+// 5
+console.log(roboBand1.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 'test'}
+console.log(roboBand1.container[0]);
+// Hank-44
+console.log(roboBand1.container[1]);
+// Warren-21
+console.log(roboBand1.container[2]);
+// Mellon-Tech
+console.log(roboBand1.container[3]);
+// Eggplant-Head
