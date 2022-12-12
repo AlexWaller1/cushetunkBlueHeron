@@ -585,6 +585,18 @@ class RoboBand {
     }
     return rArray;
   }
+
+  shift() {
+    let rElement = this.container[0];
+    let newArray = new RoboBand();
+    let i = 1;
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
+  }
 }
 
 const roboBand1 = new RoboBand("RoboBand!");
@@ -611,3 +623,42 @@ console.log(roboBand1.container[2]);
 // Mellon-Tech
 console.log(roboBand1.container[3]);
 // Eggplant-Head
+console.log(roboBand1.pop());
+// test
+console.log(roboBand1.length);
+// 4
+
+// shift unshift delete insert
+
+console.log(roboBand1.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(roboBand1.indexOf("Hank-44"));
+// 0
+console.log(roboBand1.indexOf("Warren-21"));
+// 1
+console.log(roboBand1.indexOf("Mellon-Tech"));
+// 2
+console.log(roboBand1.indexOf("Eggplant-Head"));
+// 3
+console.log(roboBand1.indexOf("Crash Bandicoot"));
+// -1
+console.log(roboBand1.includes("Hank-44"));
+// true
+console.log(roboBand1.includes("Warren-21"));
+// true
+console.log(roboBand1.includes("Mellon-Tech"));
+// true
+console.log(roboBand1.includes("Eggplant-Head"));
+// true
+console.log(roboBand1.includes("Crash Bandicoot"));
+// false
+const roboBandClone1 = roboBand1.splice(2, 4);
+
+console.log(roboBandClone1.container);
+// {0: 'Mellon-Tech', 1: 'Eggplant-Head'}
+console.log(roboBandClone1.length);
+// 2
+console.log(roboBand1.message);
+// RoboBand1
+console.log(roboBandClone1.message);
+// RoboClone!
