@@ -897,4 +897,45 @@ subMap.set("8", 60);
 subMap.set("9", 61);
 subMap.set("0", 62);
 
+console.log(subMap.get("9"));
+// 61
+console.log(subMap.get("0"));
+// 62
+
+subMap.set("`", 63);
+subMap.set("~", 64);
+subMap.set("!", 65);
+subMap.set("@", 66);
+subMap.set("#", 67);
+subMap.set("$", 68);
+subMap.set("%", 69);
+subMap.set("^", 70);
+subMap.set("&", 71);
+subMap.set("*", 72);
+subMap.set("(", 73);
+subMap.set(")", 74);
+subMap.set("-", 75);
+subMap.set("_", 76);
+subMap.set("=", 77);
+subMap.set("+", 78);
+subMap.set("{", 79);
+subMap.set("[", 80);
+subMap.set("}", 81);
+subMap.set("]", 82);
+subMap.set("|", 83);
+subMap.set(":", 84);
+subMap.set(";", 85);
+subMap.set("'", 86);
+subMap.set("<", 87);
+subMap.set(",", 88);
+subMap.set(">", 89);
+subMap.set(".", 90);
+subMap.set("?", 91);
+subMap.set("/", 92);
+
+console.log(subMap.get("."));
+// 90
+console.log(subMap.get("/"));
+// 92
+
 class RoboActive {}
