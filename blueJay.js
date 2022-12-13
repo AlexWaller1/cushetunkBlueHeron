@@ -588,7 +588,7 @@ class RoboBand {
 
   shift() {
     let rElement = this.container[0];
-    let newArray = new RoboBand();
+    let newArray = new RoboBand("shift function!");
     let i = 1;
     for (; i < this.length; i++) {
       newArray.push(this.container[i]);
@@ -616,6 +616,26 @@ class RoboBand {
   delete(index) {
     let newArray = new RoboBand("delete function!");
     let i = 0;
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+      this.container = newArray.container;
+      this.length = newArray.length;
+    }
+  }
+
+  insert(element, index) {
+    let newArray = new RoboBand("insert function!");
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i === index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
   }
 }
 
@@ -682,3 +702,11 @@ console.log(roboBand1.message);
 // RoboBand1
 console.log(roboBandClone1.message);
 // RoboClone!
+console.log(roboBand1.shift());
+// Hank-44
+console.log(roboBand1.container);
+// {0: 'Warren-21', 1: 'Mellon-Tech', 2: 'Eggplant-Head'}
+console.log(roboBand1.length);
+// 3
+console.log(roboBand1.message);
+// RoboBand! never got the message from shift method because message was never reassigned
