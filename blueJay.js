@@ -848,4 +848,53 @@ console.log(subMap.get("x"));
 console.log(subMap.get("y"));
 // 25
 
+subMap.set("A", 27);
+subMap.set("B", 28);
+subMap.set("C", 29);
+subMap.set("D", 30);
+subMap.set("E", 31);
+subMap.set("F", 32);
+subMap.set("G", 33);
+subMap.set("H", 34);
+subMap.set("I", 35);
+subMap.set("J", 36);
+subMap.set("K", 37);
+subMap.set("L", 38);
+subMap.set("M", 39);
+subMap.set("N", 40);
+subMap.set("O", 41);
+subMap.set("P", 42);
+
+console.log(subMap.get("C"));
+// 29
+console.log(subMap.get("D"));
+// 30
+
+subMap.set("Q", 43);
+subMap.set("R", 44);
+subMap.set("S", 45);
+subMap.set("T", 46);
+subMap.set("U", 47);
+subMap.set("V", 48);
+subMap.set("W", 49);
+subMap.set("X", 50);
+subMap.set("Y", 51);
+subMap.set("Z", 52);
+
+console.log(subMap.get("Y"));
+// 51
+console.log(subMap.get("Z"));
+// 52
+
+subMap.set("1", 53);
+subMap.set("2", 54);
+subMap.set("3", 55);
+subMap.set("4", 56);
+subMap.set("5", 57);
+subMap.set("6", 58);
+subMap.set("7", 59);
+subMap.set("8", 60);
+subMap.set("9", 61);
+subMap.set("0", 62);
+
 class RoboActive {}
