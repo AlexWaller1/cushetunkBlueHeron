@@ -614,15 +614,17 @@ class RoboBand {
   }
 
   delete(index) {
+    let rElement = this.container[index];
     let newArray = new RoboBand("delete function!");
     let i = 0;
     for (; i < this.length; i++) {
       if (i !== index) {
         newArray.push(this.container[i]);
       }
-      this.container = newArray.container;
-      this.length = newArray.length;
     }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
   }
 
   insert(element, index) {
@@ -632,10 +634,13 @@ class RoboBand {
       if (i === index) {
         newArray.push(element);
         newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
       }
     }
     this.container = newArray.container;
     this.length = newArray.length;
+    return this.container;
   }
 }
 
@@ -710,3 +715,17 @@ console.log(roboBand1.length);
 // 3
 console.log(roboBand1.message);
 // RoboBand! never got the message from shift method because message was never reassigned
+console.log(roboBand1.unshift("Hank-44", "Hank-44"));
+// 5
+console.log(roboBand1.container);
+// {0: 'Hank-44', 1: 'Hank-44', 2: 'Warren-21', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(roboBand1.delete(1));
+// Hank-44
+console.log(roboBand1.length);
+// 4
+console.log(roboBand1.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(roboBand1.insert("Bender", 2));
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Bender', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(roboBand1.length);
+// 5
