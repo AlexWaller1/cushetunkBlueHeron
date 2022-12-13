@@ -729,3 +729,39 @@ console.log(roboBand1.insert("Bender", 2));
 // {0: 'Hank-44', 1: 'Warren-21', 2: 'Bender', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
 console.log(roboBand1.length);
 // 5
+console.log("----------------------------------------------");
+console.log("------------------------------------");
+
+class RoboProtoMap {
+  constructor(message = "RoboProtoMap") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  set(key, value) {
+    this.container[key] = value;
+    this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    return this.container[key];
+  }
+
+  has(key) {
+    if (this.container[key] === undefined) {
+      return false;
+    }
+    return false;
+  }
+
+  delete(key) {
+    delete this.container[key];
+  }
+}
+
+const proto1 = new RoboProtoMap("Proto Map 1!");
+
+console.log(proto1.set(1, "Hank-44"));
+// 1
