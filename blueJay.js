@@ -753,11 +753,13 @@ class RoboProtoMap {
     if (this.container[key] === undefined) {
       return false;
     }
-    return false;
+    return true;
   }
 
   delete(key) {
     delete this.container[key];
+    this.size--;
+    return this.size;
   }
 }
 
@@ -765,3 +767,85 @@ const proto1 = new RoboProtoMap("Proto Map 1!");
 
 console.log(proto1.set(1, "Hank-44"));
 // 1
+console.log(proto1.set(2, "Warren-21"));
+// 2
+console.log(proto1.set(3, "Mellon-Tech"));
+// 3
+console.log(proto1.set(4, "Eggplant-Head"));
+// 4
+console.log(proto1.size);
+// 4
+console.log(proto1.get(1));
+// Hank-44
+console.log(proto1.get(2));
+// Warren-21
+console.log(proto1.get(3));
+// Mellon-Tech
+console.log(proto1.get(4));
+// Eggplant-Head
+console.log(proto1.get(0));
+// undefined
+console.log(proto1.has(1));
+// true
+console.log(proto1.has(2));
+// true
+console.log(proto1.has(3));
+// true
+console.log(proto1.has(4));
+// true
+console.log(proto1.has(0));
+// false
+console.log(proto1.delete(3));
+// 3
+console.log(proto1.get(3));
+// undefined
+console.log(proto1.size);
+// 3
+console.log(proto1.set(3, "Mellon-Tech"));
+// 4
+console.log(proto1.get(3));
+// Mellon-Tech
+console.log("--------------------------------------------");
+console.log("-----------------------------------------");
+
+let subMap = new RoboProtoMap();
+
+subMap.set("a", 1);
+subMap.set("b", 2);
+subMap.set("c", 3);
+subMap.set("d", 4);
+subMap.set("e", 5);
+subMap.set("f", 6);
+subMap.set("g", 7);
+subMap.set("h", 8);
+subMap.set("i", 9);
+subMap.set("j", 10);
+subMap.set("k", 11);
+subMap.set("l", 12);
+subMap.set("m", 13);
+subMap.set("n", 14);
+
+console.log(subMap.get("a"));
+// 1
+console.log(subMap.get("b"));
+// 2
+
+subMap.set("o", 15);
+subMap.set("p", 16);
+subMap.set("q", 17);
+subMap.set("r", 18);
+subMap.set("s", 19);
+subMap.set("t", 20);
+subMap.set("u", 21);
+subMap.set("v", 22);
+subMap.set("w", 23);
+subMap.set("x", 24);
+subMap.set("y", 25);
+subMap.set("z", 26);
+
+console.log(subMap.get("x"));
+// 24
+console.log(subMap.get("y"));
+// 25
+
+class RoboActive {}
