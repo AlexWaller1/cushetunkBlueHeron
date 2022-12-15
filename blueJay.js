@@ -1043,3 +1043,40 @@ console.log(roboMap5.has(2));
 // true
 console.log(roboMap5.size);
 // 4
+console.log("-------------------------------------------");
+console.log("-----------------------------------------");
+
+const hammerHead5 = {
+  name: "Hammerhead",
+  species: "Hammerhead Shark",
+  homePlanet: "Venice Sands 5",
+  occupation: "Pickerel Cola Space Truck Driver",
+  hasPickerelCola: true,
+  hasCoolJacket: true,
+  friends: ["Taylor", "Harvey", "Wibaux"]
+};
+
+console.log(hammerHead5.name);
+// Hammerhead
+console.log(hammerHead5.species);
+// Hammerhead Shark
+console.log(hammerHead5.homePlanet);
+// Venice Sands 5
+console.log(hammerHead5.occupation);
+// Pickerel Cola Space Truck Driver
+console.log(hammerHead5.hasPickerelCola);
+// true
+console.log(hammerHead5.hasCoolJacket);
+// true
+console.log(hammerHead5.friends[0]);
+// Taylor
+console.log(hammerHead5.friends[1]);
+// Harvey
+console.log(hammerHead5.friends[2]);
+// Wibaux
+console.log(hammerHead5.friends.length);
+// 3
+console.log(Object.keys(hammerHead5)[0]);
+// name
+console.log(Object.values(hammerHead5)[3]);
+// Pickerel Cola Space Truck Driver
