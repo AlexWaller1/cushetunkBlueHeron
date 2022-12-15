@@ -1021,3 +1021,25 @@ console.log(roboMap5.get(3));
 // Mellon-Tech
 console.log(roboMap5.get(4));
 // Eggplant-Head
+console.log(roboMap5.has(1));
+// true
+console.log(roboMap5.has(2));
+// true
+console.log(roboMap5.has(3));
+// true
+console.log(roboMap5.has(4));
+// true
+console.log(roboMap5.delete(2));
+// 3
+console.log(roboMap5.get(2));
+// undefined
+console.log(roboMap5.has(2));
+// false
+console.log(roboMap5.set(2, "Warren-21"));
+// 4
+console.log(roboMap5.get(2));
+// Warren-21
+console.log(roboMap5.has(2));
+// true
+console.log(roboMap5.size);
+// 4
