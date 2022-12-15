@@ -938,4 +938,31 @@ console.log(subMap.get("."));
 console.log(subMap.get("/"));
 // 92
 
-class RoboActive {}
+class RoboActive {
+  constructor(message = "RoboActive!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  hash(key) {
+    if (typeof key !== "string") {
+      key = key.toString();
+    }
+    let hashKey = "";
+    let i = 0;
+    for (; i < key.length; i++) {
+      let newKey = key.charAt(i);
+      let char = subMap.get(newKey);
+      hashKey = hashKey.concat(char);
+    }
+    return parseInt(hashKey);
+  }
+}
+
+let testMap2 = new RoboActive();
+
+console.log(testMap2.hash("Beezer"));
+// 285526518
+console.log(testMap2.hash("Beezer"));
+// 285526518
