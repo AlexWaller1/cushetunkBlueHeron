@@ -1110,3 +1110,13 @@ console.log(piscesFriends[1]);
 // Harvey
 console.log(piscesFriends[2]);
 // Wibaux
+console.log(typeof coolJacket);
+// boolean
+console.log(typeof spaceTruck);
+// string
+console.log(typeof pickerel);
+// boolean
+console.log(typeof piscesFriends);
+// object
+console.log(typeof piscesFriends.length);
+// number
