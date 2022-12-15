@@ -1080,3 +1080,33 @@ console.log(Object.keys(hammerHead5)[0]);
 // name
 console.log(Object.values(hammerHead5)[3]);
 // Pickerel Cola Space Truck Driver
+const {
+  name: hammerHeadName,
+  species: hammerHeadSpecies,
+  homePlanet: veniceSands,
+  occupation: spaceTruck,
+  hasPickerelCola: pickerel,
+  hasCoolJacket: coolJacket,
+  friends: piscesFriends
+} = hammerHead5;
+
+console.log(hammerHeadName);
+// Hammerhead
+console.log(hammerHeadSpecies);
+// Hammerhead Shark
+console.log(veniceSands);
+// Venice Sands 5
+console.log(spaceTruck);
+// Pickerel Cola Space Truck Driver
+console.log(pickerel);
+// true
+console.log(coolJacket);
+// true
+console.log(piscesFriends.length);
+// 3
+console.log(piscesFriends[0]);
+// Taylor
+console.log(piscesFriends[1]);
+// Harvey
+console.log(piscesFriends[2]);
+// Wibaux
