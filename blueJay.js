@@ -958,6 +958,26 @@ class RoboActive {
     }
     return parseInt(hashKey);
   }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] === undefined) {
+      return false;
+    }
+    return true;
+  }
 }
 
 let testMap2 = new RoboActive();
@@ -966,3 +986,11 @@ console.log(testMap2.hash("Beezer"));
 // 285526518
 console.log(testMap2.hash("Beezer"));
 // 285526518
+console.log(testMap2.hash("Chipper"));
+// 29891616518
+console.log(testMap2.hash("Chipper"));
+// 29891616518
+console.log(testMap2.hash("Bodhi"));
+// 2815489
+console.log(testMap2.hash("Bodhi"));
+// 2815489
