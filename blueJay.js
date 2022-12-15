@@ -1120,3 +1120,21 @@ console.log(typeof piscesFriends);
 // object
 console.log(typeof piscesFriends.length);
 // number
+console.log("---------------------------------------------");
+console.log("----------------------------------------");
+
+const robots9 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
+
+function reverse(array) {
+  let i = 0;
+  let j = array.length - 1;
+  for (; i < j; i++, j--) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+console.log(reverse(robots9));
+// ['Eggplant-Head', 'Mellon-Tech', 'Warren-21', 'Hank-44']
