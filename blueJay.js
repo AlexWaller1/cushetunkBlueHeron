@@ -978,6 +978,13 @@ class RoboActive {
     }
     return true;
   }
+
+  delete(key) {
+    key = this.hash(key);
+    delete this.container[key];
+    this.size--;
+    return this.size;
+  }
 }
 
 let testMap2 = new RoboActive();
@@ -994,3 +1001,23 @@ console.log(testMap2.hash("Bodhi"));
 // 2815489
 console.log(testMap2.hash("Bodhi"));
 // 2815489
+const roboMap5 = new RoboActive();
+
+console.log(roboMap5.set(1, "Hank-44"));
+// 1
+console.log(roboMap5.set(2, "Warren-21"));
+// 2
+console.log(roboMap5.set(3, "Mellon-Tech"));
+// 3
+console.log(roboMap5.set(4, "Eggplant-Head"));
+// 4
+console.log(roboMap5.size);
+// 4
+console.log(roboMap5.get(1));
+// Hank-44
+console.log(roboMap5.get(2));
+// Warren-21
+console.log(roboMap5.get(3));
+// Mellon-Tech
+console.log(roboMap5.get(4));
+// Eggplant-Head
