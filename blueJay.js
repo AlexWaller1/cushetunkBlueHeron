@@ -1167,3 +1167,50 @@ console.log(isPalindrome(racecar));
 // true
 console.log(isPalindrome(lamp));
 // false
+console.log(isPalindrome(radar));
+// true
+console.log(isPalindrome(television));
+// false
+console.log(isPalindrome(kayak));
+// true
+console.log(isPalindrome(robot));
+
+console.log("--------------------------------------------");
+console.log("----------------------------------------");
+
+console.log(Math.sqrt(9));
+// 3
+
+let nine = 9;
+
+let three = 3;
+
+let five = 5;
+
+let seventyThree = 73;
+
+let ninetyFour = 94;
+
+let eightySeven = 87;
+
+function isPrimeNum(num) {
+  if (num <= 2) {
+    return false;
+  }
+  let sqrt = Math.sqrt(num);
+  let i = 2;
+
+  for (; i <= sqrt; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrimeNum(nine));
+// false
+console.log(isPrimeNum(three));
+// true
+console.log(isPrimeNum(five));
+// true
