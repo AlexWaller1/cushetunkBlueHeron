@@ -1214,3 +1214,9 @@ console.log(isPrimeNum(three));
 // true
 console.log(isPrimeNum(five));
 // true
+console.log(isPrimeNum(seventyThree));
+// true
+console.log(isPrimeNum(ninetyFour));
+// false
+console.log(isPrimeNum(eightySeven));
+// false
