@@ -1138,3 +1138,32 @@ function reverse(array) {
 
 console.log(reverse(robots9));
 // ['Eggplant-Head', 'Mellon-Tech', 'Warren-21', 'Hank-44']
+
+let racecar = "racecar";
+
+let lamp = "lamp";
+
+let radar = "radar";
+
+let television = "television";
+
+let kayak = "kayak";
+
+let robot = "robot";
+
+function isPalindrome(string) {
+  let i = 0;
+  let j = string.length - 1;
+
+  for (; i < j; i++, j--) {
+    if (string.charAt(i) !== string.charAt(j)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrome(racecar));
+// true
+console.log(isPalindrome(lamp));
+// false
