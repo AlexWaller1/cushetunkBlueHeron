@@ -1220,3 +1220,30 @@ console.log(isPrimeNum(ninetyFour));
 // false
 console.log(isPrimeNum(eightySeven));
 // false
+console.log(87 / 3);
+// 29
+console.log("------------------------------------------");
+console.log("-------------------------------------");
+
+function findAllFactors(num) {
+  let rArray = [];
+  let sqrt = Math.sqrt(num);
+  let i = 1;
+
+  for (; i <= sqrt; i++) {
+    let factor1 = num / i;
+    if (num % i == 0) {
+      rArray.push(factor1);
+      let factor2 = num / factor1;
+      if (factor2 !== sqrt) {
+        rArray.push(factor2);
+      }
+    }
+  }
+  return rArray;
+}
+
+console.log(findAllFactors(36));
+// [36, 1, 18, 2, 12, 3, 9, 4, 6]
+console.log(findAllFactors(20));
+// [20, 1, 10, 2, 5, 4]
