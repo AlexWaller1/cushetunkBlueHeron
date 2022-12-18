@@ -1247,3 +1247,75 @@ console.log(findAllFactors(36));
 // [36, 1, 18, 2, 12, 3, 9, 4, 6]
 console.log(findAllFactors(20));
 // [20, 1, 10, 2, 5, 4]
+
+console.log("-------------------------------------------");
+console.log("----------------------------------------");
+
+function fizzBuzz(num) {
+  if (num % 5 == 0 && num % 3 == 0) {
+    return "FizzBuzz";
+  } else if (num % 5 == 0) {
+    return "Fizz";
+  } else if (num % 3 == 0) {
+    return "Buzz";
+  } else {
+    return "No FizzBuzz";
+  }
+}
+
+console.log(fizzBuzz(15));
+// FizzBuzz
+console.log(fizzBuzz(20));
+// Fizz
+console.log(fizzBuzz(6));
+// Buzz
+
+console.log("------------------------------------------");
+console.log("-----------------------------------------");
+
+function divisibleBy3Under100() {
+  let oneHundred = 100;
+  let count = 0;
+  let i = 1;
+
+  for (; i < oneHundred; i++) {
+    if (i % 3 == 0) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(divisibleBy3Under100());
+// 33
+
+console.log("---------------------------------------------");
+console.log("--------------------------------------");
+
+function findFactorial(num) {
+  let num2 = num;
+  let factorial = 1;
+  for (; num > 0; num--) {
+    factorial = factorial * num;
+  }
+  return `${num2}! = ${factorial}`;
+}
+
+console.log(findFactorial(5));
+// 5! = 120
+console.log(5 * 4 * 3 * 2 * 1);
+// 120
+console.log(findFactorial(4));
+// 4! = 24
+console.log(4 * 3 * 2 * 1);
+// 24
+console.log("---------------------------------------------");
+console.log("----------------------------------------");
+
+let date1 = new Date();
+
+console.log(date1);
+// Sun Dec 18 2022 12:41:37 GMT-0500 (Eastern Standard Time)
+console.log(date1.getFullYear());
+// 2022
+console.log(date1.getDay());
