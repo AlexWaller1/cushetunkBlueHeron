@@ -1384,3 +1384,13 @@ console.log(typeof robots15.length);
 // number
 console.log(typeof robots15.length === 4);
 // false
+console.log(typeof robots15[0]);
+// string
+console.log(typeof null);
+// object
+console.log(typeof undefined);
+// undefined
+let randomRoboIndex = Math.floor(Math.random() * robots15.length);
+
+console.log(robots15[randomRoboIndex]);
+// logs random element from array to console
