@@ -1376,3 +1376,11 @@ const robots15 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
 
 console.log(robots15[2]);
 // Mellon-Tech
+console.log(robots15.length);
+// 4
+console.log(typeof robots15);
+// object
+console.log(typeof robots15.length);
+// number
+console.log(typeof robots15.length === 4);
+// false
