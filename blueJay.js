@@ -1312,6 +1312,8 @@ console.log(4 * 3 * 2 * 1);
 console.log("---------------------------------------------");
 console.log("----------------------------------------");
 
+// Date Object
+
 let date1 = new Date();
 
 console.log(date1);
@@ -1319,3 +1321,58 @@ console.log(date1);
 console.log(date1.getFullYear());
 // 2022
 console.log(date1.getDay());
+// 0
+
+// Math.floor(), Math.random(), Math.round();
+
+console.log(Math.random() * 10);
+// will log any number(including decimals between 0 and 10)
+console.log(Math.round(9.56));
+// 10
+console.log(Math.round(7.45));
+// 7
+console.log(Math.floor(9.56));
+// 9
+
+let rem1 = 9.56 % 1;
+
+console.log(rem1);
+
+console.log(9.56 - rem1);
+// 9
+
+function mathDotFloor(num) {
+  let decimal = num % 1;
+  return num - decimal;
+}
+
+console.log(mathDotFloor(9.56));
+// 9
+console.log(mathDotFloor(12.945));
+// 12
+let twelve = mathDotFloor(12.945);
+
+console.log(twelve % 1);
+// 0
+
+function mathDotRound(num) {
+  let remainder = num % 1;
+  num = num - remainder;
+
+  if (remainder >= 0.5) {
+    return num + 1;
+  } else {
+    return num;
+  }
+}
+
+console.log(mathDotRound(9.56));
+// 10
+console.log(mathDotRound(9.5));
+// 10
+console.log(mathDotRound(9.499));
+// 9
+const robots15 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
+
+console.log(robots15[2]);
+// Mellon-Tech
