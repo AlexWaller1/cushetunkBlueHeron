@@ -1445,3 +1445,30 @@ console.log(voteCount(votes2));
 // -31
 console.log(voteCount(votes3));
 // 0
+
+console.log("----------------------------------------------");
+console.log("-----------------------------------------");
+
+function fizzBuzzArray(num) {
+  let rArray = [];
+  let i = 1;
+
+  for (; i <= num; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      rArray.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      rArray.push("Fizz");
+    } else if (i % 5 === 0) {
+      rArray.push("Buzz");
+    } else {
+      rArray.push(i);
+    }
+  }
+  return rArray;
+}
+
+console.log(fizzBuzzArray(15));
+// [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
+
+console.log("----------------------------------------------");
+console.log("------------------------------------------");
