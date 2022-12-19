@@ -1425,3 +1425,23 @@ console.log(smallBig(smallBig2));
 // [25, 29]
 console.log(smallBig(smallBig3));
 // [91, 99]
+
+console.log("----------------------------------------");
+console.log("-------------------------------------");
+
+let votes1 = { upvotes: 13, downvotes: 0 };
+
+let votes2 = { upvotes: 2, downvotes: 33 };
+
+let votes3 = { upvotes: 132, downvotes: 132 };
+
+function voteCount(votes) {
+  return votes["upvotes"] - votes["downvotes"];
+}
+
+console.log(voteCount(votes1));
+// 13
+console.log(voteCount(votes2));
+// -31
+console.log(voteCount(votes3));
+// 0
