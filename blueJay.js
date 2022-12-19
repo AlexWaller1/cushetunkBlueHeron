@@ -1394,3 +1394,34 @@ let randomRoboIndex = Math.floor(Math.random() * robots15.length);
 
 console.log(robots15[randomRoboIndex]);
 // logs random element from array to console
+
+console.log("------------------------------------------");
+console.log("-----------------------------------------");
+
+let smallBig1 = [1, 2, 3, 4, 5];
+
+let smallBig2 = [25, 26, 27, 28, 29];
+
+let smallBig3 = [91, 93, 95, 97, 99];
+
+function smallBig(array) {
+  let min = array[0];
+  let max = array[0];
+  let i = 1;
+  for (; i < array.length; i++) {
+    if (array[i] > max) {
+      max = array[i];
+    }
+    if (array[i] < min) {
+      min = array[i];
+    }
+  }
+  return [min, max];
+}
+
+console.log(smallBig(smallBig1));
+// [1, 5]
+console.log(smallBig(smallBig2));
+// [25, 29]
+console.log(smallBig(smallBig3));
+// [91, 99]
