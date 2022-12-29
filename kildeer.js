@@ -107,3 +107,50 @@ console.log(capitalizeFirstLetter(title3));
 // I Like Pizza
 console.log(capitalizeFirstLetter(title4));
 // Pizza Pizza Pizza
+console.log("---------------------------------------");
+console.log("---------------------------");
+
+let single1 = [2, 2, 1];
+
+let single2 = [4, 1, 2, 1, 2];
+
+let single3 = [1];
+
+let single4 = [3, 3, 4, 4];
+
+function singleElement(array) {
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (numsMap.has(key)) {
+      let value = numsMap.get(key);
+      value++;
+      numsMap.set(key, value);
+    } else {
+      numsMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < array.length; j++) {
+    let key = array[j];
+    if (numsMap.get(key) === 1) {
+      return key;
+    }
+  }
+  return -1;
+}
+
+console.log(singleElement(single1));
+// 1
+console.log(singleElement(single2));
+// 4
+console.log(singleElement(single3));
+// 1
+console.log(singleElement(single4));
+// -1
+console.log("-----------------------------------------");
+console.log("----------------------------------------");
