@@ -72,3 +72,38 @@ console.log(objMaker(addName7, addName8, addName9));
 // {piano: 500, stereo: 300, Caligula: 'priceless'}
 console.log("-----------------------------------------------");
 console.log("-------------------------------------------");
+
+let title1 = "This is a title";
+
+let title1Split = title1.split(" ");
+
+console.log(title1Split);
+
+let title2 = "capitalize every word";
+
+let title3 = "I Like Pizza";
+
+let title4 = "pizza pizza pizza";
+
+function capitalizeFirstLetter(string) {
+  let words = string.split(" ");
+  let i = 0;
+
+  for (; i < words.length; i++) {
+    words[i] = words[i].replace(
+      words[i].charAt(0),
+      words[i].charAt(0).toUpperCase()
+    );
+  }
+  let rString = words.join(" ");
+  return rString;
+}
+
+console.log(capitalizeFirstLetter(title1));
+// This Is A Title
+console.log(capitalizeFirstLetter(title2));
+// Capitalize Every Word
+console.log(capitalizeFirstLetter(title3));
+// I Like Pizza
+console.log(capitalizeFirstLetter(title4));
+// Pizza Pizza Pizza
