@@ -154,3 +154,51 @@ console.log(singleElement(single4));
 // -1
 console.log("-----------------------------------------");
 console.log("----------------------------------------");
+
+let color1 = [0, 1, 2, 0, 1, 2];
+
+function sortByColor(array) {
+  let zeros = [];
+  let ones = [];
+  let twos = [];
+  let rArray = [];
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let num = array[i];
+    if (num === 0) {
+      zeros.push(num);
+    }
+    if (num === 1) {
+      ones.push(num);
+    }
+    if (num === 2) {
+      twos.push(num);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < zeros.length; j++) {
+    rArray.push(zeros[j]);
+  }
+
+  let k = 0;
+
+  for (; k < ones.length; k++) {
+    rArray.push(ones[k]);
+  }
+
+  let l = 0;
+
+  for (; l < twos.length; l++) {
+    rArray.push(twos[l]);
+  }
+
+  return rArray;
+}
+
+console.log(sortByColor(color1));
+// [0, 0, 1, 1, 2, 2]
+console.log("----------------------------------------------");
+console.log("---------------------------------------------");
