@@ -202,3 +202,56 @@ console.log(sortByColor(color1));
 // [0, 0, 1, 1, 2, 2]
 console.log("----------------------------------------------");
 console.log("---------------------------------------------");
+
+let accounts1 = [
+  [1, 2, 3],
+  [3, 2, 1]
+];
+
+let accounts2 = [
+  [1, 5],
+  [7, 3],
+  [3, 5]
+];
+
+let accounts3 = [
+  [2, 8, 7],
+  [7, 1, 3],
+  [1, 9, 5]
+];
+
+function accountSum(array) {
+  let sumArray = [];
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let account = array[i];
+    let sum = 0;
+    let j = 0;
+    for (; j < account.length; j++) {
+      sum = sum + account[j];
+      if (j === account.length - 1) {
+        sumArray.push(sum);
+      }
+    }
+  }
+
+  let max = sumArray[0];
+  let k = 1;
+
+  for (; k < sumArray.length; k++) {
+    if (sumArray[k] > max) {
+      max = sumArray[k];
+    }
+  }
+  return max;
+}
+
+console.log(accountSum(accounts1));
+// 6
+console.log(accountSum(accounts2));
+// 10
+console.log(accountSum(accounts3));
+// 17
+console.log("-----------------------------------------");
+console.log("-----------------------------------------");
