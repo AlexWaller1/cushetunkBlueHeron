@@ -33,3 +33,42 @@ function keyValueArray(obj) {
 
 console.log(keyValueArray(keyValue1));
 // [['a', 1], ['b', 2]]
+console.log(keyValueArray(keyValue2));
+// [['shrimp', 15], ['tots', 12]]
+console.log(keyValueArray(keyValue3));
+// []
+
+console.log("---------------------------------------------");
+console.log("-----------------------------------------");
+
+let addName1 = {};
+
+let addName2 = "Brutus";
+
+let addName3 = "priceless";
+
+let addName4 = { piano: 500 };
+
+let addName5 = "Brutus";
+
+let addName6 = "priceless";
+
+let addName7 = { piano: 500, stereo: 300 };
+
+let addName8 = "Caligula";
+
+let addName9 = "priceless";
+
+function objMaker(obj, key, value) {
+  obj[key] = value;
+  return obj;
+}
+
+console.log(objMaker(addName1, addName2, addName3));
+// {Brutus: 'priceless'}
+console.log(objMaker(addName4, addName5, addName6));
+// {piano: 500, Brutus: 'priceless'}
+console.log(objMaker(addName7, addName8, addName9));
+// {piano: 500, stereo: 300, Caligula: 'priceless'}
+console.log("-----------------------------------------------");
+console.log("-------------------------------------------");
