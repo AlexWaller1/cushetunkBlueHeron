@@ -255,3 +255,21 @@ console.log(accountSum(accounts3));
 // 17
 console.log("-----------------------------------------");
 console.log("-----------------------------------------");
+
+function arrayOfMultiples(num, length) {
+  let rArray = [];
+  let i = 1;
+
+  for (; i <= length; i++) {
+    let element = i * num;
+    rArray.push(element);
+  }
+  return rArray;
+}
+
+console.log(arrayOfMultiples(7, 5));
+// [7, 14, 21, 28, 35]
+console.log(arrayOfMultiples(17, 6));
+// [17, 34, 51, 68, 85, 102]
+console.log("--------------------------------------------");
+console.log("----------------------------------");
