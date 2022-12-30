@@ -405,3 +405,33 @@ console.log(cersei);
 // Cersei
 console.log("--------------------------------------------");
 console.log("-----------------------------------------");
+
+// Most Songs in Playlist!!!
+
+let songs1 = [3, 4, 7, 2];
+
+let songs2 = [4, 2, 5, 3, 1, 1, 2, 3, 4, 2, 5, 6, 3, 2, 4, 7, 3, 2, 3];
+
+function mostSongsInPlaylist(array) {
+  let sum = 0;
+  let count = 0;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    sum = sum + array[i];
+    if (sum < 60) {
+      count++;
+    }
+    if (sum >= 60) {
+      return count;
+    }
+  }
+  return count;
+}
+
+console.log(mostSongsInPlaylist(songs1));
+// 4
+console.log(mostSongsInPlaylist(songs2));
+// 18
+console.log("-----------------------------------------");
+console.log("------------------------------------------");
