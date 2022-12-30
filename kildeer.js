@@ -333,3 +333,75 @@ console.log(friends);
 // ['Taylor', 'Harvey', 'Wibaux']
 console.log("---------------------------------------");
 console.log("-------------------------------------------");
+
+const arya = {
+  first: "Arya",
+  last: "Stark",
+  origin: "Winterfell",
+  allegiance: "House Stark"
+};
+
+const { first, last, origin, allegiance } = arya;
+
+console.log(first);
+// Arya
+console.log(last);
+// Stark
+console.log("-----------------------------------------");
+console.log("-----------------------------------");
+
+const jonSnow = {
+  first: "Jon",
+  last: "Snow",
+  title: "Prince",
+  family: {
+    brothers: {
+      brother1: "Rob Stark",
+      brother2: "Rickon Stark"
+    },
+    sisters: {
+      sister1: "Arya Stark",
+      sister2: "Sansa Stark"
+    }
+  }
+};
+
+const {
+  first: jon,
+  last: snow,
+  title,
+  family: {
+    brothers: { brother1, brother2 },
+    sisters: { sister1, sister2 }
+  }
+} = jonSnow;
+
+console.log(brother1);
+// Rob Stark
+console.log(brother2);
+// Rickon Stark
+
+const characters = ["Ned Stark", "The Quiet Wolf", "House Stark"];
+
+const [nedStark, alias, house] = characters;
+
+console.log(nedStark, alias, house);
+// Ned Stark The Quiet Wolf House Stark
+
+const skills = "The Usurper, Baratheon, Cersei";
+
+const skillsArray = skills.split(", ");
+
+console.log(skillsArray);
+// ['The Usurper', 'Baratheon', 'Cersei']
+
+const [usurper, baratheon, cersei] = skillsArray;
+
+console.log(usurper);
+// The Usurper
+console.log(baratheon);
+// Baratheon
+console.log(cersei);
+// Cersei
+console.log("--------------------------------------------");
+console.log("-----------------------------------------");
