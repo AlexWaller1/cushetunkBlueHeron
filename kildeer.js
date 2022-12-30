@@ -294,3 +294,42 @@ console.log(sortAscending(false, territories));
 // opposite alphabetical order by label!
 console.log("---------------------------------------");
 console.log("-----------------------------------------");
+
+// object destructuring
+
+const hammerhead = {
+  name: "Hammerhead",
+  homePlanet: "Venice Sands 5",
+  occupation: "Pickerel Cola Space Truck Driver",
+  hasCoolJacket: true,
+  species: "Hammerhead Shark",
+  hasPickerelCola: true,
+  friends: ["Taylor", "Harvey", "Wibaux"]
+};
+
+const {
+  name,
+  homePlanet,
+  occupation,
+  hasCoolJacket,
+  species,
+  hasPickerelCola,
+  friends
+} = hammerhead;
+
+console.log(name);
+// Hammerhead
+console.log(homePlanet);
+// Venice Sands 5
+console.log(occupation);
+// Pickerel Cola Space Truck Driver
+console.log(hasCoolJacket);
+// true
+console.log(species);
+// Hammerhead Shark
+console.log(hasPickerelCola);
+// true
+console.log(friends);
+// ['Taylor', 'Harvey', 'Wibaux']
+console.log("---------------------------------------");
+console.log("-------------------------------------------");
