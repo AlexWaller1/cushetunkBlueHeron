@@ -435,3 +435,29 @@ console.log(mostSongsInPlaylist(songs2));
 // 18
 console.log("-----------------------------------------");
 console.log("------------------------------------------");
+
+const robots = [
+  { name: "Hank-44", paintCoat: "Silver" },
+  { name: "Warren-21", paintCoat: "Silver" },
+  { name: "Mellon-Tech", paintCoat: "Yellow and Green" },
+  { name: "Eggplant-Head", paintCoat: "Blue and Orange" }
+];
+
+let roboFilter1 = robots.filter(r => r.paintCoat === "Silver");
+
+console.log(roboFilter1);
+/* 
+
+[
+    { name: 'Hank-44', paintCoat: 'Silver'},
+    { name: 'Warren-21', paintCoat: 'Silver }
+]
+
+*/
+
+let roboFilter2 = robots.filter(r => r.paintCoat == "Silver").map(r => r.name);
+
+console.log(roboFilter2);
+// ['Hank-44', 'Warren-21']
+console.log("------------------------------------------");
+console.log("-------------------------------------");
