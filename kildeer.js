@@ -273,3 +273,24 @@ console.log(arrayOfMultiples(17, 6));
 // [17, 34, 51, 68, 85, 102]
 console.log("--------------------------------------------");
 console.log("----------------------------------");
+
+let territories = [
+  { value: 1, label: "Australia" },
+  { value: 2, label: "Western Europe" },
+  { value: 3, label: "North America" }
+];
+
+function sortAscending(sortASC, array) {
+  sortASC
+    ? array.sort((a, b) => (a.label > b.label ? 1 : -1))
+    : array.sort((a, b) => (a.label > b.label ? -1 : 1));
+
+  return array;
+}
+
+console.log(sortAscending(true, territories));
+// alphabetical order by label!
+console.log(sortAscending(false, territories));
+// opposite alphabetical order by label!
+console.log("---------------------------------------");
+console.log("-----------------------------------------");
