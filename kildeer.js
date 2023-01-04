@@ -538,3 +538,32 @@ console.log(majorityElement(majority2));
 // 2
 console.log("---------------------------------------");
 console.log("--------------------------------");
+
+let duplicates1 = [1, 2, 3, 1];
+
+let duplicates2 = [1, 2, 3, 4];
+
+let duplicates3 = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2];
+
+function hasDuplicates(array) {
+  let numsMap = new Map();
+  let i = 0;
+  for (; i < array.length; i++) {
+    let num = array[i];
+    if (numsMap.has(num)) {
+      return true;
+    } else {
+      numsMap.set(num, 1);
+    }
+  }
+  return false;
+}
+
+console.log(hasDuplicates(duplicates1));
+// true
+console.log(hasDuplicates(duplicates2));
+// false
+console.log(hasDuplicates(duplicates3));
+// true
+console.log("----------------------------------------");
+console.log("----------------------------------------");
