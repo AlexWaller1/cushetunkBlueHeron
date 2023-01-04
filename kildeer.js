@@ -567,3 +567,43 @@ console.log(hasDuplicates(duplicates3));
 // true
 console.log("----------------------------------------");
 console.log("----------------------------------------");
+
+let numArr1 = [2, 7, 11, 15];
+
+let target1 = 9;
+
+let numArr2 = [3, 2, 4];
+
+let target2 = 6;
+
+let numArr3 = [3, 3];
+
+let target3 = [6];
+
+function findTarget(array, target) {
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    numsMap.set(key, i);
+  }
+
+  let j = 0;
+  for (; j < array.length; j++) {
+    let diff = target - array[j];
+    if (numsMap.has(diff) && numsMap.get(diff) !== j) {
+      return [j, numsMap.get(diff)];
+    }
+  }
+  return [];
+}
+
+console.log(findTarget(numArr1, target1));
+// [0, 1]
+console.log(findTarget(numArr2, target2));
+// [1, 2]
+console.log(findTarget(numArr3, target3));
+// [0, 1]
+console.log("------------------------------------------");
+console.log("--------------------------------------");
