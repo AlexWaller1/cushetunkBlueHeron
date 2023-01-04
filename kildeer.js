@@ -461,3 +461,80 @@ console.log(roboFilter2);
 // ['Hank-44', 'Warren-21']
 console.log("------------------------------------------");
 console.log("-------------------------------------");
+
+let jackpot1 = ["@", "@", "@", "@"];
+
+let jackpot2 = ["%", "*", "*", "#"];
+
+let jackpot3 = ["$", "$", "!", "$"];
+
+function jackpot(game) {
+  let i = 0;
+
+  for (; i < game.length - 1; i++) {
+    if (game[i] !== game[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(jackpot(jackpot1));
+// true
+console.log(jackpot(jackpot2));
+// false
+console.log(jackpot(jackpot3));
+// false
+console.log("--------------------------------------");
+console.log("----------------------------------------");
+
+let testObj1 = {};
+
+testObj1[1] = 2;
+
+console.log(testObj1);
+// {1: 2}
+console.log(Object.keys(testObj1));
+// ['1']
+console.log(typeof Object.keys(testObj1)[0]);
+// string
+
+let majority1 = [3, 2, 3];
+
+let majority2 = [2, 2, 1, 1, 1, 2, 2];
+
+function majorityElement(array) {
+  let obj = {};
+  let i = 0;
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (obj[key]) {
+      let value = obj[key];
+      value++;
+      obj[key] = value;
+    } else {
+      obj[key] = 1;
+    }
+  }
+
+  let keys = Object.keys(obj);
+  let values = Object.values(obj);
+  let max = values[0];
+  let rNum = keys[0];
+  let j = 1;
+
+  for (; j < keys.length; j++) {
+    if (values[j] > max) {
+      max = values[j];
+      rNum = keys[j];
+    }
+  }
+  return parseInt(rNum);
+}
+
+console.log(majorityElement(majority1));
+// 3
+console.log(majorityElement(majority2));
+// 2
+console.log("---------------------------------------");
+console.log("--------------------------------");
