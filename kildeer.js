@@ -658,3 +658,60 @@ console.log(isPrime(72));
 // false
 console.log("-----------------------------------------");
 console.log("-----------------------------------");
+
+let exAndOh = [
+  ["X", "O", "O"],
+  ["O", "X", "X", "O"]
+];
+
+function twoDeeArrayCharCount(array, char) {
+  let count = 0;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let nested = array[i];
+    let j = 0;
+    for (; j < nested.length; j++) {
+      if (nested[j] === char) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+console.log(twoDeeArrayCharCount(exAndOh, "X"));
+// 3
+console.log("-------------------------------------------");
+console.log("---------------------------------------");
+
+let true1 = [true, false, true, false];
+
+let true2 = [true, true, true, true];
+
+let true3 = [false, false, false, true];
+
+let true4 = [];
+
+function trueCount(array) {
+  let count = 0;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (array[i]) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(trueCount(true1));
+// 2
+console.log(trueCount(true2));
+// 4
+console.log(trueCount(true3));
+// 1
+console.log(trueCount(true4));
+// 0
+console.log("------------------------------------------");
+console.log("-------------------------------------");
