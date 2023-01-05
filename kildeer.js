@@ -715,3 +715,45 @@ console.log(trueCount(true4));
 // 0
 console.log("------------------------------------------");
 console.log("-------------------------------------");
+
+let nestedRobots = ["Hank-44", ["Warren-21"], ["Mellon-Tech", "Eggplant-Head"]];
+
+nestedRobots = nestedRobots.flat();
+
+console.log(nestedRobots);
+// ['Hank-44', 'Warren-21', 'Mellon-Tech', 'Eggplant-Head']
+
+let nested1 = [1, [2, 3]];
+
+let nested2 = [1, [2, [3, 4]]];
+
+let nested3 = [1, [2, [3, [4, [5, 6]]]]];
+
+let nested4 = [1, [2], 1, [2], 1];
+
+nested3 = nested3.flat();
+
+console.log(nested3);
+
+function nestedCount(array) {
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (typeof array[i] === "object") {
+      array = array.flat();
+      i = i - 1;
+    }
+  }
+  return array.length;
+}
+
+console.log(nestedCount(nested1));
+// 3
+console.log(nestedCount(nested2));
+// 4
+console.log(nestedCount(nested3));
+// 6
+console.log(nestedCount(nested4));
+// 5
+console.log("---------------------------------------");
+console.log("-----------------------------------");
