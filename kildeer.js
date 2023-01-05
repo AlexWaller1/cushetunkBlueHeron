@@ -635,3 +635,26 @@ console.log(findAllFactors(125));
 // [1, 125, 5, 25]
 console.log("---------------------------------------------");
 console.log("---------------------------------------");
+
+function isPrime(num) {
+  let sqrt = Math.sqrt(num);
+  let i = 2;
+
+  for (; i < sqrt; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(11));
+// true
+console.log(isPrime(14));
+// false
+console.log(isPrime(71));
+// true
+console.log(isPrime(72));
+// false
+console.log("-----------------------------------------");
+console.log("-----------------------------------");
