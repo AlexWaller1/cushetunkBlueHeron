@@ -607,3 +607,31 @@ console.log(findTarget(numArr3, target3));
 // [0, 1]
 console.log("------------------------------------------");
 console.log("--------------------------------------");
+
+function findAllFactors(num) {
+  let sqrt = Math.sqrt(num);
+  let rArray = [];
+  let i = 1;
+
+  for (; i < sqrt; i++) {
+    if (num % i == 0) {
+      rArray.push(i);
+      let factor2 = num / i;
+      if (factor2 !== i) {
+        rArray.push(factor2);
+      }
+    }
+  }
+  return rArray;
+}
+
+console.log(findAllFactors(10));
+// [1, 10, 2, 5]
+console.log(findAllFactors(6));
+// [1, 2, 3, 6]
+console.log(findAllFactors(100));
+// [1, 100, 2, 50, 4, 25, 5, 20]
+console.log(findAllFactors(125));
+// [1, 125, 5, 25]
+console.log("---------------------------------------------");
+console.log("---------------------------------------");
