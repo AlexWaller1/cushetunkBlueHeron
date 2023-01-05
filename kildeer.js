@@ -796,3 +796,41 @@ console.log(numsGreaterThan(greater3));
 // [0, 0, 0, 0]
 console.log("--------------------------------------");
 console.log("-------------------------------------------");
+
+let range1 = [3, 0, 1];
+
+let range2 = [0, 1];
+
+let range3 = [9, 6, 4, 2, 3, 5, 7, 0, 1];
+
+let range4 = [0];
+
+function missingInRange(array) {
+  let range = array.length;
+  let i = 0;
+  let sum1 = 0;
+
+  for (; i <= range; i++) {
+    sum1 = sum1 + i;
+  }
+
+  let sum2 = 0;
+  let j = 0;
+
+  for (; j < array.length; j++) {
+    sum2 = sum2 + array[j];
+  }
+
+  return sum1 - sum2;
+}
+
+console.log(missingInRange(range1));
+// 2
+console.log(missingInRange(range2));
+// 2
+console.log(missingInRange(range3));
+// 8
+console.log(missingInRange(range4));
+// 1
+console.log("--------------------------------------------");
+console.log("------------------------------------");
