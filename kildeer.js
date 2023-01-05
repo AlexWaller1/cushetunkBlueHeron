@@ -757,3 +757,42 @@ console.log(nestedCount(nested4));
 // 5
 console.log("---------------------------------------");
 console.log("-----------------------------------");
+
+let greater1 = [8, 1, 2, 2, 3];
+
+let greater2 = [6, 5, 4, 8];
+
+let greater3 = [7, 7, 7, 7];
+
+function numsGreaterThan(array) {
+  let numsMap = new Map();
+  let array2 = [...array];
+  let rArray = [];
+  let i = 0;
+
+  array = array.sort((a, b) => a - b);
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (!numsMap.has(key)) {
+      numsMap.set(key, i);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < array2.length; j++) {
+    let key = array2[j];
+    rArray.push(numsMap.get(key));
+  }
+  return rArray;
+}
+
+console.log(numsGreaterThan(greater1));
+// [4, 0, 1, 1, 3]
+console.log(numsGreaterThan(greater2));
+// [2, 1, 0, 3]
+console.log(numsGreaterThan(greater3));
+// [0, 0, 0, 0]
+console.log("--------------------------------------");
+console.log("-------------------------------------------");
