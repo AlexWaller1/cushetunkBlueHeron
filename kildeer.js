@@ -834,3 +834,54 @@ console.log(missingInRange(range4));
 // 1
 console.log("--------------------------------------------");
 console.log("------------------------------------");
+
+let numString1 = "-0123.00";
+
+let numString2 = "+-a13";
+
+function validNumString(string) {
+  let numsMap = new Map();
+  numsMap.set("+", true);
+  numsMap.set("-", true);
+  numsMap.set(".", true);
+  numsMap.set("0", true);
+  numsMap.set("1", true);
+  numsMap.set("2", true);
+  numsMap.set("3", true);
+  numsMap.set("4", true);
+  numsMap.set("5", true);
+  numsMap.set("6", true);
+  numsMap.set("7", true);
+  numsMap.set("8", true);
+  numsMap.set("9", true);
+
+  let decimalCount = 0;
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let char = string.charAt(i);
+    if (!numsMap.has(char)) {
+      return false;
+    }
+    if (char === ".") {
+      decimalCount++;
+    }
+    if (decimalCount > 1) {
+      return false;
+    }
+    if (char === "+" && i > 0) {
+      return false;
+    }
+    if (char === "-" && i > 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(validNumString(numString1));
+// true
+console.log(validNumString(numString2));
+// false
+console.log("-------------------------------------------");
+console.log("----------------------------------------");
