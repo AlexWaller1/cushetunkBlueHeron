@@ -885,3 +885,27 @@ console.log(validNumString(numString2));
 // false
 console.log("-------------------------------------------");
 console.log("----------------------------------------");
+
+const hank44 = ["H", "a", "n", "k", "-", "4", "4"];
+
+const warren21 = ["W", "a", "r", "r", "e", "n", "-", "2", "1"];
+
+function reverseArray(array) {
+  let i = 0;
+  let j = array.length - 1;
+  let temp = 0;
+
+  for (; i < j; i++, j--) {
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+console.log(reverseArray(hank44));
+// ['4', '4', '-', 'k', 'n', 'a', 'H']
+console.log(reverseArray(warren21));
+// ['1', '2', '-', 'n', 'e', 'r', 'r', 'a', 'W']
+console.log("---------------------------------------------");
+console.log("---------------------------------------");
