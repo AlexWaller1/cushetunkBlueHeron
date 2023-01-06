@@ -909,3 +909,33 @@ console.log(reverseArray(warren21));
 // ['1', '2', '-', 'n', 'e', 'r', 'r', 'a', 'W']
 console.log("---------------------------------------------");
 console.log("---------------------------------------");
+
+const shape = {
+  radius: 10,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () => 2 * Math.PI * this.radius
+};
+
+console.log(shape.diameter());
+// 20
+console.log(shape.perimeter());
+// NaN
+// is NaN because arrow function is not able to reference
+// a layer abover and and grab radius or any such property
+console.log("-----------------------------------------------");
+console.log("------------------------------------");
+
+function sayHi() {
+  console.log(name);
+  console.log(age);
+  var name = "Lydia";
+  let age = 21;
+}
+
+// sayHi();
+// name logs undefined because we can call a var before declaration
+// however, we are not allowed to this with let
+console.log("-----------------------------------------");
+console.log("--------------------------------------");
