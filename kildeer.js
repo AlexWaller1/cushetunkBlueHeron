@@ -960,3 +960,30 @@ console.log(getBudgets(budgets));
 // 65700
 console.log("-------------------------------------------");
 console.log("-------------------------------------");
+
+let trueCount4 = [true, false, true, false];
+
+let trueCount5 = [false, false, false, false];
+
+let trueCount6 = [];
+
+function trueCount2(array) {
+  let count = 0;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (array[i]) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(trueCount2(trueCount4));
+// 2
+console.log(trueCount2(trueCount5));
+// 0
+console.log(trueCount2(trueCount6));
+// 0
+console.log("-------------------------------------------");
+console.log("---------------------------------------");
