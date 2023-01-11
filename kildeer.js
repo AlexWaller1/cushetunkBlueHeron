@@ -939,3 +939,24 @@ function sayHi() {
 // however, we are not allowed to this with let
 console.log("-----------------------------------------");
 console.log("--------------------------------------");
+
+let budgets = [
+  { name: "John", age: 21, budget: 23000 },
+  { name: "Steve", age: 32, budget: 40000 },
+  { name: "Martin", age: 16, budget: 2700 }
+];
+
+function getBudgets(array) {
+  let budget = 0;
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    budget = budget + array[i].budget;
+  }
+  return budget;
+}
+
+console.log(getBudgets(budgets));
+// 65700
+console.log("-------------------------------------------");
+console.log("-------------------------------------");
