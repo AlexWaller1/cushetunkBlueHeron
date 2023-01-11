@@ -1018,3 +1018,37 @@ console.log(flatLength(flat4));
 // 5
 console.log("--------------------------------------");
 console.log("------------------------------------");
+
+let twice1 = [4, 3, 2, 7, 8, 2, 3, 1];
+
+let twice2 = [1, 1, 2];
+
+let twice3 = [];
+
+function appearsTwice(array) {
+  let numsMap = new Map();
+  let rArray = [];
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (numsMap.has(key)) {
+      let value = numsMap.get(key);
+      value++;
+      numsMap.set(key, value);
+      rArray.push(key);
+    } else {
+      numsMap.set(key, 1);
+    }
+  }
+  return rArray;
+}
+
+console.log(appearsTwice(twice1));
+// [2, 3]
+console.log(appearsTwice(twice2));
+// [1]
+console.log(appearsTwice(twice3));
+// []
+console.log("--------------------------------------------");
+console.log("-----------------------------");
