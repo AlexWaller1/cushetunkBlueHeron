@@ -987,3 +987,34 @@ console.log(trueCount2(trueCount6));
 // 0
 console.log("-------------------------------------------");
 console.log("---------------------------------------");
+
+let flat1 = [1, [2, 3]];
+
+let flat2 = [1, [2, [3, 4]]];
+
+let flat3 = [1, [2, [3, [4, [5, 6]]]]];
+
+let flat4 = [1, [2], 1, [2], 1];
+
+function flatLength(array) {
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    if (typeof array[i] === "object") {
+      array = array.flat();
+      i--;
+    }
+  }
+  return array.length;
+}
+
+console.log(flatLength(flat1));
+// 3
+console.log(flatLength(flat2));
+// 4
+console.log(flatLength(flat3));
+// 6
+console.log(flatLength(flat4));
+// 5
+console.log("--------------------------------------");
+console.log("------------------------------------");
