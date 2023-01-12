@@ -1192,3 +1192,45 @@ console.log(appearsTwice2(twice7));
 // true
 console.log("--------------------------------------------");
 console.log("-------------------------------------");
+
+let target10 = [2, 7, 11, 15];
+
+let target11 = 9;
+
+let target12 = [3, 2, 4];
+
+let target13 = 6;
+
+let target14 = [3, 3];
+
+let target15 = 6;
+
+function findTarget2(array, target) {
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    numsMap.set(key, i);
+  }
+
+  let j = 0;
+
+  for (; j < array.length; j++) {
+    let diff = target - array[j];
+    if (numsMap.has(diff)) {
+      if (j !== numsMap.get(diff)) {
+        return [j, numsMap.get(diff)];
+      }
+    }
+  }
+}
+
+console.log(findTarget2(target10, target11));
+// [0, 1]
+console.log(findTarget2(target12, target13));
+// [1, 2]
+console.log(findTarget2(target14, target15));
+// [0, 1]
+console.log("--------------------------------------------");
+console.log("-------------------------------------");
