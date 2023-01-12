@@ -1162,3 +1162,33 @@ console.log(greaterThan21(greaterThan12));
 // [0, 0, 0, 0]
 console.log("---------------------------------------------");
 console.log("------------------------------------------");
+
+let twice5 = [1, 2, 3, 1];
+
+let twice6 = [1, 2, 3, 4];
+
+let twice7 = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2];
+
+function appearsTwice2(array) {
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (numsMap.has(key)) {
+      return true;
+    } else {
+      numsMap.set(key, i);
+    }
+  }
+  return false;
+}
+
+console.log(appearsTwice2(twice5));
+// true
+console.log(appearsTwice2(twice6));
+// false
+console.log(appearsTwice2(twice7));
+// true
+console.log("--------------------------------------------");
+console.log("-------------------------------------");
