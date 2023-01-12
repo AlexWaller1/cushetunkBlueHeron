@@ -1059,6 +1059,8 @@ let rangeDiff2 = [0, 1];
 
 let rangeDiff3 = [9, 6, 4, 2, 3, 5, 7, 0, 1];
 
+let rangeDiff4 = [0];
+
 function rangeDiff(array) {
   let range = 0;
   let i = 0;
@@ -1083,5 +1085,41 @@ console.log(rangeDiff(rangeDiff2));
 // 2
 console.log(rangeDiff(rangeDiff3));
 // 8
+console.log(rangeDiff(rangeDiff4));
+// 1
 console.log("-----------------------------------------");
 console.log("---------------------------------");
+
+let anagram1 = "nnjjdyus";
+
+let anagram2 = "njdnsjyu";
+
+let anagram3 = "tacocat";
+
+let anagram4 = "ctatocato";
+
+function isAnagram(string1, string2) {
+  string1 = string1.split("");
+
+  string2 = string2.split("");
+
+  string1 = string1.sort((a, b) => (a > b ? 1 : -1));
+
+  string2 = string2.sort((a, b) => (a > b ? 1 : -1));
+
+  string1 = string1.join("");
+
+  string2 = string2.join("");
+
+  if (string1 === string2) {
+    return true;
+  }
+  return false;
+}
+
+console.log(isAnagram(anagram1, anagram2));
+// true;
+console.log(isAnagram(anagram3, anagram4));
+// false;
+console.log("----------------------------------------");
+console.log("---------------------------------------");
