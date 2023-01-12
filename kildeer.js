@@ -1052,3 +1052,36 @@ console.log(appearsTwice(twice3));
 // []
 console.log("--------------------------------------------");
 console.log("-----------------------------");
+
+let rangeDiff1 = [3, 0, 1];
+
+let rangeDiff2 = [0, 1];
+
+let rangeDiff3 = [9, 6, 4, 2, 3, 5, 7, 0, 1];
+
+function rangeDiff(array) {
+  let range = 0;
+  let i = 0;
+
+  for (; i <= array.length; i++) {
+    range = range + i;
+  }
+
+  let sum = 0;
+  let j = 0;
+
+  for (; j < array.length; j++) {
+    sum = sum + array[j];
+  }
+
+  return range - sum;
+}
+
+console.log(rangeDiff(rangeDiff1));
+// 2
+console.log(rangeDiff(rangeDiff2));
+// 2
+console.log(rangeDiff(rangeDiff3));
+// 8
+console.log("-----------------------------------------");
+console.log("---------------------------------");
