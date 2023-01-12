@@ -1123,3 +1123,42 @@ console.log(isAnagram(anagram3, anagram4));
 // false;
 console.log("----------------------------------------");
 console.log("---------------------------------------");
+
+let greaterThan10 = [8, 1, 2, 2, 3];
+
+let greaterThan11 = [6, 5, 4, 8];
+
+let greaterThan12 = [7, 7, 7, 7];
+
+function greaterThan21(array) {
+  let numsMap = new Map();
+  let array2 = [...array];
+  array = array.sort((a, b) => (a > b ? 1 : -1));
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (!numsMap.has(key)) {
+      numsMap.set(key, i);
+    }
+  }
+
+  let rArray = [];
+  let j = 0;
+
+  for (; j < array2.length; j++) {
+    let key = array2[j];
+    rArray.push(numsMap.get(key));
+  }
+
+  return rArray;
+}
+
+console.log(greaterThan21(greaterThan10));
+// [4, 0, 1, 1, 3]
+console.log(greaterThan21(greaterThan11));
+// [2, 1, 0, 3]
+console.log(greaterThan21(greaterThan12));
+// [0, 0, 0, 0]
+console.log("---------------------------------------------");
+console.log("------------------------------------------");
