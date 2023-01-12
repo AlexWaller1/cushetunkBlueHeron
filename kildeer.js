@@ -1234,3 +1234,35 @@ console.log(findTarget2(target14, target15));
 // [0, 1]
 console.log("--------------------------------------------");
 console.log("-------------------------------------");
+
+const shape2 = {
+  radius: 10,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () => 2 * Math.PI * this.radius
+};
+
+console.log(shape2.diameter());
+// 20
+console.log(shape.perimeter());
+// NaN
+// NaN because arrow functions cannot reach above own layer
+// to read data
+console.log("-----------------------------------------");
+console.log("-----------------------------------------");
+
+function sayHi2() {
+  console.log(name);
+  console.log(age);
+  var name = "Lydia";
+  let age = 21;
+}
+
+// console.log(sayHi2());
+// name logs undefined because we are able to call a var
+// before instantiation
+// age logs an error because we are not able to log
+// a let before instantiation
+console.log("-------------------------------------------");
+console.log("---------------------------------------");
