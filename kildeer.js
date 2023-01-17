@@ -1347,3 +1347,43 @@ console.log(jewelsAndStones(jewels2, stones2));
 // 0
 console.log("-------------------------------------------");
 console.log("--------------------------------------");
+
+let anagram5 = "anagram";
+
+let anagram6 = "nagaram";
+
+let anagram7 = "rat";
+
+let anagram8 = "car";
+
+let anagram9 = "nails";
+
+let anagram10 = "snail";
+
+function anagram55(string1, string2) {
+  string1 = string1.split("");
+
+  string2 = string2.split("");
+
+  string1 = string1.sort((a, b) => (a > b ? 1 : -1));
+
+  string2 = string2.sort((a, b) => (a > b ? 1 : -1));
+
+  string1 = string1.join("");
+
+  string2 = string2.join("");
+
+  if (string1 === string2) {
+    return true;
+  }
+  return false;
+}
+
+console.log(anagram55(anagram5, anagram6));
+// true
+console.log(anagram55(anagram7, anagram8));
+// false
+console.log(anagram55(anagram9, anagram10));
+// true
+console.log("------------------------------------------");
+console.log("--------------------------------------");
