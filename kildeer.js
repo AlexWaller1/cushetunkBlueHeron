@@ -1387,3 +1387,52 @@ console.log(anagram55(anagram9, anagram10));
 // true
 console.log("------------------------------------------");
 console.log("--------------------------------------");
+
+function anagram56(string1, string2) {
+  if (string1.length !== string2.length) {
+    return false;
+  }
+  let charsObj = {};
+  let i = 0;
+
+  for (; i < string1.length; i++) {
+    let key = string1.charAt(i);
+    if (charsObj[key] !== undefined) {
+      let value = charsObj[key];
+      value++;
+      charsObj[key] = value;
+    } else {
+      charsObj[key] = 1;
+    }
+  }
+  let charsObj2 = {};
+  let j = 0;
+
+  for (; j < string2.length; j++) {
+    let key = string2.charAt(j);
+    if (charsObj2[key] !== undefined) {
+      let value = charsObj2[key];
+      value++;
+      charsObj2[key] = value;
+    } else {
+      charsObj2[key] = 1;
+    }
+  }
+
+  let a = 0;
+
+  for (; a < string1.length; a++) {
+    let char = string1.charAt(a);
+    if (charsObj[char] !== charsObj2[char]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(anagram56(anagram5, anagram6));
+// true
+console.log(anagram56(anagram7, anagram8));
+// false
+console.log(anagram56(anagram9, anagram10));
+// true
