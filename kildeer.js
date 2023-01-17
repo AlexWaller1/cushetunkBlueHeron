@@ -1266,3 +1266,46 @@ function sayHi2() {
 // a let before instantiation
 console.log("-------------------------------------------");
 console.log("---------------------------------------");
+
+console.log("Kildeer.js!!!");
+// Kildeer.js
+let unique1 = "leetcode";
+
+let unique2 = "loveleetcode";
+
+let unique3 = "aabb";
+
+function firstUniqueChar(string) {
+  let charsMap = new Map();
+  let i = 0;
+
+  for (; i < string.length; i++) {
+    let key = string.charAt(i);
+    if (charsMap.has(key)) {
+      let value = charsMap.get(key);
+      value++;
+      charsMap.set(key, value);
+    } else {
+      charsMap.set(key, 1);
+    }
+  }
+
+  let j = 0;
+
+  for (; j < string.length; j++) {
+    let key = string.charAt(j);
+    if (charsMap.get(key) === 1) {
+      return j;
+    }
+  }
+  return -1;
+}
+
+console.log(firstUniqueChar(unique1));
+// 0
+console.log(firstUniqueChar(unique2));
+// 2
+console.log(firstUniqueChar(unique3));
+// -1
+console.log("------------------------------------------");
+console.log("-----------------------------------");
