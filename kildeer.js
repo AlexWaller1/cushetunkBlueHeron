@@ -1309,3 +1309,41 @@ console.log(firstUniqueChar(unique3));
 // -1
 console.log("------------------------------------------");
 console.log("-----------------------------------");
+
+let jewels1 = "aA";
+
+let stones1 = "aAAbbbb";
+
+let jewels2 = "z";
+
+let stones2 = "ZZ";
+
+function jewelsAndStones(jewels, stones) {
+  let jewelsMap = new Map();
+  let i = 0;
+
+  for (; i < jewels.length; i++) {
+    let key = jewels.charAt(i);
+    if (!jewelsMap.has(key)) {
+      jewelsMap.set(key, true);
+    }
+  }
+
+  let count = 0;
+  let j = 0;
+
+  for (; j < stones.length; j++) {
+    let key = stones.charAt(j);
+    if (jewelsMap.has(key)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(jewelsAndStones(jewels1, stones1));
+// 3
+console.log(jewelsAndStones(jewels2, stones2));
+// 0
+console.log("-------------------------------------------");
+console.log("--------------------------------------");
