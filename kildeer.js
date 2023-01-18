@@ -1491,3 +1491,85 @@ console.log(allSubArrays(oddArr2, oddCount2));
 
 console.log("-------------------------------------------");
 console.log("------------------------------------------");
+
+let addNums = (a, b) => a + b;
+
+console.log(typeof addNums);
+// function
+let date7 = new Date();
+
+console.log(date7);
+// Tue Jan 17 2023 21:44:40 GMT-0500 (Eastern Standard Time)
+console.log(typeof date7);
+// object
+function addXY(x, y) {
+  return { a: x, b: y };
+}
+
+console.log(typeof addXY(2, 3));
+// object
+console.log(typeof null);
+// object
+console.log(
+  typeof function add(x, y) {
+    return x + y;
+  }
+);
+// function
+let testObj = {
+  1: "One",
+  2: "Two",
+  3: "Three",
+  4: "Four",
+  5: "Five"
+};
+
+console.log(testObj[1]);
+// One
+console.log(testObj[2]);
+// Two
+console.log(testObj[3]);
+// Three
+console.log(testObj[4]);
+// Four
+console.log(testObj[5]);
+// Five
+
+let testObj2 = {
+  1: { hank44: "Hank-44", warren21: "Warren-21" },
+  2: { mellonTech: "Mellon-Tech", eggplantHead: "Eggplant-Head" }
+};
+
+console.log(testObj2[1]["hank44"]);
+// Hank-44
+console.log(testObj2[1]["warren21"]);
+// Warren-21
+console.log(testObj2[2]["mellonTech"]);
+// Mellon-Tech
+console.log(testObj2[2]["eggplantHead"]);
+// Eggplant-Head
+
+function crashBandicoot(num, letter) {
+  num = num.toString();
+  const crashBandicoot = {
+    "-3": { a: "Tiny Tiger", b: "N. Trance" },
+    "-2": { a: "Swifty", b: "Dingodile" },
+    "-1": { a: "Spyro", b: "Nina Cortex" },
+    0: { a: "Crash Bandicoot", b: "Neo Cortex" },
+    1: { a: "Nitrous Oxide", b: "Polar" },
+    2: { a: "Ripper Roo", b: "Dr. N. Tropy" },
+    3: { a: "Koala Kong", b: "Crunch Bandicoot" }
+  };
+  return crashBandicoot[num][letter];
+}
+
+console.log(crashBandicoot(-3, "a"));
+// Tiny Tiger
+console.log(crashBandicoot(0, "a"));
+// Crash Bandicoot
+console.log(crashBandicoot(-2, "b"));
+// Dingodile
+console.log(crashBandicoot(2, "a"));
+// Ripper Roo
+console.log("-------------------------------------------");
+console.log("----------------------------------");
