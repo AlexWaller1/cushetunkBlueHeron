@@ -1436,3 +1436,58 @@ console.log(anagram56(anagram7, anagram8));
 // false
 console.log(anagram56(anagram9, anagram10));
 // true
+console.log("-----------------------------------------");
+console.log("---------------------------------------");
+
+const robots55 = ["Hank-44", "Warren-21", "Mellon-Tech", "Eggplant-Head"];
+
+let oddArr1 = [4, 3, 2, 3, 4];
+
+let oddCount1 = 2;
+
+let oddArr2 = [5, 6, 7, 8, 9];
+
+let oddCount2 = 3;
+
+function allSubArrays(array, oddNum) {
+  let all = [];
+  let sub = [];
+  let i = 0;
+  let count = 0;
+
+  for (; i < array.length; i++) {
+    sub.push(array[i]);
+    let sub2 = [...sub];
+    all.push(sub2);
+    if (i === array.length - 1) {
+      count++;
+      i = count - 1;
+      sub = [];
+    }
+  }
+
+  let j = 0;
+  let total = 0;
+  for (; j < all.length; j++) {
+    let sub = all[j];
+    let oddCount = 0;
+    let a = 0;
+    for (; a < sub.length; a++) {
+      if (sub[a] % 2 !== 0) {
+        oddCount++;
+      }
+      if (a === sub.length - 1 && oddCount === oddNum) {
+        total++;
+      }
+    }
+  }
+  return total;
+}
+
+console.log(allSubArrays(oddArr1, oddCount1));
+// 4
+console.log(allSubArrays(oddArr2, oddCount2));
+// 1
+
+console.log("-------------------------------------------");
+console.log("------------------------------------------");
