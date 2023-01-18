@@ -1573,3 +1573,49 @@ console.log(crashBandicoot(2, "a"));
 // Ripper Roo
 console.log("-------------------------------------------");
 console.log("----------------------------------");
+
+// Majority Element
+
+let majority11 = [3, 2, 3];
+
+let majority12 = [2, 2, 1, 1, 1, 2, 2];
+
+let majority14 = [6, 5, 5];
+
+function majorityElement(array) {
+  let elMap = new Map();
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (elMap.has(key)) {
+      let value = elMap.get(key);
+      value++;
+      elMap.set(key, value);
+    } else {
+      elMap.set(key, 1);
+    }
+  }
+
+  let max = elMap.get(array[0]);
+  let maxEl = array[0];
+  let j = 1;
+
+  for (; j < array.length; j++) {
+    let key = array[j];
+    if (elMap.get(key) > max) {
+      max = elMap.get(key);
+      maxEl = array[j];
+    }
+  }
+  return maxEl;
+}
+
+console.log(majorityElement(majority11));
+// 3
+console.log(majorityElement(majority12));
+// 2
+console.log(majorityElement(majority14));
+// 5
+console.log("------------------------------------------");
+console.log("-----------------------------------------");
