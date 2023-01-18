@@ -1619,3 +1619,120 @@ console.log(majorityElement(majority14));
 // 5
 console.log("------------------------------------------");
 console.log("-----------------------------------------");
+
+// Intersection of Two Arrays
+
+let intersect1 = [1, 2, 2, 1];
+
+let intersect2 = [2, 2];
+
+let intersect3 = [4, 9, 5];
+
+let intersect4 = [9, 4, 9, 8, 4];
+
+function intersection(array1, array2) {
+  let long = [];
+  let short = [];
+
+  if (array1 >= array2) {
+    long = [...array1];
+    short = [...array2];
+  } else {
+    long = [...array2];
+    short = [...array1];
+  }
+
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < long.length; i++) {
+    let key = long[i];
+    if (numsMap.has(key)) {
+      let value = numsMap.get(key);
+      value++;
+      numsMap.set(key, value);
+    } else {
+      numsMap.set(key, 1);
+    }
+  }
+
+  let rArray = [];
+  let j = 0;
+
+  for (; j < short.length; j++) {
+    let key = short[j];
+    if (numsMap.has(key) && numsMap.get(key) > 0) {
+      rArray.push(key);
+      let value = numsMap.get(key);
+      value--;
+      numsMap.set(key, value);
+    }
+  }
+  return rArray;
+}
+
+console.log(intersection(intersect1, intersect2));
+// [2, 2]
+console.log(intersection(intersect3, intersect4));
+// [4, 9]
+console.log("-------------------------------------------");
+console.log("-------------------------------------");
+
+let apple = "apple";
+
+console.log(apple.charAt(20));
+// ""
+console.log("" === "");
+// true
+console.log(apple.charAt(20) === "");
+// true
+
+let words1 = ["hello", "leetcode"];
+
+let order1 = "hlabcdefgijkmnopqrstuvwxyz";
+
+let words2 = ["word", "world", "row"];
+
+let order2 = "worldabcefghijkmnpqstuvxyz";
+
+let words3 = ["apple", "app"];
+
+let order3 = "abcdefghijklmnopqrstuvwxyz";
+
+function alienAlphabet(array, order) {
+  let chars = new Map();
+  order = order.split("");
+  order.unshift("");
+  let i = 0;
+
+  for (; i < order.length; i++) {
+    let key = order[i];
+    chars.set(key, i);
+  }
+
+  let j = 0;
+
+  for (; j < array.length - 1; j++) {
+    let word1 = array[j];
+    let word2 = array[j + 1];
+    let a = 0;
+    for (; a < array[j].length; a++) {
+      if (chars.get(word1.charAt(a)) < chars.get(word2.charAt(a))) {
+        break;
+      }
+      if (chars.get(word1.charAt(a)) > chars.get(word2.charAt(a))) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+console.log(alienAlphabet(words1, order1));
+// true
+console.log(alienAlphabet(words2, order2));
+// false
+console.log(alienAlphabet(words3, order3));
+// false
+console.log("------------------------------------------");
+console.log("-----------------------------------------");
