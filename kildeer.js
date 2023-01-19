@@ -1736,3 +1736,52 @@ console.log(alienAlphabet(words3, order3));
 // false
 console.log("------------------------------------------");
 console.log("-----------------------------------------");
+
+let words5 = ["hello", "leetcode"];
+
+let order5 = "hlabcdefgijkmnopqrstuvwxyz";
+
+function alienAlphabet2(array, order) {
+  let chars = new Map();
+  // Map so each letter of alphabet can have a value
+  order = order.split("");
+  // converting string to array of single characters from string
+  order.unshift("");
+  // must have value in for empty string, as two words which
+  // same letter by letter until one ends, in which case an empty space
+  // is considered alphabetically earlier
+
+  // then set the characters to a map with an increasing numerical value
+  let i = 0;
+  for (; i < order.length; i++) {
+    let key = order[i];
+    chars.set(key, i);
+  }
+
+  let j = 0;
+  for (; j < array.length - 1; j++) {
+    // j is will interate until the length of the array minus one
+    // because since we only need to evaluate elements which have
+    // another element after them in array, so we never need to j
+    // to get to the last index of the array, it will error otherwise
+    // as word2 would be undefined
+    let word1 = array[j];
+    // currently iterated element
+    let word2 = array[j + 1];
+    // element one spot up in the array
+    let a = 0;
+    for (; a < word1.length; a++) {
+      if (chars.get(word1.charAt(a)) < chars.get(word2.charAt(a))) {
+        break;
+      }
+      if (chars.get(word1.charAt(a)) > chars.get(word2.charAt(a))) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+console.log(alienAlphabet2(words5, order5));
+// true
+c;
