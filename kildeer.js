@@ -1899,4 +1899,22 @@ class Robots19 {
     this.length = newArray.length;
     return this.length;
   }
+
+  delete(index) {
+    let rElement = this.container[index];
+    let newArray = new Robots19();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement ?? "array does not have that index";
+  }
+
+  insert(element, index) {
+    let newArray = new Robots19();
+  }
 }
