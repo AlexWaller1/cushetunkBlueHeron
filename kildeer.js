@@ -1980,3 +1980,19 @@ console.log(roboClone44.length);
 // 2
 console.log(roboClone44.message);
 // Robots19!!!
+console.log(robots44.shift());
+// Hank-44
+console.log(robots44.container);
+// {0: 'Warren-21', 1: 'Mellon-Tech', 2: 'Eggplant-Head'}
+console.log(robots44.length);
+// 3
+console.log(robots44.unshift("Hank-44", "Bender", "Test"));
+// 6
+console.log(robots44.container);
+// {0: 'Hank-44', 1: 'Bender', 2: 'Test', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(robots44.length);
+// 6
+console.log(robots44.delete(2));
+// Test
+console.log(robots44.delete(12));
+// array does not have that index
