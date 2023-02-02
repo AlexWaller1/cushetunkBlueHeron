@@ -1916,5 +1916,59 @@ class Robots19 {
 
   insert(element, index) {
     let newArray = new Robots19();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i === index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.container;
   }
 }
+
+const robots44 = new Robots19("Robo!!!");
+console.log(robots44.push("Hank-44"));
+// 1
+console.log(robots44.push("Warren-21"));
+// 2
+console.log(robots44.push("Mellon-Tech"));
+// 3
+console.log(robots44.push("Eggplant-Head"));
+// 4
+console.log(robots44.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(robots44.length);
+// 4
+console.log(robots44.container[0]);
+// Hank-44
+console.log(robots44.container[1]);
+// Warren-21
+console.log(robots44.container[2]);
+// Mellon-Tech
+console.log(robots44.container[3]);
+// Eggplant-Head
+console.log(robots44.indexOf("Hank-44"));
+// 0
+console.log(robots44.indexOf("Warren-21"));
+// 1
+console.log(robots44.indexOf("Mellon-Tech"));
+// 2
+console.log(robots44.indexOf("Eggplant-Head"));
+// 3
+console.log(robots44.indexOf("Bender"));
+// -1
+console.log(robots44.includes("Hank-44"));
+// true
+console.log(robots44.includes("Warren-21"));
+// true
+console.log(robots44.includes("Mellon-Tech"));
+// true
+console.log(robots44.includes("Eggplant-Head"));
+// true
+console.log(robots44.includes("Bender"));
+// false
