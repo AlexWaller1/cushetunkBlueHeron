@@ -2004,3 +2004,70 @@ console.log(robots44.insert("Robot Jones", 2));
 // {0: 'Hank-44', 1: 'Bender', 2: 'Robot Jones', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
 console.log(robots44.length);
 // 6
+console.log("-----------------------------------------------");
+console.log("---------------------------------------------");
+
+const RisingDough = {};
+
+RisingDough["name"] = "Rising Dough";
+
+RisingDough["model"] = "Randall-94";
+
+RisingDough["employer"] = "Fiz-Mart";
+
+RisingDough["favoriteFood"] = "Pizza";
+
+RisingDough["favoriteSoda"] = "Pickerel Cola";
+
+RisingDough["friends"] = [
+  "Beezer",
+  "Chipper",
+  "Bodhi",
+  "Brick",
+  "Ziggy",
+  "Yugo Lancing",
+  "Brooke Nevins",
+  "Brayden",
+  "Mellon-Tech",
+  "Eggplant-Head",
+  "Rollo"
+];
+
+console.log(RisingDough.name);
+// Rising Dough
+console.log(RisingDough.model);
+// Randall-94
+console.log(RisingDough.employer);
+// Fiz-Mart
+console.log(RisingDough.favoriteFood);
+// Pizza
+console.log(RisingDough.favoriteSoda);
+// Pickerel Cola
+console.log(RisingDough.friends.length);
+// 11
+
+const {
+  name: RisingDoughName,
+  model,
+  employer,
+  favoriteFood,
+  favoriteSoda,
+  friends: RisingDoughFriends
+} = RisingDough;
+
+console.log(RisingDoughName);
+// Rising Dough
+console.log(model);
+// Randall-94
+console.log(employer);
+// Fiz-Mart
+console.log(favoriteFood);
+// Pizza
+console.log("Bodhi!!!");
+// Bodhi!!!
+console.log(favoriteSoda);
+// Pickerel Cola
+console.log(RisingDoughFriends.length);
+// 11
+console.log("--------------------------------------------------");
+console.log("-------------------------------------------");
