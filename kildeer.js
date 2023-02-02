@@ -1996,3 +1996,11 @@ console.log(robots44.delete(2));
 // Test
 console.log(robots44.delete(12));
 // array does not have that index
+console.log(robots44.container);
+// {0: 'Hank-44', 1: 'Bender', 2: 'Warren-21', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(robots44.length);
+// 5
+console.log(robots44.insert("Robot Jones", 2));
+// {0: 'Hank-44', 1: 'Bender', 2: 'Robot Jones', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(robots44.length);
+// 6
