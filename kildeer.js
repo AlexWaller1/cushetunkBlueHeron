@@ -1866,7 +1866,7 @@ class Robots19 {
   }
 
   slice(index1, index2) {
-    let rArray = [];
+    let rArray = new Robots19();
     for (; index1 < index2; index1++) {
       rArray.push(this.container[index1]);
     }
@@ -1972,3 +1972,11 @@ console.log(robots44.includes("Eggplant-Head"));
 // true
 console.log(robots44.includes("Bender"));
 // false
+const roboClone44 = robots44.slice(2, 4);
+
+console.log(roboClone44.container);
+// {0: 'Mellon-Tech', 1: 'Eggplant-Head}
+console.log(roboClone44.length);
+// 2
+console.log(roboClone44.message);
+// Robots19!!!
