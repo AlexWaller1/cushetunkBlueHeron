@@ -1784,4 +1784,119 @@ function alienAlphabet2(array, order) {
 
 console.log(alienAlphabet2(words5, order5));
 // true
-c;
+console.log("-----------------------------------------------");
+console.log("------------------------------------------------");
+
+let numsGreater1 = [8, 1, 2, 2, 3];
+
+let numsGreater2 = [6, 5, 4, 8];
+
+let numsGreater3 = [7, 7, 7, 7];
+
+function numsGreaterThanProto(array) {
+  let array2 = [...array];
+  array.sort((a, b) => (a > b ? 1 : -1));
+  let numsMap = new Map();
+  let i = 0;
+
+  for (; i < array.length; i++) {
+    let key = array[i];
+    if (!numsMap.has(key)) {
+      numsMap.set(key, i);
+    }
+  }
+
+  let rArray = [];
+  let j = 0;
+
+  for (; j < array2.length; j++) {
+    let key = array2[j];
+    rArray.push(numsMap.get(key));
+  }
+  return rArray;
+}
+
+console.log(numsGreaterThanProto(numsGreater1));
+// [4, 0, 1, 1, 3]
+console.log(numsGreaterThanProto(numsGreater2));
+// [2, 1, 0, 3]
+console.log(numsGreaterThanProto(numsGreater3));
+// [0, 0, 0, 0]
+console.log("--------------------------------------------------");
+console.log("----------------------------------------------");
+
+class Robots19 {
+  constructor(message = "Robots19!!!") {
+    this.container = {};
+    this.length = 0;
+    this.message = message;
+  }
+
+  push(element) {
+    this.container[this.length] = element;
+    this.length++;
+    return this.length;
+  }
+
+  pop() {
+    let rElement = this.container[this.length - 1];
+    delete this.container[this.length - 1];
+    this.length--;
+    return rElement;
+  }
+
+  indexOf(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  includes(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  slice(index1, index2) {
+    let rArray = [];
+    for (; index1 < index2; index1++) {
+      rArray.push(this.container[index1]);
+    }
+    return rArray;
+  }
+
+  shift() {
+    let newArray = new Robots19();
+    let rElement = this.container[0];
+    let i = 1;
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return rElement;
+  }
+
+  unshift(args) {
+    let newArray = new Robots19();
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+    let j = 0;
+    for (; j < this.length; j++) {
+      newArray.push(this.container[j]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.length;
+  }
+}
