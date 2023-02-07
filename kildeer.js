@@ -2244,6 +2244,34 @@ class RoboHash {
     }
     return parseInt(newKey);
   }
+
+  set(key, value) {
+    key = this.hash(key);
+    this.container[key] = value;
+    this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    key = this.hash(key);
+    return this.container[key];
+  }
+
+  has(key) {
+    key = this.hash(key);
+    if (this.container[key] !== undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  delete(key) {
+    key = this.hash(key);
+    let rValue = this.container[key];
+    delete this.container[key];
+    this.size--;
+    return rValue;
+  }
 }
 
 const RoboMap21 = new RoboHash("RoboMap21!");
@@ -2254,3 +2282,41 @@ console.log(RoboMap21.hash("Chipper"));
 // 29891616518
 console.log(RoboMap21.hash("Bodhi"));
 // 2815489
+console.log(RoboMap21.set(1, "Hank-44"));
+// 1
+console.log(RoboMap21.set(2, "Warren-21"));
+// 2
+console.log(RoboMap21.set(3, "Mellon-Tech"));
+// 3
+console.log(RoboMap21.set(4, "Eggplant-Head"));
+// 4
+console.log(RoboMap21.size);
+// 4
+console.log(RoboMap21.has(1));
+// true
+console.log(RoboMap21.has(2));
+// true
+console.log(RoboMap21.has(3));
+// true
+console.log(RoboMap21.has(4));
+// true
+console.log(RoboMap21.has(5));
+// false
+console.log(RoboMap21.get(1));
+// Hank-44
+console.log(RoboMap21.get(2));
+// Warren-21
+console.log(RoboMap21.get(3));
+// Mellon-Tech
+console.log(RoboMap21.get(4));
+// Eggplant-Head
+console.log(RoboMap21.delete(3));
+// Mellon-Tech
+console.log(RoboMap21.get(3));
+// undefined
+console.log(RoboMap21.size);
+// 3
+console.log(RoboMap21.set(3, "Mellon-Tech"));
+// 4
+console.log(RoboMap21.get(3));
+// Mellon-Tech
