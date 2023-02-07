@@ -2222,3 +2222,35 @@ charsMap.set("?", 92);
 
 console.log(charsMap.get("["));
 // 79
+
+class RoboHash {
+  constructor(message = "RoboHash!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  hash(key) {
+    if (typeof key !== "string") {
+      key = key.toString();
+    }
+    let newKey = "";
+    let i = 0;
+
+    for (; i < key.length; i++) {
+      let char = key.charAt(i);
+      char = charsMap.get(char);
+      newKey = newKey.concat(char);
+    }
+    return parseInt(newKey);
+  }
+}
+
+const RoboMap21 = new RoboHash("RoboMap21!");
+
+console.log(RoboMap21.hash("Beezer"));
+// 285526518
+console.log(RoboMap21.hash("Chipper"));
+// 29891616518
+console.log(RoboMap21.hash("Bodhi"));
+// 2815489
