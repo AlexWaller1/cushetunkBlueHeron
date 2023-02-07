@@ -2071,3 +2071,74 @@ console.log(RisingDoughFriends.length);
 // 11
 console.log("--------------------------------------------------");
 console.log("-------------------------------------------");
+
+class PrimeMap {
+  constructor(message = "PrimeMap!") {
+    this.container = [];
+    this.size = 0;
+    this.message = message;
+  }
+
+  set(key, value) {
+    this.container[key] = value;
+    this.size++;
+    return this.size;
+  }
+
+  get(key) {
+    return this.container[key];
+  }
+
+  has(key) {
+    if (this.container[key] !== undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  delete(key) {
+    delete this.container[key];
+    this.size--;
+    return this.size;
+  }
+}
+
+const charsMap = new PrimeMap("charsMap!");
+
+charsMap.set("a", 1);
+charsMap.set("b", 2);
+charsMap.set("c", 3);
+charsMap.set("d", 4);
+charsMap.set("e", 5);
+charsMap.set("f", 6);
+charsMap.set("g", 7);
+charsMap.set("h", 8);
+charsMap.set("i", 9);
+
+console.log(charsMap.get("a"));
+// 1
+console.log(charsMap.get("b"));
+// 2
+
+charsMap.set("j", 10);
+charsMap.set("k", 11);
+charsMap.set("l", 12);
+charsMap.set("m", 13);
+charsMap.set("n", 14);
+charsMap.set("o", 15);
+charsMap.set("p", 16);
+charsMap.set("q", 17);
+charsMap.set("r", 18);
+charsMap.set("s", 19);
+charsMap.set("t", 20);
+charsMap.set("u", 21);
+charsMap.set("v", 22);
+charsMap.set("w", 23);
+charsMap.set("x", 24);
+charsMap.set("y", 25);
+charsMap.set("z", 26);
+
+console.log(charsMap.get("z"));
+// 26
+console.log(charsMap.get("u"));
+// 21
