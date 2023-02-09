@@ -144,4 +144,24 @@ class RoboArray {
     this.length--;
     return rElement;
   }
+
+  indexOf(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  includes(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
