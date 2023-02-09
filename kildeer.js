@@ -2320,3 +2320,5 @@ console.log(RoboMap21.set(3, "Mellon-Tech"));
 // 4
 console.log(RoboMap21.get(3));
 // Mellon-Tech
+console.log(RoboMap21.message);
+// RoboMap21!
