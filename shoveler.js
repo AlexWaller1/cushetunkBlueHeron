@@ -258,6 +258,10 @@ class RoboArray21 {
     }
     return this.container;
   }
+
+  fill(value, from, to) {
+    return value ?? "no argument";
+  }
 }
 
 const RobotsNJ = new RoboArray21();
@@ -369,3 +373,5 @@ console.log(RobotsNJ.concat(RobotsWI));
 // {0: 'Hank-44', 1: 'Rising Dough', 2: 'Bender', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head', 6: 'Chappie', 7: 'Robot Jones', 8: 'Ziggo', 9: 'Hardac'}
 console.log(RobotsNJ.length);
 // 10
+console.log(RobotsNJ.fill());
+// no argument
