@@ -213,6 +213,22 @@ class RoboArray21 {
     this.length = newArray.length;
     return rElement;
   }
+
+  insert(element, index) {
+    let newArray = new RoboArray21();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i === index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    return this.container;
+  }
 }
 
 const RobotsNJ = new RoboArray21();
@@ -267,3 +283,27 @@ console.log(roboClone1.container[1]);
 // Eggplant-Head
 console.log(roboClone1.length);
 // 2
+console.log(RobotsNJ.shift());
+// Hank-44
+console.log(RobotsNJ.container);
+// {0: 'Warren-21', 1: 'Mellon-Tech', 2: 'Eggplant-Head'}
+console.log(RobotsNJ.length);
+// 3
+console.log(RobotsNJ.unshift("Hank-44", "Rising Dough", "Bender"));
+// 6
+console.log(RobotsNJ.container);
+// {0: 'Hank-44', 1: 'Rising Dough', 2: 'Bender', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(RobotsNJ.length);
+// 6
+console.log(RobotsNJ.delete(2));
+// Bender
+console.log(RobotsNJ.container);
+// {0: 'Hank-44', 1: 'Rising Dough', 2: 'Warren-21', 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(RobotsNJ.length);
+// 5
+console.log(RobotsNJ.insert("Bender", 2));
+// {0: 'Hank-44', 1: 'Rising Dough', 2: 'Bender', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(RobotsNJ.container);
+// {0: 'Hank-44', 1: 'Rising Dough', 2: 'Bender', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
+console.log(RobotsNJ.length);
+// 6
