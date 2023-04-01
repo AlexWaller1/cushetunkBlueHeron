@@ -250,6 +250,14 @@ class RoboArray21 {
     }
     return this.container;
   }
+
+  concat(array) {
+    let i = 0;
+    for (; i < array.length; i++) {
+      this.push(array.container[i]);
+    }
+    return this.container;
+  }
 }
 
 const RobotsNJ = new RoboArray21();
@@ -342,3 +350,22 @@ console.log(CrashBandicoot.reverse());
 // {0: 'Dingodile', 1: 'Neo Cortex', 2: 'Crash Bandicoot'}
 console.log(CrashBandicoot.container);
 // {0: 'Dingodile', 1: 'Neo Cortex', 2: 'Crash Bandicoot'}
+
+const RobotsWI = new RoboArray21();
+
+console.log(RobotsWI.push("Chappie"));
+// 1
+console.log(RobotsWI.push("Robot Jones"));
+// 2
+console.log(RobotsWI.push("Ziggo"));
+// 3
+console.log(RobotsWI.push("Hardac"));
+// 4
+console.log(RobotsWI.container);
+// {0: 'Chappie', 1: 'Robot Jones'}
+console.log(typeof RobotsWI.container);
+// object
+console.log(RobotsNJ.concat(RobotsWI));
+// {0: 'Hank-44', 1: 'Rising Dough', 2: 'Bender', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head', 6: 'Chappie', 7: 'Robot Jones', 8: 'Ziggo', 9: 'Hardac'}
+console.log(RobotsNJ.length);
+// 10
