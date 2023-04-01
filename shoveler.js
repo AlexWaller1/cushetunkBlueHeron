@@ -135,5 +135,23 @@ class RoboArray21 {
   push(element) {
     this.container[this.length] = element;
     this.length++;
+    return this.length;
+  }
+
+  pop() {
+    let rElement = this.container[this.legnth - 1];
+    delete this.container[this.length - 1];
+    this.length--;
+    return rElement;
+  }
+
+  indexOf(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return i;
+      }
+    }
+    return -1;
   }
 }
