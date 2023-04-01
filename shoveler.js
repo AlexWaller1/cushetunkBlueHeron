@@ -229,6 +229,15 @@ class RoboArray21 {
     this.length = newArray.length;
     return this.container;
   }
+
+  of(args) {
+    let rArray = new RoboArray21();
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      rArray.push(arguments[i]);
+    }
+    return rArray;
+  }
 }
 
 const RobotsNJ = new RoboArray21();
@@ -307,3 +316,13 @@ console.log(RobotsNJ.container);
 // {0: 'Hank-44', 1: 'Rising Dough', 2: 'Bender', 3: 'Warren-21', 4: 'Mellon-Tech', 5: 'Eggplant-Head'}
 console.log(RobotsNJ.length);
 // 6
+const CrashBandicoot = RobotsNJ.of(
+  "Crash Bandicoot",
+  "Neo Cortex",
+  "Dingodile"
+);
+
+console.log(CrashBandicoot.container);
+// {0: 'Crash Bandicoot', 1: 'Neo Cortex', 2: 'Dingodile'}
+console.log(CrashBandicoot.length);
+// 3
