@@ -139,7 +139,7 @@ class RoboArray21 {
   }
 
   pop() {
-    let rElement = this.container[this.legnth - 1];
+    let rElement = this.container[this.length - 1];
     delete this.container[this.length - 1];
     this.length--;
     return rElement;
@@ -229,3 +229,19 @@ console.log(RobotsNJ.push("test"));
 // 5
 console.log(RobotsNJ.container);
 // {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 'test'}
+console.log(RobotsNJ.length);
+// 5
+console.log(RobotsNJ.pop());
+// test
+console.log(RobotsNJ.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(RobotsNJ.length);
+// 4
+console.log(RobotsNJ.indexOf("Hank-44"));
+// 0
+console.log(RobotsNJ.indexOf("Warren-21"));
+// 1
+console.log(RobotsNJ.indexOf("Mellon-Tech"));
+// 2
+console.log(RobotsNJ.indexOf("Eggplant-Head"));
+// 3
