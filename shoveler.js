@@ -245,3 +245,25 @@ console.log(RobotsNJ.indexOf("Mellon-Tech"));
 // 2
 console.log(RobotsNJ.indexOf("Eggplant-Head"));
 // 3
+console.log(RobotsNJ.indexOf("Bender"));
+// -1
+console.log(RobotsNJ.includes("Hank-44"));
+// true
+console.log(RobotsNJ.includes("Warren-21"));
+// true
+console.log(RobotsNJ.includes("Mellon-Tech"));
+// true
+console.log(RobotsNJ.includes("Eggplant-Head"));
+// true
+console.log(RobotsNJ.includes("Bender"));
+// false
+let roboClone1 = RobotsNJ.slice(2, 4);
+
+console.log(roboClone1.container);
+// {0: 'Mellon-Tech', 1: 'Eggplant-Head'}
+console.log(roboClone1.container[0]);
+// Mellon-Tech
+console.log(roboClone1.container[1]);
+// Eggplant-Head
+console.log(roboClone1.length);
+// 2
