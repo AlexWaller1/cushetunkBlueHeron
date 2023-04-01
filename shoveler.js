@@ -238,6 +238,18 @@ class RoboArray21 {
     }
     return rArray;
   }
+
+  reverse() {
+    let i = 0;
+    let temp = 0;
+    let j = this.length - 1;
+    for (; i < j; i++, j--) {
+      temp = this.container[i];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
+    }
+    return this.container;
+  }
 }
 
 const RobotsNJ = new RoboArray21();
@@ -326,3 +338,7 @@ console.log(CrashBandicoot.container);
 // {0: 'Crash Bandicoot', 1: 'Neo Cortex', 2: 'Dingodile'}
 console.log(CrashBandicoot.length);
 // 3
+console.log(CrashBandicoot.reverse());
+// {0: 'Dingodile', 1: 'Neo Cortex', 2: 'Crash Bandicoot'}
+console.log(CrashBandicoot.container);
+// {0: 'Dingodile', 1: 'Neo Cortex', 2: 'Crash Bandicoot'}
