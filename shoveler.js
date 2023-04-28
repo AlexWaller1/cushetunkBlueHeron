@@ -375,3 +375,54 @@ console.log(RobotsNJ.length);
 // 10
 console.log(RobotsNJ.fill());
 // no argument
+const MellonTech = {
+  name: "Mellon-Tech",
+  specialty: "Guitar Player and Guitar Tech"
+};
+
+let MellonTechKeyValuePair = { paintCoat: "Green and Yellow" };
+
+const NewMellonTech = { ...MellonTech, ...MellonTechKeyValuePair };
+
+console.log(NewMellonTech);
+
+const CrashBandicoot27 = [
+  { id: 1, name: "Crash Bandicoot" },
+  { id: 2, name: "Neo Cortex" },
+  { id: 3, name: "Coco Bandicoot" },
+  { id: 4, name: "Dingodile" },
+  { id: 5, name: "Tiny Tiger" }
+];
+
+let filteredCrash = CrashBandicoot27.filter(crash => crash.id !== 2);
+
+console.log(filteredCrash);
+// array without Neo Cortex
+
+let rounded2 = parseFloat(23.098);
+
+console.log(rounded2);
+
+rounded2 = rounded2.toFixed(2);
+
+console.log(rounded2);
+
+let rounded3 = 6.549;
+
+console.log(rounded3.toFixed(2));
+// 6.55
+
+function shovelerDuck() {
+  console.log("Shoveler Duck");
+}
+function whileCount() {
+  let i = 0;
+
+  while (i < 5) {
+    i++;
+  }
+
+  return i;
+}
+
+console.log(whileCount());
