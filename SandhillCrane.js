@@ -152,4 +152,63 @@ class RoboArray {
     this.message = newArray.message;
     return rElement;
   }
+
+  insert(element, index) {
+    let newArray = new RoboArray("Element Inserted!");
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i === index) {
+        newArray.push(element);
+        newArray.push(this.container[i]);
+      } else {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    this.message = newArray.message;
+    return this.container;
+  }
+
+  reverse() {
+    let i = 0;
+    let j = this.length - 1;
+    let temp = 0;
+    for (; i < j; i++, j--) {
+      temp = this.container[i];
+      this.container[i] = this.container[j];
+      this.container[j] = temp;
+    }
+    this.message = "Array Reversed";
+    return this.container;
+  }
+
+  at(index) {
+    return this.container[index];
+  }
+
+  find(func) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (func(this.container[i])) {
+        return this.container[i];
+      }
+    }
+    return "No Element Matched this Condtion";
+  }
 }
+
+const robots = new RoboArray();
+
+console.log(robots.push("Hank-44"));
+// 1
+console.log(robots.push("Warren-21"));
+// 2
+console.log(robots.push("Mellon-Tech"));
+// 3
+console.log(robots.push("Eggplant-Head"));
+// 4
+console.log(robots.find(x => x === "Mellon-Tech"));
+// Mellon-Tech
+console.log(robots.find(x => x.length === 13));
+// Eggplant-Head
