@@ -89,4 +89,67 @@ class RoboArray {
     }
     return -1;
   }
+
+  includes(element) {
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (this.container[i] === element) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  splice(index1, index2) {
+    let clone = new RoboArray("Cloned RoboArray!");
+    for (; index1 < index2; index1++) {
+      newArray.push(this.container[index1]);
+    }
+
+    return clone;
+  }
+
+  shift() {
+    let rElement = this.container[0];
+    let newArray = new RoboArray("Array Shifted!");
+    let i = 1;
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    this.message = newArray.message;
+    return rElement;
+  }
+
+  unshift(args) {
+    let newArray = new RoboArray("Array Unshifted!!!");
+    let i = 0;
+    for (; i < arguments.length; i++) {
+      newArray.push(arguments[i]);
+    }
+    i = 0;
+    for (; i < this.length; i++) {
+      newArray.push(this.container[i]);
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    this.message = newArray.message;
+    return this.length;
+  }
+
+  delete(index) {
+    let rElement = this.container[index];
+    let newArray = new RoboArray("Element Deleted");
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (i !== index) {
+        newArray.push(this.container[i]);
+      }
+    }
+    this.container = newArray.container;
+    this.length = newArray.length;
+    this.message = newArray.message;
+    return rElement;
+  }
 }
