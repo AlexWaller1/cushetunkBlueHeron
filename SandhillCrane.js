@@ -196,6 +196,41 @@ class RoboArray {
     }
     return "No Element Matched this Condtion";
   }
+
+  filter(func) {
+    let filteredArray = new RoboArray();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (func(this.container[i])) {
+        filteredArray.push(this.container[i]);
+      }
+    }
+    return filteredArray.container;
+  }
+
+  findLast(func) {
+    let filteredArray = new RoboArray();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (func(this.container[i])) {
+        filteredArray.push(this.container[i]);
+      }
+    }
+    return filteredArray.container[filteredArray.length - 1];
+  }
+
+  findLastIndex(func) {
+    let filteredArray = new RoboArray();
+    let i = 0;
+    for (; i < this.length; i++) {
+      if (func(this.container[i])) {
+        filteredArray.push(this.container[i]);
+      }
+    }
+
+    let lastElement = filteredArray.container[filteredArray.length - 1];
+    return this.indexOf(lastElement);
+  }
 }
 
 const robots = new RoboArray();
@@ -212,3 +247,38 @@ console.log(robots.find(x => x === "Mellon-Tech"));
 // Mellon-Tech
 console.log(robots.find(x => x.length === 13));
 // Eggplant-Head
+console.log(robots.insert(14, 2));
+// {0: 'Hank-44', 1: 'Warren-21', 2: 14, 3: 'Mellon-Tech', 4: 'Eggplant-Head'}
+console.log(robots.find(x => typeof x === "number"));
+// 14
+console.log(robots.filter(r => typeof r === "string"));
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log(robots.findLast(r => typeof r === "string"));
+// Eggplant-Head
+console.log(robots);
+
+const robots2 = new RoboArray();
+
+console.log(robots2.push("Hank-44"));
+// 1
+console.log(robots2.push("Warren-21"));
+// 2
+console.log(robots2.push("Mellon-Tech"));
+// 3
+console.log(robots2.push("Eggplant-Head"));
+// 4
+
+console.log(robots2);
+
+console.log(robots2.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head'}
+console.log("Mellon-Tech" > 21);
+// false
+console.log(robots2.push(37));
+// 5
+console.log(robots2.push(44));
+// 6
+console.log(robots2.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 37, 5: 44}
+console.log(robots2.findLastIndex(x => x > 25));
+// 5
