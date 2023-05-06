@@ -229,7 +229,14 @@ class RoboArray {
     }
 
     let lastElement = filteredArray.container[filteredArray.length - 1];
-    return this.indexOf(lastElement);
+    let returnIndex = -1;
+    let j = 0;
+    for (; j < this.length; j++) {
+      if (this.container[j] === lastElement) {
+        returnIndex = j;
+      }
+    }
+    return returnIndex;
   }
 }
 
@@ -282,3 +289,21 @@ console.log(robots2.container);
 // {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 37, 5: 44}
 console.log(robots2.findLastIndex(x => x > 25));
 // 5
+const crashBandicoot = [
+  "Crash Bandicoot",
+  "Neo Cortex",
+  "Dingodile",
+  "Tiny Tiger",
+  "Crash Bandicoot"
+];
+
+console.log(crashBandicoot.indexOf("Crash Bandicoot"));
+// 0
+console.log(crashBandicoot.findLastIndex(crash => crash === "Crash Bandicoot"));
+// 4
+console.log(robots2.push("Mellon-Tech"));
+// 7
+console.log(robots2.container);
+// {0: 'Hank-44', 1: 'Warren-21', 2: 'Mellon-Tech', 3: 'Eggplant-Head', 4: 37, 5: 44, 6: 'Mellon-Tech'}
+console.log(robots2.findLastIndex(mt => mt === "Mellon-Tech"));
+// 6
